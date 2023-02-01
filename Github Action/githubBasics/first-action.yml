@@ -1,0 +1,8 @@
+name: First Workshop
+on: workflow_dispatch # allows to manully run the workflow you can do that in github website in actions section
+jobs: 
+  first-job:
+    run-ons: ubuntu-latest           #can find all supported runon on github action runner website
+    steps:
+      - name: print greeting
+        run: echo "hello world"

@@ -1,0 +1,30 @@
+To connect to the localhost replace http://localhost: or anything containing localhost to host.docker.internal
+
+TO CONNECT TO MONGODB
+
+docker run mongodb
+find the mongodb ip by using inspect commnad
+
+NETWORK
+
+
+
+docker network create fav-net    (unlike volume network are not cretaed automically)
+docker network ls
+
+MONGODB
+
+docker run -d --name mongodb --network fav-net mongodb  (now this mongodb can be access by puthing the another container in same network and
+                                                         change the url to mongodb container name)
+docker run -v data:/data/db -network fav-net mongodb    (to persist the data)
+-e MONGO_INITDB_ROOT_USERNAME=max -e MONGO_INITDB_ROOT_PASSWORD=secret
+mongodb://max:secret@mongodb:27017/myapp?authSource=admin    
+
+
+REACT
+
+React container need to be run in -it mode
+Note: React run on browser react container and backend container have no use been in same network since it can't communicate with backend been run on browser not on container
+
+
+

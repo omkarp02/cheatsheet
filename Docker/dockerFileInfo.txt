@@ -1,0 +1,24 @@
+FROM node:14-alpine                        //baseImage
+
+WORKDIR /app                     //here we set the workdir for the docker image
+
+COPY package.json .             //here we are copying the package.json file first because the way image is build is in layer so whenever one
+                                 layer changes all the layer below that layer gets executed, so we don't want npm install happening all the time when the code changes so we mention it before copy the whole directory and run npm install the whole time
+
+RUN npm install                 //RUN always run when the image is created
+
+COPY . .                         //if you set the the workdir there is not need for the absolute path like  /app instead pass a relative path . 
+
+ARG DEFAULT_PORT=80
+
+ENV PORT $DEFAULT_PORT                     //here this can work as a default value
+
+EXPOSE $PORT                        //can expose a port
+
+VOLUME ["/app/feedback"]        //path inside of our container volume maps this path to somewhere in your machine, this is anonoymous volume
+
+CMD ['node', 'server.js']       //Runs the commnad when we run the container
+
+ENTRYPOINT ['npm']              //so cmd command get overwritten as shown in utility sectino by command in entrypoint does not the command 
+                                while running the image is appended to this entrypoint command, so you can only init instead of npm init
+

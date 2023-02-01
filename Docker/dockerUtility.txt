@@ -1,0 +1,5 @@
+docker exec -it [container_name] npm init  //can execute command on a running container
+
+docker run -it -v [relative-path]:/app node-util npm install
+
+docker compose run --rm [service_name] init

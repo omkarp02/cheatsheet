@@ -1,0 +1,23 @@
+name: Matrix Demo
+on: push
+ jobs: 
+  build:
+    continue-on-error: true
+      strategy:
+      matrix:
+        node-version: [12,14,16]
+        operating-system: [ubuntu-latest, windows-latest]
+        include:
+          - node-version: 10
+            operating-system: ubutu-latest
+        exclude: 
+          - node-version: 12
+            operating-system: windows-latest
+      runs-on: ${{matrix.operating-system}}
+      steps: 
+        - name: get code
+          uses: actions/checkout@v3
+        - name: Install NOdejs
+          uses: actions/setup-node@v3
+          with: 
+            node-version: ${{ matrix.node-version }}

@@ -1,0 +1,4 @@
+docker-compose up
+-d                                           //detached mode
+docker-compose down -v                       //delete all container with -v also delete volumes
+--build                                      //just build the image instead of using locally existing image

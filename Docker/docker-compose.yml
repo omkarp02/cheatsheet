@@ -1,0 +1,49 @@
+#docker compose by default put all the services in the same network 
+#Note: service name can be used in the code
+
+
+version: '3.8'   #this is a docker compose user you cna find the official docs
+services: 
+  mongodb:
+    image: 'mongo'
+    volumes: 
+      - data:/data/db #if we use the same volume name for the other service the same volume will be shared Note: all the named volume should be mentioned below
+    container_name: mongodb #container name
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME=max 
+    #   MONGO_INITDB_ROOT_PASSWORD=secret 
+    env_file:
+      - ./env/mongo.env   #this is the relative path
+    # networks:
+    #   - goals-net
+  backend:
+    build: ./backend   # will build the image in backend folder
+    # build: 
+    #   context: ./backend # here you can set the path 
+    #   dockerfile: Dockerfile #here you can set the path to docker file
+      # args:
+      #   some-args: 1
+    ports:
+      - '80:80'
+    volumes:
+      - logs/app/logs
+      - ./backend:/app #here we can use relative path instead of absolute path
+      - /app/node_modules
+    env_file:
+      - ./env/backend.env
+    depends_on:  # backend depends on mongodb service
+      - mongodb   
+  frontend:
+    build: ./frontend
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - ./frontend/src:/app/src
+    stdin_open: true  #to start service on interactive mode
+    tty: true
+    depends_on: 
+      - backend
+
+volumes:
+  data:
+  logs:

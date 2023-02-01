@@ -1,0 +1,32 @@
+name: test1
+on: push  #checkout all the event on github action event page, for multiple event [push, workflow_dispatch]
+jobs: 
+  test:
+    run_on: ubuntu-latest  #can find all supported runon on github action runner website
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3  #action can be found on github action checkout
+      - name: Install node #this software actually have node js pre installed but which we are installing it
+        uses: action/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test
+        run: npm test
+  deploy: 
+    needs: test     # this is this job is dependent on test job for multiple [test, job2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3  #action can be found on github action checkout
+      - name: Install node #this software actually have node js pre installed but which we are installing it
+        uses: action/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
+        run: npm run build
+      - name: Deploy
+        run: echo "deploy"

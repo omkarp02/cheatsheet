@@ -1,0 +1,31 @@
+name: Reusable Deploy
+on: 
+  workflow_call:
+    inputs:
+      artifact-name: 
+        description: the name of deployable artifacefile
+        required: false
+        default: dist
+        type: string
+   # secrets: 
+      #some-secrets:
+       # required: true
+  outputs: 
+    results: 
+      description: the resutl
+      value: 
+
+jobs: 
+  deploy:
+    outputs: 
+      outcome: ${{ steps.set-result.outputs.step-result}} 
+    runs-on: ubutu-latest
+    steps: 
+      - name: get cod
+        uses: actions/downlaod-artifact@v3
+        with: 
+          name: ${{ inputs.artifact-name }}
+      - name: output information
+        run: echo "deploying"
+      - name: set result 
+        run : echo '::set-output name=step-result::success

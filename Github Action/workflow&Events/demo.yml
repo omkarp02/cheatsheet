@@ -1,0 +1,29 @@
+name: Events Demo 1
+on: 
+  pull_request:
+  types: 
+    - opened
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' # you can get the cheatsheet to format here https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+    paths-ignore: 
+      - '.github/workflows/*' # would only be pushed if you make changes to this branch
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploying..."

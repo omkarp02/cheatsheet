@@ -1,0 +1,93 @@
+docker pull node:14
+
+DOCKER RUN      (create a new container by default run in attached mode)
+
+docker run node     
+docker run -it node                         (to run node in interative mode)
+docker run -p 3000:80 [container_id]        (first is the port to expose: second is the internal port)
+-d                                          (to run docker in detached mode)
+--rm                                        (remove the container when it is stopped)
+--name [app_name]                           (can use custom name instead of the [container_name which is auto generated] )
+docker run -it node npm init                (override the default command)
+
+DOCKER START    (restart existing container with detached mode)
+
+docker start [container_id or container_name]
+-a              (to start in attached mode)
+-i              (to start in interative mode)
+
+GET LOGS OR ATTACH TO THE RUNNING CONTAINER  
+
+docker attach [container_name]
+docker logs [container_name]
+docker logs -f [container_name]         (to follow the logs)
+
+
+DOCKER LIST
+
+docker ps                              (to see all the running processes)
+docker ps -a                           (to list all the process)
+docker stop [container_name]
+docker images                          (list images)
+
+DOCKER BUILD 
+
+docker build -t ola:latest .
+-t [image_name]:[tag]                 (adds a tag)
+
+DOCKER DELETE CONTAINER
+
+docker rm [container_name]                      (can't delete running container, to delete multiple just seperate name with whitespace)
+docker rmi [image_id]                           (delete the image if they are not used by any container)
+docker image prune                              (remove all the unused images)
+docker container prune 
+
+DOCKER RENAME
+
+docker tag [current-name] [new-name ]
+
+DOCKER INFO
+
+docker image inspect [image_id]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOT VERY IMPORTANT
+
+DOCKER TO COPY FILES IN THE RUNNING CONTAINER also viceversa
+
+docker cp dummpy/. [container_name]:/path  
+docker cp [container_name]:/path dummpy
+
+
+
+ 

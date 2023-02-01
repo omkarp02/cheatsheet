@@ -1,0 +1,46 @@
+VOLUME
+
+There are two volume anonoymous volume and named volume
+anonoymous volume get removed when the container is removed rm, this volume are attached to a container
+name volume data will persist, these are not attached to a container
+
+-v /app/data            ---- anonoymous volume
+-v feedback:/app/data   ---- named volume
+-v path:path            ---- bind mount
+
+docker run -d -p 3000:80 -v feedback:/app/feedback              //-v [name]:[path]
+
+BIND MOUNT
+
+bind mount are great for persitant and editable data
+
+docker run -d -p 3000:80 -v feedback:/app/feedback  -v "[absolute_path]:/app"   //absolute_path we can get that by right click at the file we need and 
+                                                                                get the path, quotes are optional and docker should have the persmission the absolute_path folder you can do that by going to docker app and in resouces and adding the folder, so what this is doing is overwritting the container with local folder which can lead to error because if we don't node_modules locally, since local folder overrides the container, here also the node node_modules will be missing here is the solution
+
+docker run -d -p 3000:80 -v feedback:/app/feedback  -v "[absolute_path]:/app" -v /app/node_modules  
+                                                                                
+                                                                                //here the node_modules folder which was created during the npm install will survive due to the docker give rank by how long the path is so /app/node_modules is longer than /app so /app/node_modules will not be overwritten by the named volume
+
+
+so if we bind the whole file structure you can remove COPY . . , but during development, not during production 
+
+
+by default container are read/write 
+
+ro can be use to read only 
+warning: check the file which can be wrote and modify them accordingly
+
+docker run -d -p 3000:80 -v feedback:/app/feedback  -v "[absolute_path]:/app:ro" -v /app/temp -v /app/node_modules
+
+
+MANAGING DOCKER VOLUME
+
+docker volume ls
+docker volume create [volume-name]  //can create volume manully
+docker volume inspect [volume-name]
+docker volume rm [volume-name]      // if not in used
+
+
+
+
+                                                                             

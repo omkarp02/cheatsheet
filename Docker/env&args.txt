@@ -1,0 +1,13 @@
+ARG
+    available inside of dockerfile, not accesible in cmd or any application code
+ENV
+    availble inside of dockerfile & in applicaiotn code, set via env in docker file or via --env on docker run
+
+
+--env PORT=8000
+-e PORT=8000 -e NAME=omkar
+
+--env-file ./.env
+
+
+--build-arg DEFAULT_PORT=8000  //check the docker file

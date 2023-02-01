@@ -1,0 +1,57 @@
+name: Deploy website
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm  #path that would be cache
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}  # when it should run npm i again when the hashfile changes means when the package-lock.json file changes, means the cache will be discarded and new cache will be creaated 
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+      
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules  #path that would be cache
+          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}  # when it should run npm i again when the hashfile changes means when the package-lock.json file changes, means the cache will be discarded and new cache will be creaated 
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Build website
+        run: npm run build
+      - name: Upload Artifact  #this are used to download and get some file after the build
+        run : actions/upload-artifact@v3
+        with: 
+          name: dist-files
+          path: |
+            dist
+            package.json
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3  
+        with: 
+          name: dist-files
+      - name: Deploy
+        run: echo "Deploying..."
