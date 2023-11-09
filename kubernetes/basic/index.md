@@ -30,6 +30,10 @@
 
 `kubectl get pod`
 
+`kubectl get pod -A`
+
+`kubectl get pod --all-namespaces`
+
 `kubectl get services`
 
 `kubectl create deployment nginx-depl --image=nginx`
@@ -50,6 +54,8 @@
 
 `kubectl exec -it {pod-name} -- bin/bash`
 
+`kubectl explain replicaset`
+
 ### create mongo deployment
 `kubectl create deployment mongo-depl --image=mongo`
 
@@ -69,12 +75,25 @@
 
 `kubectl apply -f nginx-deployment.yaml`
 
+`kubectl replace --force -f /tmp/kubectl-edit-3251585406.yaml `
+
+`kubectl get pod webapp -o yaml`
+
 `kubectl get pod`
 
 `kubectl get deployment`
 
 ### delete with config
 `kubectl delete -f nginx-deployment.yaml`
+
+### namespace
+`kubectl get pods --namespace=dev`
+
+`kubectl config set-context $(kubectl config current-context) --namespace=dev`
+
+`kubectl run redis --image=redis -n=finance`
+
+
 
 #Metrics
 
