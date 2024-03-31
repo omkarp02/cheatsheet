@@ -10,6 +10,7 @@ kubectl replace -f ngnix.yaml
 kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml //get yaml file
 kubectl edit rs ngnix
 kubectl get all
+kubectl explain replicaset
 ```
 
 ### Pods
