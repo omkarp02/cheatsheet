@@ -49,6 +49,9 @@ docker tag [current-name] [new-name ]
 DOCKER INFO
 
 docker image inspect [image_id]
+docker container inspec [container_id]
+docker exec -it <container_name_or_id> bash
+docker exec -it <container_name_or_id> sh
 
 
 

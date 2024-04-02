@@ -11,6 +11,8 @@ kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml //get y
 kubectl edit rs ngnix
 kubectl get all
 kubectl explain replicaset
+kubectl get pod app-proposal -o yaml
+kubectl exec pod/proposal-dply-646458dcb9-m458q -- whoami
 ```
 
 ### Pods
@@ -49,6 +51,13 @@ kubectl create deployment httpd-frontend --image=httpd:2.4alpine --replicas=3
 kubectl get pods --namespace=dev
 kubectl get pods --all-namespaces
 kubectl config set-context $(kubectl config current-context) --namespace=prod
+```
+
+### configmap
+
+```
+kubectl create configmap \
+    app-config --from-literal=APP_COLOR=blue
 ```
 
 
