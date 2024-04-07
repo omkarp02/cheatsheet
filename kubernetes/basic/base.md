@@ -61,4 +61,13 @@ kubectl create configmap \
 ```
 
 
+### rollout
+
+```
+kubectl create -f deply.yml --record
+kubectl rollout status deployment/proposal-dply
+kubectl rollout history deployment/proposal-dply //to see the status of the revision
+kubectl rollout undo deployment/proposal-dply
+```
+
 
