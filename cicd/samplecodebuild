@@ -1,0 +1,67 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+  
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+    commands:
+      - echo Phase INSTALL was STARTED on `date`
+      - echo "Installing Pre-Requisites..."
+      - python3 -m pip install pip --upgrade || exit 1
+      - echo "Cleaning up un-needed files..." && rm -fr .git .gitignore readme.md README.md Readme.md ReadMe.md || exit 0 && echo "Cleanup Completed!"
+      - echo checking versions
+      - node -v
+      - npm -v
+    # finally:
+    #   - echo Phase INSTALL was COMPLETED on `date`
+    #   - if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]; then echo 'INSTALL SUCCESSFUL'; else echo 'INSTALL FAILED'; exit 1; fi
+  pre_build:
+    commands:
+      - echo Phase PRE_BUILD was STARTED on `date`
+      - echo Entered the build phase...
+      - npm install -g nx@17.0.2
+      - npm install --include=optional
+      - nx run proposal:build --generatePackageJson=true --verbose
+      - ls
+      - cp -r dist/apps/proposal/* apps/proposal/
+      - cp -r dist/libs/ apps/proposal/
+      - cd apps/proposal
+      - ls -a
+    # finally:
+    #   - echo Phase PRE_BUILD was COMPLETED on `date`
+    #   - if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]; then echo 'PRE_BUILD SUCCESSFUL'; else echo 'PRE_BUILD FAILED'; exit 1; fi
+  build:
+    commands:
+      - echo Phase BUILD was STARTED on `date`
+      - echo "Login into docker"
+      - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
+      - echo "Logging in to Amazon ECR..."
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 659450734844.dkr.ecr.ap-south-1.amazonaws.com
+      - ECR_REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO
+      # - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      # - IMAGE_TAG=${COMMIT_HASH:=latest}
+      # - echo "Building the Docker image..."
+      # - docker build -t $ECR_REPOSITORY_URI:latest .
+      # - docker tag $ECR_REPOSITORY_URI:latest $ECR_REPOSITORY_URI:$IMAGE_TAG
+      - docker build -t $ECR_REPOSITORY_URI:$ENV .
+    # finally:
+    #   - echo Phase BUILD was COMPLETED on `date`
+    #   - if [ "$CODEBUILD_BUILD_SUCCEEDING" -eq 1 ]; then echo 'IMAGE BUILD SUCCESSFUL'; else echo 'IMAGE BUILD FAILED'; exit 1; fi
+  post_build:
+    commands:
+      - echo Phase POST_BUILD was STARTED on `date`
+      - echo "Pushing the Docker image to ECR..."
+      - docker push $ECR_REPOSITORY_URI:$ENV 
+      #- docker push $ECR_REPOSITORY_URI:$IMAGE_TAG
+      - echo Change directory to secondary source
+      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $AWS_CLUSTER_NAME
+      - echo "Apply changes to kube manifests" 
+      - git clone -b ${Branch_Name} https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/${Repo_Name}
+      - cd ${DIR}
+      - ls -la
+      - kubectl apply -f deployment.yaml
+      - kubectl apply -f service.yaml
+      - kubectl rollout restart deployment nx-proposal -n creditx
