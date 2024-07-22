@@ -10,6 +10,15 @@ while moving remove the last element from the sum
 
 */
 
+
+
+
+
+
+
+
+
+
 /*
 
 Longest subarray / substring
@@ -47,6 +56,46 @@ while(r < n){
     }
     r += 1
 }
+
+    Optimal don't shrink
+    To know more about this watch first video or 4 video optimal solution of sliding window
+
+    while(r < n){
+    sum += arr[r]
+
+    if(sum > k){ //here insted of while we are doing if
+        sum -= arr[l]
+        l += 1
+    }
+
+    if(sum <= k){
+        max = Math.max(r - l + 1, max)
+    }
+    r += 1
+}
+
+
+
+*/
+
+
+
+/*
+
+No of subarray
+
+
+
+
+
+*/
+
+
+/*
+
+Shortest / Minium window
+
+
 
 
 

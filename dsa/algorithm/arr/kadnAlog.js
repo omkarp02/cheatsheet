@@ -1,7 +1,7 @@
-function soln(arr) {
-  let max = Number.MIN_VALUE;
+function soln(nums) {
+  let max = Number.NEGATIVE_INFINITY;
   let cur = 0;
-  for (let item of arr) {
+  for (let item of nums) {
     cur += item;
     if (max < cur) {
       max = cur;
@@ -13,6 +13,6 @@ function soln(arr) {
   return max
 }
 
-const arr = [1, 2, 7, -4, 3, 2, -10, 9, 1];
+const arr = [-1];
 
 console.log(soln(arr));

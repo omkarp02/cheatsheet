@@ -1,17 +1,3 @@
 /*
-
-    read format
-        recursion => basic
-        algorithm => sort
-        
-
-
-
-
-
-
-
-
-
-
+   Just go throught the dsa sheet and as you encounter problem related to the algo check the algo if you have forgotthen and solve the problem
 */
