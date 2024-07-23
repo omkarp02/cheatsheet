@@ -515,6 +515,47 @@ const arr18 = [102, 4, 100, 1, 101, 3, 2];
   optimal sort and two pointer
 */
 
+/*
+  Trapping Rain water problem 
+  this has a complex logic and intuition see the striver video for it
+
+*/
+
+/*
+  Chocolate Distribution problem
+  This first understand the problem and try doing yourself 
+  video to watch shashcode  channel
+*/
+
+/*
+  Smallest Subarray with sum greater than a given value 
+  This can be solved with sliding window very easily first see striver sliding window question
+  */
+
+/*
+Three way partitioning of an array around a given value
+  This can be done using 3 pointer try to solve yourself you will find the solution
+  
+
+  solution l,i, r
+  l will always take care of left and r will do the same
+  i will increase for every loop and check the element it is one and swap with l and r accordingly
+
+*/
+
+/*
+
+Minimum swaps required bring elements less equal K together
+
+My approach is iterate and find all the element together like 
+2 1 5 6 3 where k = 3
+
+INtuituion count the elment less than 3 and apply the sliding window so number of element less than 3 is 3 now make a window of size 3 and staring counting not favorual elemnent which are the answer
+
+what shashcode video
+
+*/
+
 //------------------------------------------------------------------------------------------------------- helpers
 function swap(first, second, arr) {
   let temp = arr[first];
