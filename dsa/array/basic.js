@@ -1,6 +1,6 @@
 //find the kth largest element use priority queue or max heap to solve this problem
 
-//move all negative element to right side of the array
+//Move all the negative elements to one side of the array
 
 function moveAllNegativeElement(arr) {
   let start = 0;
@@ -18,11 +18,29 @@ function moveAllNegativeElement(arr) {
 
 const arr1 = [1, -1, 1, 1, -1, -1, 1, 1];
 
+/*
+  Find missing number in an array
+  If number range from 1 to n than it can be cyclic 
+  If there is no duplication this can be done by sum method
+  xor method  see this in bit manipulation 
+
+*/
+function findMissingNumberInArray(nums){
+  
+}
+
+const arr19 = [1, 2, 3, 5]
+console.log(findMissingNumberInArray(arr19))
+
+//Find the number that appears once, and other numbers twice.
+//This can also be solved by bit manupulation and hashing the hashing one figure out yourself
+
+
 // console.log(moveAllNegativeElement(arr1));
 
 //find union intersection of two sorted array  this can be done using set
 
-//write a program to cyclic rotate an array
+//Write a program to cyclically rotate an array by one
 /*
 Intuition 
 
@@ -38,7 +56,7 @@ const arr2 = ["a", "b", "c", "d", "e", "f", "g"];
 
 function rotateArrayByK(arr, k) {}
 
-//minimum number of jump to reach end of an array
+//Minimum no. of Jumps to reach end of an array
 /*
     1. This can be done using recursion and dp check dp folder 1D
     2. This is another method lets see this
@@ -104,7 +122,7 @@ function swap(first, second, arr) {
 //Find duplicate in an array of N+1 Integers
 //For this problem check the cylic sort alogrithm
 
-//Given an array consisting of only 0,1 and 2 sort the array
+//Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo
 
 const sortColors = function (nums) {
   let start = 0;
@@ -419,6 +437,21 @@ function largestSubArrayWithZeroSum(nums) {
 const arr17 = [1, -1, 3, 2, -2, -8, 1, 7, 10, 23];
 
 // console.log(largestSubArrayWithZeroSum(arr17));
+
+//Replace Elements with Greatest Element on Right Side
+var replaceElements = function(arr) {
+  let max = -1
+  for(let i = arr.length - 1; i >=0; i-- ){
+      let curMax = max
+      max = Math.max(curMax, arr[i])
+      arr[i] = curMax
+  }
+  return arr
+};
+
+const arr20 =[17, 18, 5, 4, 6, 1]
+console.log(replaceElements(arr20))
+
 
 //Find factorial of a large number
 /*
