@@ -1,151 +1,271 @@
+//LinkedList
 
-
-let arr2 = [3, 5, 8, 9, 15, 19];
-let n2 = 6,
-  x2 = 9;
-// let ind2 = upperBound(arr, x, n);
-// console.log("The upper bound is the index:", ind);
-
-//Find first and last positions of an element in a sorted array
-//find the lower bound and upper bound of target and you find the first and last position
-/*
-Here is another great solution try to solve this using binary search yourself
-Here you do a binary search and if you find element equal to target than if you want to find the first occurance you apply binary search on the left side of the arr
-*/
-
-function firstAndLastPosition(nums, target) {}
-
-var searchRange = function (nums, target) {
-  const fs = binarySearchFirstLastOccurnace(nums, target, true);
-  const lt = binarySearchFirstLastOccurnace(nums, target, false);
-  return [fs, lt];
-};
-
-const binarySearchFirstLastOccurnace = (nums, target, firstOccurance) => {
-  let low = 0;
-  let high = nums.length - 1;
-  let ans = -1;
-
-  while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
-    if (nums[mid] < target) {
-      low = mid + 1;
-    } else if (nums[mid] > target) {
-      high = mid - 1;
-    } else {
-      ans = mid;
-      if (firstOccurance) {
-        high = mid - 1;
-      } else {
-        low = mid + 1;
-      }
-    }
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
   }
-  return ans;
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  // Add a node to the end of the list
+  append(data) {
+    const newNode = new Node(data);
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+    this.size++;
+  }
+
+  // Insert a node at a specific position
+  insert(data, index) {
+    if (index < 0 || index > this.size) {
+      return false;
+    }
+    const newNode = new Node(data);
+    if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      let previous = null;
+      let currentIndex = 0;
+      while (currentIndex < index) {
+        previous = current;
+        current = current.next;
+        currentIndex++;
+      }
+      newNode.next = current;
+      previous.next = newNode;
+    }
+    this.size++;
+    return true;
+  }
+
+  // Remove a node at a specific position
+  remove(index) {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    let removedNode;
+    if (index === 0) {
+      removedNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let current = this.head;
+      let previous = null;
+      let currentIndex = 0;
+      while (currentIndex < index) {
+        previous = current;
+        current = current.next;
+        currentIndex++;
+      }
+      removedNode = current;
+      previous.next = current.next;
+    }
+    this.size--;
+    return removedNode.data;
+  }
+
+  // Get the data at a specific index
+  get(index) {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    let current = this.head;
+    let currentIndex = 0;
+    while (currentIndex < index) {
+      current = current.next;
+      currentIndex++;
+    }
+    return current;
+  }
+
+  // Print the list
+  print(head) {
+    let current = head;
+    let result = "";
+    while (current) {
+      result += current.data + " -> ";
+      current = current.next;
+    }
+    result += "null";
+    console.log(result);
+  }
+}
+
+const ll = new LinkedList();
+ll.append(1);
+ll.append(2);
+ll.append(3);
+ll.append(4);
+ll.append(5);
+ll.append(6);
+
+// Middle of a LinkedList [TortoiseHare Method]
+
+var middleNode = function (head) {
+  const temp = head;
+  let slow = temp;
+  let fast = temp;
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow.data;
 };
 
-const arr3 = [5, 7, 7, 7, 7, 8, 8, 10];
+// console.log(middleNode(ll.head));
 
-// console.log(searchRange(arr3, 7));
+// Reverse a LL [Recursive]
+//Here you have difficulty returning the head so once try reversing recursevly while returning the new head
+var reverseListRec = function (head) {
+  if (head.next === null || head === null) {
+    return head;
+  }
 
-//This is easy use binary search to just element one side by checking mid and start and now solve by yourself
-const searchInRotatedSortedArr = function (nums, target) {
-  let start = 0;
-  let end = nums.length - 1;
+  const newHead = reverseListRec(head.next);
+  const nextNode = head.next;
+  nextNode.next = head;
+  head.next = null;
+  return newHead;
+};
 
-  while (start <= end) {
-    const mid = Math.floor((start + end) / 2);
+// const newHead = reverseListRec(ll.head)
+// ll.print(newHead)
 
-    if (target === nums[mid]) {
-      return mid;
-    } else if (nums[mid] <= nums[start]) {
-      //here note this equal to sign please very important
-      //this means right hand side is sorted so check in right hand side
-      if (target >= nums[mid + 1] && target <= nums[end]) {
-        start = mid + 1;
-      } else {
-        end = mid - 1;
+// Reverse a LinkedList [Iterative]
+var reverseList = function (head) {
+  let prev = null;
+  let cur = head;
+  let next = head.next;
+
+  while (next !== null) {
+    cur.next = prev;
+    prev = cur;
+    cur = next;
+    next = next.next;
+  }
+
+  cur.next = prev;
+  return cur;
+};
+
+// const newHead = reverseList(ll.head);
+// ll.print(newHead);
+
+// Detect a loop in LL
+var hasCycle = function (head) {
+  let slow = head;
+  let fast = head;
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+  return false;
+};
+
+// ll.print(ll.head)
+// const lastNode = ll.get(ll.size - 1)
+// const secondNode = ll.get(1)
+// lastNode.next = secondNode
+
+// console.log(hasCycle(ll.head))
+
+// Find the starting point in LL
+var detectCycle = function (head) {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) {
+      slow = head;
+      while (slow !== fast) {
+        slow = slow.next;
+        fast = fast.next;
       }
-    } else {
-      if (target >= nums[start] && target <= nums[mid - 1]) {
-        end = mid - 1;
-      } else {
-        start = mid + 1;
-      }
+      return slow;
     }
   }
   return -1;
 };
 
-const arr4 = [3, 4, 5, 6, 7, 8, 1, 2];
-// console.log(searchInRotatedSortedArr(arr4, 2));
+// ll.print(ll.head);
+// const lastNode = ll.get(ll.size - 1);
+// const secondNode = ll.get(1);
+// lastNode.next = secondNode;
 
-//here is s = m = e trim down the search place because this is making you the problem to identify which side to trim
-/*
+// detectCycle(ll.head);
 
-312333
-
-so here from s = 0 and e = 5 it will be s = 1 and e = 4 so again check if s = mid = e if not again trim 
-
-*/
-const searchInRotatedDuplicateSortedArr = function (nums, target) {
-  let start = 0;
-  let end = nums.length - 1;
-
-  while (start <= end) {
-    const mid = Math.floor((start + end) / 2);
-
-    if (target === nums[mid]) {
-      return true;
-    } else if (nums[mid] === nums[start] && nums[mid] === nums[end]) {
-      start += 1;
-      end -= 1;
-    } else if (nums[start] <= nums[mid]) {
-      //here note this equal to sign please very important
-      if (target >= nums[start] && target <= nums[mid - 1]) {
-        end = mid - 1;
-      } else {
-        start = mid + 1;
-      }
-    } else {
-      //this means right hand side is sorted so check in right hand side
-      if (target >= nums[mid + 1] && target <= nums[end]) {
-        start = mid + 1;
-      } else {
-        end = mid - 1;
-      }
+//Length of Loop in LL
+const lengthOfLoop = function (head) {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) {
+      let count = 0;
+      do {
+        slow = slow.next;
+        count += 1;
+      } while (fast !== slow);
+      return count;
     }
   }
-  return false;
+  return -1;
 };
 
-const arr5 = [2, 2, 2, 3, 1];
-// console.log(searchInRotatedDuplicateSortedArr(arr5, 1));
+// Check if LL is palindrome or not
+//This can be done using stack or reverse method
+//Better stack
+//optimal reverse
 
-//so here we if find the sorted half and take the smallest from it and than again find the another sorted half and so on
-const minimumInRotatedSortedArray = function (nums) {
-  let start = 0;
-  let end = nums.length - 1;
-  let min = 0;
-  while (start <= end) {
-    const mid = Math.floor((start + end) / 2);
-    if (nums[start] <= nums[mid]) {
-      //this mean the left side is sorted
-      //here note this equal to sign please very important
-      if(nums[start] < nums[min]){
-        min = start
-      }
-      start = mid + 1;
-    } else {
-      //this means right hand side is sorted so check in right hand side
-      if(nums[mid] < nums[min]){
-        min = mid
-      }
-      end = mid - 1;
-    }
+//Segrregate odd and even nodes in LL
+
+var oddEvenList = function (head) {
+  let odd = head;
+  let even = head.next;
+  const evenStart = head.next
+
+
+  while (odd.next !== null && even.next !== null) {
+    const oddNext = odd.next.next
+    const evenNext = even.next.next
+    odd.next = oddNext
+    odd = oddNext
+    even.next = evenNext;
+    even = evenNext;
   }
-  return nums[min]
+
+  odd.next = null
+  even.next = null
+
+  odd.next = evenStart
+
+  return head
 };
 
-const arr6 = [3, 4, 5, 1, 2];
-console.log(minimumInRotatedSortedArray(arr6))
+// ll.print(ll.head)
+// oddEvenList(ll.head)
+// ll.print(ll.head)
+
+/////////////////-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
