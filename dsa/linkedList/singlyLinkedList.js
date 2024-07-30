@@ -104,9 +104,12 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
-ll.append(9);
-ll.append(9);
-ll.append(9);
+ll.append(1);
+ll.append(2);
+ll.append(3);
+ll.append(4);
+ll.append(5);
+ll.append(6);
 
 //Find middle of linkedlist
 function findMiddle(head) {
@@ -404,6 +407,44 @@ secondNumber.append(9)
 secondNumber.append(9)
 
 
-const newHead = addTwoNumbers(oneNumber.head, secondNumber.head)
+// const newHead = addTwoNumbers(oneNumber.head, secondNumber.head)
 // ll.print(newHead)
+
+
+	
+// Reverse LL in group of given size K
+//This you can do please try this one put 15min in diagram and thing and do this yourself
+function reverseKthNode(head, k) {
+  let prev = null;
+  let cur = head;
+  let next = head.next;
+  let lastNode = head;
+  let newHead = null;
+
+  let count = k;
+
+  while (cur !== null) {
+    if (count === 0) {
+      lastNode.next = cur;
+      count = k;
+      lastNode = cur;
+      if (newHead === null) {
+        newHead = prev;
+      }
+    }
+
+    cur.next = prev;
+    prev = cur;
+    cur = next;
+    if (next) {
+      next = next.next;
+    }
+    count -= 1;
+  }
+  console.log('>>>>>>>', newHead)
+  return newHead
+}
+
+// ll.print(ll.head)
+// const newHead = reverseKthNode(ll.head, 2);
 

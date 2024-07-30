@@ -1,6 +1,6 @@
 /*
 
-Singly LinkedList✅
+Singly LinkedList
 
 Middle of a LinkedList [TortoiseHare Method]✅
 
@@ -34,3 +34,19 @@ Add 2 numbers in LL
 
 
 */
+
+
+/*
+
+Doubly LinkedList
+
+Delete all occurrences of a key in DLL✅
+
+Find pairs with given sum in DLL✅
+
+Remove duplicates from sorted DLL✅
+
+*/
+
+
+

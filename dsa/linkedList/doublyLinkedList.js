@@ -119,8 +119,8 @@ class DoublyLinkedList {
   }
 
   // Print the list forward
-  printForward() {
-    let current = this.head;
+  printForward(head) {
+    let current = head ? head : this.head;
     let result = "";
     while (current) {
       result += current.data + " <-> ";
@@ -142,3 +142,62 @@ class DoublyLinkedList {
     console.log(result);
   }
 }
+
+const dl = new DoublyLinkedList();
+dl.append(1);
+dl.append(2);
+dl.append(3);
+dl.append(4);
+dl.append(5);
+dl.append(6);
+
+dl.printForward();
+
+//Delete all occurrences of a key in DLL
+
+function deleteAllOccurrenceOfKeyInDLL(head, key) {
+  let prev = null;
+  let newHead = head;
+
+  while (newHead.data === key) {
+    newHead = newHead.next;
+    newHead.prev = null;
+  }
+
+  let cur = newHead;
+  let next = newHead.next;
+
+  while (cur !== null) {
+    if (cur.data === key) {
+      prev.next = next;
+      cur = next;
+      if (next) {
+        next.prev = prev;
+        next = next.next;
+      }
+    } else {
+      prev = cur;
+      cur = next;
+      if (next) {
+        next = next.next;
+      }
+    }
+  }
+
+  return newHead;
+}
+
+// const newHead = deleteAllOccurrenceOfKeyInDLL(dl.head, 10);
+
+// dl.printForward(newHead);
+
+//Find pairs with given sum in DLL
+//This one was easy so did'nt do it
+
+// Remove duplicates from sorted DLL
+//This seems easy so did't do it
+
+//Reverse LL in group of given size K
+//This you can do but once check kunal kushwaha 2:41:20
+
+

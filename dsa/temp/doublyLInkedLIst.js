@@ -197,38 +197,3 @@ function deleteAllOccurrenceOfKeyInDLL(head, key) {
 // Remove duplicates from sorted DLL
 //This seems easy so did't do it
 
-//Reverse LL in group of given size K
-//This you can do but once check kunal kushwaha 2:41:20
-
-function reverseKthNode(head, k) {
-  let prev = null;
-  let cur = head;
-  let next = head.next;
-  let lastNode = head;
-  let newHead = null;
-
-  let count = k;
-
-  while (cur !== null) {
-    if (count === 0) {
-      lastNode.next = cur;
-      count = k;
-      lastNode = cur;
-      if (newHead === null) {
-        newHead = prev;
-      }
-    }
-
-    cur.next = prev;
-    prev = cur;
-    cur = next;
-    if (next) {
-      next = next.next;
-    }
-    count -= 1;
-  }
-  return newHead
-}
-
-const newHead = reverseKthNode(dl.head, 2);
-dl.printForward(newHead)
