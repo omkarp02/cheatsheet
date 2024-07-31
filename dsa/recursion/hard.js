@@ -111,66 +111,66 @@ const word = "ABCCED";
 // N Queen
 //so while checking for queen don't check below row so don't have any queen
 var solveNQueens = function (n) {
-  const board = [];
-  const result = [];
-
-  for (let k = 0; k < n; k++) {
-    board.push(Array(n).fill(false));
-  }
-
-  for (let i = 0; i < board[0].length; i++) {
-    board[0][i] = true;
-    solveNQueenHlp(1, board, result);
-    board[0][i] = false;
-  }
-
-  return result;
-};
-
-function solveNQueenHlp(r, board, result) {
-  if (r > board.length - 1) {
-    result.push(createQueenPattern(board));
-    return;
-  }
-
-  for (let c = 0; c < board[r].length; c++) {
-    if (!checkQueenExist(r, c, board)) {
-      board[r][c] = true;
-      solveNQueenHlp(r + 1, board, result);
-      board[r][c] = false;
+    const board = [];
+    const result = [];
+  
+    for (let k = 0; k < n; k++) {
+      board.push(Array(n).fill(false));
     }
-  }
-}
-
-function checkQueenExist(r, c, board) {
-  //up
-  for (let i = 0; i < r; i++) {
-    if (board[r - 1 - i][c]) return true;
-  }
-
-  //rightdiagonal
-  for (let j = 0; j < Math.min(board.length - c - 1, r); j++) {
-    if (board[r - j - 1][c + 1 + j]) return true;
-  }
-
-  //leftdiagoanl
-  for (let k = 0; k < Math.min(c, r); k++) {
-    if (board[r - k - 1][c - k - 1]) return true;
-  }
-
-  return false;
-}
-
-function createQueenPattern(board) {
-  const finalStr = [];
-  for (let r = 0; r < board.length; r++) {
-    let str = "";
+  
+    for (let i = 0; i < board[0].length; i++) {
+      board[0][i] = true;
+      solveNQueenHlp(1, board, result);
+      board[0][i] = false;
+    }
+  
+    return result;
+  };
+  
+  function solveNQueenHlp(r, board, result) {
+    if (r > board.length - 1) {
+      result.push(createQueenPattern(board));
+      return;
+    }
+  
     for (let c = 0; c < board[r].length; c++) {
-      str += board[r][c] ? "Q" : ".";
+      if (!checkQueenExist(r, c, board)) {
+        board[r][c] = true;
+        solveNQueenHlp(r + 1, board, result);
+        board[r][c] = false;
+      }
     }
-    finalStr.push(str);
   }
-  return finalStr
-}
+  
+  function checkQueenExist(r, c, board) {
+    //up
+    for (let i = 0; i < r; i++) {
+      if (board[r - 1 - i][c]) return true;
+    }
+  
+    //rightdiagonal
+    for (let j = 0; j < Math.min(board.length - c - 1, r); j++) {
+      if (board[r - j - 1][c + 1 + j]) return true;
+    }
+  
+    //leftdiagoanl
+    for (let k = 0; k < Math.min(c, r); k++) {
+      if (board[r - k - 1][c - k - 1]) return true;
+    }
+  
+    return false;
+  }
+  
+  function createQueenPattern(board) {
+    const finalStr = [];
+    for (let r = 0; r < board.length; r++) {
+      let str = "";
+      for (let c = 0; c < board[r].length; c++) {
+        str += board[r][c] ? "Q" : ".";
+      }
+      finalStr.push(str);
+    }
+    return finalStr
+  }
 
-console.log(solveNQueens(1));
+console.log(solveNQueens(4));
