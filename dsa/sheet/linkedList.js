@@ -8,6 +8,12 @@ Reverse a LinkedList [Iterative]✅
 
 Reverse a LL [Recursive]✅
 
+Remove Duplicates in a sorted Linked List.✅
+
+Remove Duplicates in a Un-sorted Linked List.✅
+
+Intersection of two Sorted Linked List.✅
+
 Detect a loop in LL✅
 
 Find the starting point in LL✅
@@ -28,13 +34,20 @@ Sort a LL of 0's 1's and 2's by changing links✅
 
 Find the intersection point of Y LL✅
 
-Add 1 to a number represented by LL
+Add 1 to a number represented by LL✅
 
-Add 2 numbers in LL
+Add 2 numbers in LL✅
+	
+Reverse LL in group of given size K✅
+
+Rotate a LL✅
+
+Flattening of LL✅
+
+Clone a Linked List with random and next pointer✅
 
 
 */
-
 
 /*
 
@@ -48,5 +61,10 @@ Remove duplicates from sorted DLL✅
 
 */
 
+/*
 
+Circular Linked List
 
+Split a Circular linked list into two halves.✅
+
+*/

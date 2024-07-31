@@ -342,7 +342,7 @@ function addHelper(head) {
 // const newHead = addOneToNumberLL(ll.head);
 // console.log(ll.print(newHead));
 
-
+//Add 2 numbers in LL
 //This you did by yourself
 var addTwoNumbers = function (l1, l2) {
   let temp1 = l1;
@@ -389,48 +389,47 @@ var addTwoNumbers = function (l1, l2) {
   return dummyNode.next;
 };
 
-const oneNumber = new LinkedList()
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
-oneNumber.append(9)
+const oneNumber = new LinkedList();
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
+oneNumber.append(9);
 
-
-const secondNumber = new LinkedList()
-secondNumber.append(9)
-secondNumber.append(9)
-secondNumber.append(9)
-secondNumber.append(9)
-
+const secondNumber = new LinkedList();
+secondNumber.append(9);
+secondNumber.append(9);
+secondNumber.append(9);
+secondNumber.append(9);
 
 // const newHead = addTwoNumbers(oneNumber.head, secondNumber.head)
 // ll.print(newHead)
 
-
-	
 // Reverse LL in group of given size K
 //This you can do please try this one put 15min in diagram and thing and do this yourself
+//This look kindly or try it yourself
 function reverseKthNode(head, k) {
   let prev = null;
   let cur = head;
   let next = head.next;
-  let lastNode = head;
-  let newHead = null;
-
+  let last = cur;
+  let newLast = null;
   let count = k;
+  let newHead = null;
 
   while (cur !== null) {
     if (count === 0) {
-      lastNode.next = cur;
-      count = k;
-      lastNode = cur;
-      if (newHead === null) {
+      if (newLast) {
+        newLast.next = prev;
+      } else {
         newHead = prev;
       }
+      newLast = last;
+      last = cur;
+      count = k;
     }
 
     cur.next = prev;
@@ -441,10 +440,73 @@ function reverseKthNode(head, k) {
     }
     count -= 1;
   }
-  console.log('>>>>>>>', newHead)
-  return newHead
+
+  newLast.next = prev;
+  last.next = null;
+
+  console.log(newHead);
+  return newHead;
 }
 
-// ll.print(ll.head)
-// const newHead = reverseKthNode(ll.head, 2);
+ll.print(ll.head);
+const newHead = reverseKthNode(ll.head, 2);
+ll.print(newHead);
 
+//Rotate a LL
+//This seems easy you did't do it
+//find the length and point the tail to heads
+//find the difference using module and set the next as null
+
+// Flattening of LL
+//This was easy you were able to figure it out
+
+//Clone a Linked List with random and next pointer
+//Better This can be one using the hasmap
+//Optimal changing the structure of linkedlist
+//1 point to another 1 then 2 point to another 2
+//1 => 1 => 2 => 2 => 3 => so on
+//see the optimal solution one time
+
+const copyRandomList = function (head) {
+  const cur = head;
+
+  while (cur !== null) {
+    const temp = cur.next;
+    cur.next = new Node(cur.data);
+    cur.next.next = temp;
+    cur = temp;
+  }
+  cur = head;
+
+  while (cur !== null) {
+    if (cur.next !== null) {
+      cur.next.random = cur.random !== null ? cur.random.next : null;
+    }
+
+    cur = cur.next.next;
+  }
+
+  let org = head;
+  let copy = head.next;
+
+  let temp = copy;
+
+  while (org !== null) {
+    org.next = org.next.next;
+    temp.next = temp.next.next;
+
+    org = org.next;
+    temp = temp.nexxt;
+  }
+
+  return copy;
+};
+
+//Remove Duplicates in a sorted Linked List
+//this was easy did'nt do it
+
+//Remove Duplicates in a Un-sorted Linked List.
+//you can use hashmap to do this
+
+//Intersection of two Sorted Linked List.
+// This was easy did't do it can be done using 2 pointer
