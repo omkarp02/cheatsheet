@@ -173,4 +173,4 @@ var solveNQueens = function (n) {
     return finalStr
   }
 
-console.log(solveNQueens(4));
+// console.log(solveNQueens(4));
