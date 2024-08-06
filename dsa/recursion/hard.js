@@ -111,66 +111,138 @@ const word = "ABCCED";
 // N Queen
 //so while checking for queen don't check below row so don't have any queen
 var solveNQueens = function (n) {
-    const board = [];
-    const result = [];
-  
-    for (let k = 0; k < n; k++) {
-      board.push(Array(n).fill(false));
-    }
-  
-    for (let i = 0; i < board[0].length; i++) {
-      board[0][i] = true;
-      solveNQueenHlp(1, board, result);
-      board[0][i] = false;
-    }
-  
-    return result;
-  };
-  
-  function solveNQueenHlp(r, board, result) {
-    if (r > board.length - 1) {
-      result.push(createQueenPattern(board));
-      return;
-    }
-  
-    for (let c = 0; c < board[r].length; c++) {
-      if (!checkQueenExist(r, c, board)) {
-        board[r][c] = true;
-        solveNQueenHlp(r + 1, board, result);
-        board[r][c] = false;
-      }
-    }
-  }
-  
-  function checkQueenExist(r, c, board) {
-    //up
-    for (let i = 0; i < r; i++) {
-      if (board[r - 1 - i][c]) return true;
-    }
-  
-    //rightdiagonal
-    for (let j = 0; j < Math.min(board.length - c - 1, r); j++) {
-      if (board[r - j - 1][c + 1 + j]) return true;
-    }
-  
-    //leftdiagoanl
-    for (let k = 0; k < Math.min(c, r); k++) {
-      if (board[r - k - 1][c - k - 1]) return true;
-    }
-  
-    return false;
-  }
-  
-  function createQueenPattern(board) {
-    const finalStr = [];
-    for (let r = 0; r < board.length; r++) {
-      let str = "";
-      for (let c = 0; c < board[r].length; c++) {
-        str += board[r][c] ? "Q" : ".";
-      }
-      finalStr.push(str);
-    }
-    return finalStr
+  const board = [];
+  const result = [];
+
+  for (let k = 0; k < n; k++) {
+    board.push(Array(n).fill(false));
   }
 
+  for (let i = 0; i < board[0].length; i++) {
+    board[0][i] = true;
+    solveNQueenHlp(1, board, result);
+    board[0][i] = false;
+  }
+
+  return result;
+};
+
+function solveNQueenHlp(r, board, result) {
+  if (r > board.length - 1) {
+    result.push(createQueenPattern(board));
+    return;
+  }
+
+  for (let c = 0; c < board[r].length; c++) {
+    if (!checkQueenExist(r, c, board)) {
+      board[r][c] = true;
+      solveNQueenHlp(r + 1, board, result);
+      board[r][c] = false;
+    }
+  }
+}
+
+function checkQueenExist(r, c, board) {
+  //up
+  for (let i = 0; i < r; i++) {
+    if (board[r - 1 - i][c]) return true;
+  }
+
+  //rightdiagonal
+  for (let j = 0; j < Math.min(board.length - c - 1, r); j++) {
+    if (board[r - j - 1][c + 1 + j]) return true;
+  }
+
+  //leftdiagoanl
+  for (let k = 0; k < Math.min(c, r); k++) {
+    if (board[r - k - 1][c - k - 1]) return true;
+  }
+
+  return false;
+}
+
+function createQueenPattern(board) {
+  const finalStr = [];
+  for (let r = 0; r < board.length; r++) {
+    let str = "";
+    for (let c = 0; c < board[r].length; c++) {
+      str += board[r][c] ? "Q" : ".";
+    }
+    finalStr.push(str);
+  }
+  return finalStr;
+}
+
 // console.log(solveNQueens(4));
+
+// Rat in a Maze
+
+function ratInMaze(maze) {
+  let path = "";
+  const backTrackMaze = [];
+  for (let item of maze) {
+    backTrackMaze.push(Array(item.length).fill(false));
+  }
+  ratInMazeHlp(0, 0, maze, backTrackMaze, path);
+}
+
+function ratInMazeHlp(r, c, maze, backTrackMaze, path) {
+  const rowLength = maze.length;
+  const colLength = maze[r].length;
+
+  if (r === rowLength - 1 && c === colLength - 1) {
+    console.log(path);
+    return;
+  }
+
+  if (backTrackMaze[r][c] || maze[r][c] === 0) {
+    return;
+  }
+
+  backTrackMaze[r][c] = true;
+
+  //left
+  if (c > 0) {
+    ratInMazeHlp(r, c - 1, maze, backTrackMaze, path + "L");
+  }
+
+  //right
+  if (c < colLength - 1) {
+    ratInMazeHlp(r, c + 1, maze, backTrackMaze, path + "R");
+  }
+
+  //up
+  if (r > 0) {
+    ratInMazeHlp(r - 1, c, maze, backTrackMaze, path + "U");
+  }
+
+  //down
+  if (r < rowLength - 1) {
+    ratInMazeHlp(r + 1, c, maze, backTrackMaze, path + "D");
+  }
+
+  backTrackMaze[r][c] = false;
+}
+
+const maze = [
+  [1, 0, 0, 0],
+  [1, 1, 0, 1],
+  [1, 1, 0, 0],
+  [0, 1, 1, 1],
+];
+
+// ratInMaze(maze);
+
+//Word Break
+//here try drawing the recursion tree
+function wordBreak(s, wordDict) {
+
+}
+
+const s = "catsandog";
+const wordDict = ["cats", "dog", "sand", "and", "cat"];
+
+console.log(wordBreak(s, wordDict));
+
+//M Coloring Problem
+//This uses graph see in graph if i did it

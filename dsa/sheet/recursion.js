@@ -30,15 +30,15 @@
 
     Hard
     	
-    Palindrome Partitioning
+    Palindrome Partitioning✅
 
-    Word Search
+    Word Search✅
 
-    N Queen
+    N Queen✅
 
-    Rat in a Maze
+    Rat in a Maze✅
 
-    Word Break
+    Word Break✅
 
     M Coloring Problem
 
