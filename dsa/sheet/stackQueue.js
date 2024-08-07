@@ -48,8 +48,12 @@ Implement Min Stack✅
     
     Remove k Digits✅
     
-    Largest rectangle in a histogram
+    Largest rectangle in a histogram✅
     
-    Maximal Rectangles
+    Maximal Rectangles✅
+    
+    Sliding Window maximum
+
+    Stock Span Problem✅
 
 */

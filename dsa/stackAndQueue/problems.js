@@ -134,7 +134,7 @@ const arr4 = [2, 1, 5, 6, 2, 3];
 function largestRectangleInHistogram(nums) {
   const stack = [];
   const length = nums.length;
-  let max = 0;
+  let max = Number.NEGATIVE_INFINITY;
   for (let i = 0; i < length; i++) {
     if (stack.length === 0) {
       stack.push(i);
@@ -147,11 +147,25 @@ function largestRectangleInHistogram(nums) {
         max = Math.max(max, nums[cur] * (i - prevSmallest - 1));
       }
       stack.push(i);
-
     }
   }
-  return max
+  return max === Number.NEGATIVE_INFINITY ? nums[stack[stack.length - 1]] : max;
 }
 
-const nums =[2, 1, 5, 6, 2, 3]
-console.log(largestRectangleInHistogram(nums))
+const nums = [1, 1];
+console.log(largestRectangleInHistogram(nums));
+
+//   Maximal Rectangles
+// This can be done with help of above quesiton
+//just image histogram on each row
+
+//Sliding Window maximum
+//was easy 
+
+// Stock Span Problem
+//was easy
+
+//celibrity problem
+//understand the question and do it yourself
+
+//lru can be done using doubly linked list and hash map
