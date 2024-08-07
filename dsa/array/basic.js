@@ -25,16 +25,13 @@ const arr1 = [1, -1, 1, 1, -1, -1, 1, 1];
   xor method  see this in bit manipulation 
 
 */
-function findMissingNumberInArray(nums){
-  
-}
+function findMissingNumberInArray(nums) {}
 
-const arr19 = [1, 2, 3, 5]
-console.log(findMissingNumberInArray(arr19))
+const arr19 = [1, 2, 3, 5];
+console.log(findMissingNumberInArray(arr19));
 
 //Find the number that appears once, and other numbers twice.
 //This can also be solved by bit manupulation and hashing the hashing one figure out yourself
-
 
 // console.log(moveAllNegativeElement(arr1));
 
@@ -242,7 +239,6 @@ const arr16 = [1, 2, 3];
 
 //--------------------------------------------------------------------------
 
-
 //find all pairs on integer array whose sum is equal to given number
 
 function findAllPairEqualToSum(nums, target) {
@@ -337,19 +333,18 @@ const arr17 = [1, -1, 3, 2, -2, -8, 1, 7, 10, 23];
 // console.log(largestSubArrayWithZeroSum(arr17));
 
 //Replace Elements with Greatest Element on Right Side
-var replaceElements = function(arr) {
-  let max = -1
-  for(let i = arr.length - 1; i >=0; i-- ){
-      let curMax = max
-      max = Math.max(curMax, arr[i])
-      arr[i] = curMax
+var replaceElements = function (arr) {
+  let max = -1;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    let curMax = max;
+    max = Math.max(curMax, arr[i]);
+    arr[i] = curMax;
   }
-  return arr
+  return arr;
 };
 
-const arr20 =[17, 18, 5, 4, 6, 1]
-console.log(replaceElements(arr20))
-
+const arr20 = [17, 18, 5, 4, 6, 1];
+console.log(replaceElements(arr20));
 
 //Find factorial of a large number
 /*
@@ -413,6 +408,32 @@ var longestConsecutive = function (nums) {
 const arr18 = [102, 4, 100, 1, 101, 3, 2];
 
 // console.log(longestConsecutive(arr18))
+
+// Count Subarray sum Equals K
+function countSubarraySum(nums, k) {
+  let cursum = 0;
+  let map = {};
+  let result = [];
+  for (let i = 0; i < nums.length; i++) {
+    cursum += nums[i];
+
+    if (cursum - k === 0) {
+      result.push([0, i]);
+    }
+
+    if (map[cursum - k] !== undefined) {
+      result.push([map[cursum - k] + 1, i]);
+    }
+
+    map[cursum] = i;
+  }
+
+  return result;
+}
+
+const arr21 = [1, 2, 3, -3, 1, 1, 1, 4, 2, -3];
+
+// console.log(countSubarraySum(arr21, 3));
 
 //Given an array of size n and a number k, find all elements that appear more than " n/k " times
 /*

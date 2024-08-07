@@ -9,7 +9,7 @@
     
     Fruit Into Baskets
     
-    longest repeating character replacement
+    Longest repeating character replacement
     
     Binary subarray with sum
     
