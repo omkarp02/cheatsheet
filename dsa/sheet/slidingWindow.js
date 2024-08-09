@@ -20,4 +20,15 @@
     Maximum point you can obtain from cards✅
 
 
+    Hard 
+
+    	
+    Longest Substring with At Most K Distinct Characters✅
+
+    Subarray with k different integers✅
+
+    Minimum Window Substring✅
+
+    Minimum Window Subsequence
+
 */
