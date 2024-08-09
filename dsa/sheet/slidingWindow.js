@@ -1,29 +1,23 @@
 /*
 
-
+    Medium
 
 	
-    Longest Substring Without Repeating Characters
+    Longest Substring Without Repeating Characters✅
     
-    Max Consecutive Ones III
+    Max Consecutive Ones III✅
     
-    Fruit Into Baskets
+    Fruit Into Baskets✅
     
-    Longest repeating character replacement
+    Longest repeating character replacement✅
     
-    Binary subarray with sum
+    Binary subarray with sum✅
     
-    Count number of nice subarrays
+    Count number of nice subarrays✅
     
-    Number of substring containing all three characters
+    Number of substring containing all three characters✅
     
-    Maximum point you can obtain from cards
-
-
-
-
-
-
+    Maximum point you can obtain from cards✅
 
 
 */
