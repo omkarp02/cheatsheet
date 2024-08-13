@@ -20,7 +20,6 @@ function insertLevelOrder(arr, root, i) {
   return root;
 }
 
-
 // Example usage:
 const arr = [1, 2, 3, 4, 5, 6, 7];
 let root = insertLevelOrder(arr, null, 0);
@@ -36,78 +35,80 @@ let root = insertLevelOrder(arr, null, 0);
 
 // Level order Traversal / Level order traversal in spiral form
 
-var levelOrder = function(root) {
-    let result = [];
-    if (root === null) return result;
+function levelOrder(root) {
+  let ans = [];
+  if (!root) {
+    return ans;
+  }
+  let q = [];
+  q.push(root);
 
-    let queue = [root];
+  while (q.length > 0) {
+    let size = q.length;
+    let level = [];
 
-    while (queue.length > 0) {
-        let levelSize = queue.length;
-        let currentLevel = [];
+    for (let i = 0; i < size; i++) {
+      let node = q.shift();
+      level.push(node.val);
 
-        for (let i = 0; i < levelSize; i++) {
-            let currentNode = queue.shift();
-            currentLevel.push(currentNode.val);
-            if (currentNode.left !== null) queue.push(currentNode.left);
-            if (currentNode.right !== null) queue.push(currentNode.right);
-        }
-
-        result.push(currentLevel);
+      if (node.left !== null) {
+        q.push(node.left);
+      }
+      if (node.right !== null) {
+        q.push(node.right);
+      }
     }
+    ans.push(level);
+  }
+  return ans;
+}
 
-    return result;
-};
-
-console.log(levelOrder(root))
+console.log(levelOrder(root));
 
 // Iterative Inorder Traversal of Binary Tree
 //This one time try doing it yourself you were not able to do this
 var inorderTraversal = function (root) {
-    let node = root;
-    const stack = [];
-    const result = [];
+  let node = root;
+  const stack = [];
+  const result = [];
 
-    while (true) {
-        if (node) {
-            stack.push(node);
-            node = node.left;
-        } else {
-            if (stack.length === 0) break;
-            const cur = stack.pop();
-            result.push(cur.val);
-            node = cur.right;
-        }
+  while (true) {
+    if (node) {
+      stack.push(node);
+      node = node.left;
+    } else {
+      if (stack.length === 0) break;
+      const cur = stack.pop();
+      result.push(cur.val);
+      node = cur.right;
     }
+  }
 
-    return result;
+  return result;
 };
-
 
 // Iterative Preorder Traversal of Binary Tree
 
 var preorderTraversal = function (root) {
-    let node = root;
-    const stack = [];
-    const result = [];
+  let node = root;
+  const stack = [];
+  const result = [];
 
-    while (true) {
-        if (node) {
-            result.push(node.val);
-            stack.push(node);
-            node = node.left;
-        } else {
-            if (stack.length === 0) break;
-            const cur = stack.pop();
+  while (true) {
+    if (node) {
+      result.push(node.val);
+      stack.push(node);
+      node = node.left;
+    } else {
+      if (stack.length === 0) break;
+      const cur = stack.pop();
 
-            node = cur.right;
-        }
+      node = cur.right;
     }
+  }
 
-    return result;
+  return result;
 };
-
-
 
 // Post-order Traversal of Binary Tree using 2 stack
 
