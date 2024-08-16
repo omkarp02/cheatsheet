@@ -31,7 +31,7 @@ var lowestCommonAncestor = function (root, p, q) {
     return false;
   }
 
-  if (root.val === p || root.val === q) {
+  if (root === p || root === q) {
     return root;
   }
 
@@ -89,17 +89,108 @@ function childrenSumProperty(root) {
 //this you can find in graph series
 
 // Count total Nodes in a COMPLETE Binary Tree
+//find height of left and right if equal than return
+var countNodes = function (root) {
+  if (root === null) return 0;
+
+  const left = countLeftNode(root);
+  const right = countRightNode(root);
+
+  if (left === right) return (1 << left) - 1;
+  return countNodes(root.left) + countNodes(root.right) + 1;
+};
+
+function countLeftNode(root) {
+  let count = 0;
+  while (root) {
+    count++;
+    root = root.left;
+  }
+  return count;
+}
+
+function countRightNode(root) {
+  let count = 0;
+  while (root) {
+    count++;
+    root = root.right;
+  }
+
+  return count;
+}
 
 // Requirements needed to construct a Unique Binary Tree | Theory
+//this is theory don't need to see covered in next question
 
 // Construct Binary Tree from inorder and preorder
+//understand the question
+
+var buildTree = function (preorder, inorder) {
+  const inOrderHash = {};
+
+  for (let i = 0; i < inorder.length; i++) {
+    inOrderHash[inorder[i]] = i;
+  }
+
+  return buildTreeHlp(
+    preorder,
+    0,
+    preorder.length - 1,
+    inorder,
+    0,
+    inorder.length - 1,
+    inOrderHash
+  );
+};
+
+function buildTreeHlp(
+  preorder,
+  preStart,
+  preEnd,
+  inorder,
+  inStart,
+  inEnd,
+  inOrderHash
+) {
+  if (preStart > preEnd || inStart > inEnd) return null;
+
+  const root = new TreeNode(preorder[preStart]);
+
+  const rootIndex = inOrderHash[root.val];
+  const diff = rootIndex - inStart;
+
+  root.left = buildTreeHlp(
+    preorder,
+    preStart + 1,
+    preStart + diff,
+    inorder,
+    inStart,
+    rootIndex - 1,
+    inOrderHash
+  );
+  root.right = buildTreeHlp(
+    preorder,
+    preStart + diff + 1,
+    preEnd,
+    inorder,
+    rootIndex + 1,
+    inEnd,
+    inOrderHash
+  );
+
+  return root;
+}
 
 // Construct the Binary Tree from Postorder and Inorder Traversal
 
 // Serialize and deserialize Binary Tree
+//think this was easy did'nt did it , just figure out how to do yourself don't code
 
 // Morris Preorder Traversal of a Binary Tree
 
 // Morris Inorder Traversal of a Binary Tree
 
 // Flatten Binary Tree to LinkedList
+//bruteforce can be solve by right left root traversal
+//second iterative by level order but from right to left
+//optimal not solved
