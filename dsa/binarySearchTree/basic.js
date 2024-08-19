@@ -193,6 +193,24 @@ BSTIterator.prototype.hasNext = function () {
 //find the inorder store in array and again travese the tree and placing the correct inorder
 //my intuition keep a upper and lowerbound and find the incorrect one and swap so basically find element which is less than previous or a element which previous is less so the preious element is in violation so two cases here
 
-
 // Largest BST in Binary Tree
+//this one try doing yourself
 //find the smallest from left and largest from right
+
+// [small, large, node]
+function findLargestBST(root) {
+  if (root === null) {
+    return [Infinity, Number.NEGATIVE_INFINITY, 0];
+  }
+
+  const left = findLargestBST(root.left);
+  const right = findLargestBST(root.right);
+
+  if (left[1] < root.val && right[0] > root.val) {
+    return [Math.min(left[0], root.val), Math.max(root.val, right[1]), Math.max(left[2], right[2]) + 1];
+  }
+
+  return [Number.NEGATIVE_INFINITY, Infinity, Math.max(left[2], right[2])];
+}
+
+
