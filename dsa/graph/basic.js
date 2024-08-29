@@ -116,22 +116,57 @@ var orangesRotting = function (grid) {
 
   const queue = [];
   const vis = [];
+  let noOfOrangeToRot = 0;
 
   for (let row = 0; row < grid.length; row++) {
+    vis.push([]);
     for (let col = 0; col < grid[row].length; col++) {
       if (grid[row][col] === 2) {
         queue.push([row, col, 0]);
+        vis[row][col] = true;
+      } else {
+        vis[row][col] = false;
+      }
+
+      if (grid[row][col] === 1) {
+        noOfOrangeToRot += 1;
       }
     }
   }
 
-  console.log(queue);
+  let maxTime = 0;
 
-  function bfs(row, col) {}
+  //here bfs starts
+  while (queue.length) {
+    const [row, col, level] = queue.shift();
 
-  bfs(row, col);
+    vis[row][col] = true;
 
-  return image;
+    if (grid[row][col] === 1) {
+      noOfOrangeToRot -= 1;
+    }
+
+    maxTime = Math.max(level, maxTime);
+
+    for (let i = 0; i < 4; i++) {
+      let nrow = row + delrow[i];
+      let ncol = col + delcol[i];
+
+      if (
+        nrow >= 0 &&
+        ncol >= 0 &&
+        nrow < grid.length &&
+        ncol < grid[nrow].length &&
+        vis[nrow][ncol] === false &&
+        grid[nrow][ncol] === 1
+      ) {
+        vis[nrow][ncol] = true;
+        queue.push([nrow, ncol, level + 1]);
+      }
+    }
+  }
+
+  return noOfOrangeToRot === 0 ? maxTime : -1;
 };
 
 const orangeGrid = [
@@ -226,6 +261,7 @@ const graph = [[], [2, 3], [1, 5], [1, 4, 6], [3], [2, 7], [3, 7], [5, 6]];
 // detectUndirectedGraphInBFS(graph);
 
 // Cycle Detection in undirected Graph (dfs)
+//here in dfs make sure you use parent
 function detectUndirectedGraphInDFS(graph) {
   const vis = [];
   const parent = [];
@@ -253,20 +289,315 @@ function detectUndirectedGraphInDFS(graph) {
 
 const graph2 = [[], [2, 3], [1, 5], [1, 4, 6], [3], [2, 7], [3, 7], [5, 6]];
 
-console.log(detectUndirectedGraphInDFS(graph2));
+// console.log(detectUndirectedGraphInDFS(graph2));
 
 // 0/1 Matrix (Bfs Problem)
+//here see the 1 and find the nearest zero
+//this was similiar did'nt do it
 
 // Surrounded Regions (dfs)
+var solve = function (board) {
+  const l = board.length;
+  const rowLength = board.length;
+  const colLength = board[0].length;
+  const vis = [];
+  const delrow = [-1, 0, +1, 0];
+  const delcol = [0, +1, 0, -1];
+
+  for (let row = 0; row < l; row++) {
+    vis[row] = [];
+    for (let col = 0; col < board[row].length; col++) {
+      vis[row][col] = false;
+    }
+  }
+
+  for (let i = 0; i < Math.max(rowLength, colLength); i++) {
+    //top
+    if (board[0] && board[0][i] === "O" && vis[0][i] === false) {
+      dfs(0, i, vis);
+    }
+    //right
+    if (
+      board[i] &&
+      board[i][colLength - 1] === "O" &&
+      vis[i][colLength - 1] === false
+    ) {
+      dfs(i, colLength - 1, vis);
+    }
+    //down
+    if (
+      board[rowLength - 1] &&
+      board[rowLength - 1][i] === "O" &&
+      vis[rowLength - 1][i] === false
+    ) {
+      dfs(rowLength - 1, i, vis);
+    }
+    if (board[i] && board[i][0] === "O" && vis[i][0] === false) {
+      dfs(i, 0, vis);
+    }
+  }
+
+  function dfs(row, col, vis) {
+    vis[row][col] = true;
+
+    for (let i = 0; i < 4; i++) {
+      let nrow = row + delrow[i];
+      let ncol = col + delcol[i];
+
+      if (
+        nrow >= 0 &&
+        ncol >= 0 &&
+        nrow < board.length &&
+        ncol < board[nrow].length &&
+        board[nrow][ncol] === "O" &&
+        vis[nrow][ncol] === false
+      ) {
+        dfs(nrow, ncol, vis);
+      }
+    }
+  }
+
+  for (let row2 = 0; row2 < l; row2++) {
+    for (let col2 = 0; col2 < board[row2].length; col2++) {
+      if (!vis[row2][col2]) {
+        board[row2][col2] = "X";
+      }
+    }
+  }
+
+  return board;
+};
+
+const grid3 = [
+  ["X", "O", "X", "O", "X", "O"],
+  ["O", "X", "O", "X", "O", "X"],
+  ["X", "O", "X", "O", "X", "O"],
+  ["O", "X", "O", "X", "O", "X"],
+];
+
+// console.log(solve(grid3));
 
 // Number of Enclaves [flood fill implementation - multisource]
+//was easy  did'nt do it
 
 // Word ladder - 1
+//here this can be done with recursion if you try drawing it
+//you can solve this bfs algo
+//so in bfs make sure you remove the visited word from the list instead of keeping an index if you are thinking of that
+
+// [word, level]
+var ladderLength = function (beginWord, endWord, wordList) {
+  if (!wordList.includes(endWord)) return 0;
+
+  const queue = [];
+  const set = new Set(wordList);
+
+  queue.push([beginWord, 1]);
+
+  while (queue.length) {
+    const [word, level] = queue.shift();
+
+    if (word === endWord) {
+      return level;
+    }
+
+    for (let i = 0; i < word.length; i++) {
+      for (let j = 97; j <= 122; j++) {
+        const char = String.fromCharCode(j);
+        const newword = word.slice(0, i) + char + word.slice(i + 1);
+        if (set.has(newword)) {
+          set.delete(newword);
+          queue.push([newword, level + 1]);
+        }
+      }
+    }
+  }
+
+  return 0;
+};
+
+const wordList = ["hot", "dot", "dog", "lot", "log", "cog"];
+const startWord = "hit";
+const endWord = "cog";
+// console.log(ladderLength(startWord, endWord, wordList));
 
 // Word ladder - 2
+//this is my solution
+var findLadders = function (beginWord, endWord, wordList) {
+  const queue = [];
+  const ans = [];
+  const set = new Set(wordList);
+
+  queue.push([beginWord]);
+
+  while (queue.length) {
+    const list = queue.shift();
+    const word = list[list.length - 1];
+
+    if (word === endWord) {
+      ans.push([...list]);
+    }
+
+    set.delete(word);
+
+    for (let i = 0; i < word.length; i++) {
+      for (let j = 97; j <= 122; j++) {
+        const char = String.fromCharCode(j);
+        const newword = word.slice(0, i) + char + word.slice(i + 1);
+        if (set.has(newword)) {
+          queue.push([...list, newword]);
+        }
+      }
+    }
+  }
+
+  return ans;
+};
+
+// const wordList2 = ["pat", "bot", "pot", "poz", "coz"];
+const wordList2 = ["hot", "dot", "dog", "lot", "log", "cog"];
+const firstWord = "hit";
+const endWord2 = "cog";
+
+// console.log(findLadders(firstWord, endWord2, wordList2));
 
 // Number of Distinct Islands [dfs multisource]
+//was easy did'nt do
 
 // Bipartite Graph (DFS)
+//this could easily done by dfs instead of visited track that by a color keeping array and also track if color are proper
+//this not submitted full on leetcode
+
+var isBipartite = function (graph) {
+  const colorList = [];
+  for (let _ of graph) {
+    colorList.push(-1);
+  }
+
+  function dfs(node, colorList, color) {
+    const adjColor = color ? 0 : 1;
+
+    for (let adj of graph[node]) {
+      if (colorList[adj] !== color && colorList[adj] === -1) {
+        colorList[adj] = adjColor;
+        if (!dfs(adj, colorList, adjColor)) return false;
+      } else if (colorList[adj] === color) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  for (let i = 0; i < graph.length; i++) {
+    if (color[i] === -1) {
+      colorList[0] = 1;
+      if (dfs(i, colorList, 1) === false) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+};
+
+const graph3 = [
+  [],
+  [2, 4, 6],
+  [1, 4, 8, 9],
+  [7, 8],
+  [1, 2, 8, 9],
+  [6, 9],
+  [1, 5, 7, 8, 9],
+  [3, 6, 9],
+  [2, 3, 4, 6, 9],
+  [2, 4, 5, 6, 7, 8],
+];
+console.log(isBipartite(graph3));
 
 // Cycle Detection in Directed Graph (DFS)
+//here we need to do backtracking
+//keep two array vis and pathvis
+
+function cycleInDirectedGraphDFS(graph) {
+  const vis = [];
+  const pathVis = [];
+  for (let _ of graph) {
+    vis.push(false);
+    pathVis.push(false);
+  }
+
+  for (let i = 0; i < graph.length; i++) {
+    if (vis[i] === 0) {
+      if (dfs(i)) {
+        return true;
+      }
+    }
+  }
+
+  function dfs(node) {
+    vis[node] = true;
+    pathVis[node] = true;
+
+    for (let adj of graph[node]) {
+      if (vis[adj] === false) {
+        if (dfs(adj)) {
+          return true;
+        } else if (pathVis[adj]) {
+          return true;
+        }
+      }
+    }
+
+    pathVis[node] = false;
+    return false;
+  }
+
+  dfs();
+}
+
+// Find eventual safe states dfs
+//here if you find a cycle means not safe
+
+function eventualSafeState(graph) {
+  const vis = [];
+  const pathVis = [];
+  const ans = [];
+
+  for (let _ of graph) {
+    vis.push(false);
+    pathVis.push(false);
+  }
+
+  for (let i = 0; i < graph.length; i++) {
+    if (vis[i] === false) {
+      dfs(i);
+    }
+  }
+
+  function dfs(node) {
+    vis[node] = true;
+    pathVis[node] = true;
+
+    for (let adj of graph[node]) {
+      if (vis[adj] === false) {
+        if (dfs(adj)) {
+          ans.push(node);
+          return true;
+        }
+      } else if (pathVis[adj]) {
+        ans.push(node);
+        return true;
+      }
+    }
+
+    pathVis[node] = false;
+    return false;
+  }
+
+  return ans;
+}
+
+const graph4 = [[1, 2], [2, 3], [5], [0], [5], [], []];
+
+console.log(eventualSafeState(graph4));

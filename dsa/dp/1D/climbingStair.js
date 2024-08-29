@@ -1,30 +1,56 @@
-function soln1(n) {
+//was able to do youself
+
+
+// Climbing Stars
+//this is normal recursion
+var climbStairs1 = function (n) {
   if (n === 0) {
     return 1;
   }
+
   if (n < 0) {
     return 0;
   }
 
-  return soln1(n - 2) + soln1(n - 1);
-}
+  return climbStairs(n - 1) + climbStairs(n - 2);
+};
 
-// console.log(soln1(4))
+//memomization
 
-function soln2(n) {
-  if (n <= 1) {
-    return n;
+const dp = [];
+var climbStairs2 = function (n) {
+  if (n === 0) {
+    return 1;
   }
 
-  const prev2 = n - 2
-  const prev = n - 1
+  if (n < 0) {
+    return 0;
+  }
+
+  if (dp[n] !== undefined) return dp[n];
+
+  const val = climbStairs(n - 1) + climbStairs(n - 2);
+  dp[n] = val;
+  return val;
+};
+
+var climbStairs = function (n) {
+  if (n === 0) {
+    return 1;
+  }
+
+  if (n < 0) {
+    return 0;
+  }
+
+  dp[0] = 1;
+  dp[1] = 1;
 
   for (let i = 2; i <= n; i++) {
-    const cur = prev2 + prev
-    
+    dp[i] = dp[i - 1] + dp[i - 2];
   }
 
-  return soln2(n - 2) + soln2(n - 1);
-}
+  return dp[n];
+};
 
-console.log(soln2(4));
+console.log(climbStairs(3));

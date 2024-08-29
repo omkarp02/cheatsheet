@@ -1,12 +1,29 @@
-const dp = [];
+//was able to do youself
 
-function soln1(arr, n) {
-  if (n === 0) return 0;
+function frogJump1(arr, n) {
+  if (n === 0) {
+    return 0;
+  }
 
-  if (dp[n]) return dp[n];
-  const left = soln1(arr, n - 1) + Math.abs(arr[n] - arr[n - 1]);
+  const left = frogJump1(arr, n - 1) + Math.abs(arr[n] - arr[n - 1]);
+
   if (n > 1) {
-    const right = soln1(arr, n - 2) + Math.abs(arr[n] - arr[n - 2]);
+    const right = frogJump1(arr, n - 2) + Math.abs(arr[n] - arr[n - 2]);
+    return Math.min(left, right);
+  }
+  return left;
+}
+
+function frogJump1(arr, n) {
+  if (n === 0) {
+    return 0;
+  }
+
+  if (dp[n] !== undefined) return dp[n];
+  const left = frogJump1(arr, n - 1) + Math.abs(arr[n] - arr[n - 1]);
+
+  if (n > 1) {
+    const right = frogJump1(arr, n - 2) + Math.abs(arr[n] - arr[n - 2]);
     dp[n] = Math.min(left, right);
     return Math.min(left, right);
   }
@@ -16,23 +33,43 @@ function soln1(arr, n) {
 }
 
 const arr = [10, 20, 30, 10];
+const n = 4;
 
-// console.log(soln1(arr, 3));
-
-function soln2(arr, n) {
-  const dp = [];
+const dp = [];
+function frogJump3(arr, n) {
   dp[0] = 0;
 
   for (let i = 1; i < n; i++) {
-    let fs = dp[i - 1] + Math.abs(arr[i] - arr[i - 1]);
-    dp[i] = fs;
+    const left = dp[i - 1] + Math.abs(arr[i] - arr[i - 1]);
+    dp[i] = left;
+
     if (i > 1) {
-      let ss = dp[i - 2] + Math.abs(arr[i] - arr[i - 2]);
-      dp[i] = Math.min(ss, fs);
+      const right = dp[i - 2] + Math.abs(arr[i] - arr[i - 2]);
+      dp[i] = Math.min(left, right);
     }
   }
 
   return dp[n - 1];
 }
 
-console.log(soln2(arr, 4));
+function frogJump(arr, n) {
+  let prev = 0;
+  let prev2 = 0;
+
+  for (let i = 1; i < n; i++) {
+    const left = prev + Math.abs(arr[i] - arr[i - 1]);
+    let cur = left;
+
+    if (i > 1) {
+      const right = prev2 + Math.abs(arr[i] - arr[i - 2]);
+      cur = Math.min(left, right);
+    }
+
+    prev2 = prev;
+    prev = cur;
+  }
+
+  return prev;
+}
+
+console.log(frogJump(arr, n - 1));

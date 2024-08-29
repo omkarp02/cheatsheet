@@ -1,5 +1,7 @@
 /*
 
+count total number of way apply or min or max apply dp
+
     here this kind of recursion problem are solved like 
 
                     1
@@ -19,3 +21,5 @@
     that put the condition used in recursion accordingly
 
 */
+
+
