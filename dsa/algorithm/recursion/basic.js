@@ -139,3 +139,16 @@ function subsetSumCount(nums, i, final, sum, target) {
 const arr4 = [1, 2, 1];
 
 console.log(subsetSumCount(arr2, 0, [], 0, 2));
+
+//Infinte supply keep one thing in mind whenever there is infinite supply keep take at same index
+/*
+
+
+  nottake = f(i - 1, t)
+  take = f(i, t - arr[i]) //here we remain at the same index
+
+
+
+
+
+*/
