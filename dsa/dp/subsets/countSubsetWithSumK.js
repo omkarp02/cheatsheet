@@ -4,10 +4,10 @@ function countSubsetWithSum1(arr, i, target) {
   if (target === 0) return 1;
   if (i === 0) return arr[0] === target ? 1 : 0;
 
-  let notpick = countSubsetWithSum1(arr, i - 1, target - arr[i]);
+  let notpick = countSubsetWithSum1(arr, i - 1, target );
   let pick = 0;
   if (target >= arr[i]) {
-    pick = countSubsetWithSum1(arr, i - 1, target);
+    pick = countSubsetWithSum1(arr, i - 1, target - arr[i]);
   }
 
   return pick + notpick;
