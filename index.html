@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main-div" style="display: flex; flex-wrap: wrap"></div>
+  </body>
+  <script>
+    const main = document.getElementById("main-div");
+    const n = 10;
+
+    let htmlStr = "";
+    for (let i = 0; i < n; i++) {
+      htmlStr += `<div style="width: 300px; height: 300px; border: 1px solid black;"></div>`;
+    }
+
+    main.innerHTML = htmlStr;
+  </script>
+</html>
