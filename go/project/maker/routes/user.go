@@ -22,3 +22,16 @@ func createUser(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusCreated, gin.H{"msg": "Success"})
 }
+
+func getAllUser(ctx *gin.Context) {
+	var user models.User
+
+	users, err := user.GetAll()
+
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"msg": "Something went wrong"})
+		return
+	}
+
+	ctx.JSON(http.StatusCreated, gin.H{"msg": "Success", "data": users})
+}
