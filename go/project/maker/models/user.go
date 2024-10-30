@@ -3,7 +3,6 @@ package models
 import (
 	"context"
 	"log"
-	"time"
 
 	"example.com/maker/db"
 	"example.com/maker/utils"
@@ -41,12 +40,9 @@ func (u *User) Insert() error {
 	}
 
 	_, err = userColl().InsertOne(context.TODO(), User{
-		Email:    u.Email,
-		Password: hashedPass,
-		Timestamps: Timestamps{
-			CreatedAt: time.Now(),
-			UpdatedAt: time.Now(),
-		},
+		Email:      u.Email,
+		Password:   hashedPass,
+		Timestamps: getCurrentTimestamps(),
 	})
 
 	if err != nil {
