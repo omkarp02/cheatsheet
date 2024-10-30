@@ -9,6 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// asd
 func createCustomer(ctx *gin.Context) error {
 	var customer models.Customer
 
