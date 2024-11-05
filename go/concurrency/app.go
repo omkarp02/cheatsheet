@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"math/rand"
+	"sync"
 	"time"
 )
 
@@ -115,15 +118,102 @@ func sq(in <-chan int) chan int {
 
 }
 
-func main() {
-	nums := []int{1, 2, 3, 4, 5, 6}
+// func main() {
+// 	nums := []int{1, 2, 3, 4, 5, 6}
 
-	dataChannel := sliceToChannel(nums)
+// 	dataChannel := sliceToChannel(nums)
 
-	finalChannel := sq(dataChannel)
+// 	finalChannel := sq(dataChannel)
 
-	for n := range finalChannel {
-		fmt.Println(n)
+// 	for n := range finalChannel {
+// 		fmt.Println(n)
+// 	}
+
+// }
+
+//Mutex
+
+var (
+	lock   sync.Mutex
+	rwLock sync.RWMutex
+	count  int
+)
+
+func increment() {
+	lock.Lock()
+
+	count++
+
+	lock.Unlock()
+}
+
+func basic() {
+	interation := 1000
+	for i := 0; i < interation; i++ {
+		go increment()
 	}
+
+	time.Sleep(1 * time.Second)
+	log.Println("hello", count)
+}
+
+func write() {
+	rwLock.Lock()
+	defer rwLock.Unlock()
+
+	fmt.Println("Write locing")
+	time.Sleep(1 * time.Second)
+	fmt.Println("Write unlocking")
+
+}
+
+func read() {
+	rwLock.RLock()
+	defer rwLock.RUnlock()
+
+	fmt.Println("Reading locing")
+	time.Sleep(1 * time.Second)
+	fmt.Println("Reading unlocking")
+
+}
+
+func readWrite() {
+	go read()
+	go read()
+	go read()
+	go read()
+	go write()
+
+	time.Sleep(8 * time.Second)
+}
+
+//we will see the once keyword
+
+func completeonce() {
+	var wg sync.WaitGroup
+	wg.Add(100)
+
+	var once sync.Once
+
+	for i := 0; i < 100; i++ {
+		if foundTreasure() {
+			once.Do(missionIsCompleted)
+		}
+	}
+
+}
+
+func foundTreasure() bool {
+	return rand.Intn(10) == 3
+}
+
+func missionIsCompleted() {
+	log.Println("missino is completed")
+}
+
+func main() {
+	// basic()
+	// readWrite()
+	completeonce()
 
 }

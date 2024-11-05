@@ -27,3 +27,16 @@ func createCustomer(ctx *gin.Context) error {
 	return nil
 
 }
+
+func getAllCustomer(ctx *gin.Context) error {
+	var customer models.Customer
+
+	customers, err := customer.GetAll()
+
+	if err != nil {
+		return err
+	}
+
+	ctx.JSON(http.StatusCreated, gin.H{"msg": "Success", "data": customers})
+	return nil
+}
