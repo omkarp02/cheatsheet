@@ -211,9 +211,18 @@ func missionIsCompleted() {
 	log.Println("missino is completed")
 }
 
+func grreth(doneChan chan bool) {
+	log.Println("ola darling")
+	doneChan <- true
+}
+
 func main() {
 	// basic()
 	// readWrite()
-	completeonce()
+	// completeonce()
+
+	tempChan := make(chan bool)
+	go grreth(tempChan)
+	log.Println(<-tempChan)
 
 }
