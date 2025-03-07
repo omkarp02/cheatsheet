@@ -8,5 +8,6 @@ type Payload struct {
 func main() {
 	// dependencyInjection()
 	// ioTest()
+	// pointer()
 
 }

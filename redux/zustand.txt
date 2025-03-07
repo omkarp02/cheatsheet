@@ -1,0 +1,1 @@
+https://github.com/pmndrs/zustand/discussions/937

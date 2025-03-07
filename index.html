@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="main-div" style="display: flex; flex-wrap: wrap"></div>
-  </body>
-  <script>
-    const main = document.getElementById("main-div");
-    const n = 10;
+<html>
+<head>
+    <title>W2UI Demo: grid/16</title>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css">
+</head>
+<body>
 
-    let htmlStr = "";
-    for (let i = 0; i < n; i++) {
-      htmlStr += `<div style="width: 300px; height: 300px; border: 1px solid black;"></div>`;
-    }
+<div id="grid" style="width: 800px; height: 400px;"></div>
 
-    main.innerHTML = htmlStr;
-  </script>
+<script type="module">
+import { w2grid, w2utils } from 'https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.es6.min.js'
+
+let grid = new w2grid({
+    name: 'grid',
+    box: '#grid',
+    show: {
+        toolbar: true,
+        footer: true
+    },
+    multiSearch: true,
+    searches: [
+        { field: 'lname', label: 'Last Name', type: 'text' },
+        { field: 'fname', label: 'First Name', type: 'text' },
+    ],
+    columns: [
+        { field: 'recid', text: 'ID', size: '50px', sortable: true, attr: 'align=center' },
+        { field: 'lname', text: 'Last Name', size: '30%', sortable: true },
+        { field: 'email', text: 'Email', size: '40%' },
+        { field: 'sdate', text: 'Start Date', render: 'date:mm/dd/yyyy', size: '120px' },
+        { field: 'status', text: 'Status', size: '120px' }
+    ],
+    records: [
+        { recid: 1, fname: 'Jane', lname: 'Doe', email: 'jdoe@gmail.com', sdate: 384052483664, status: ['active']},
+        { recid: 2, fname: 'Stuart', lname: 'Motzart', email: 'jdoe@gmail.com', sdate: 1384052583664, status: ['active'] },
+    ]
+})
+
+</script>
+
+</body>
 </html>

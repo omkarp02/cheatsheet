@@ -140,11 +140,11 @@ var (
 )
 
 func increment() {
-	lock.Lock()
-
+	// lock.Lock()
+	time.Sleep(500 * time.Millisecond)
 	count++
 
-	lock.Unlock()
+	// lock.Unlock()
 }
 
 func basic() {
@@ -216,13 +216,49 @@ func grreth(doneChan chan bool) {
 	doneChan <- true
 }
 
+type KV struct {
+	data string
+}
+
+// Constructor that returns a pointer
+func NewKVPointer() *KV {
+	return &KV{
+		data: "ola",
+	}
+}
+
+// Constructor that returns a value
+
+func fetchUserLikes(userName string, respchan chan any) {
+	time.Sleep(time.Millisecond * 150)
+	respchan <- 11
+}
+
+func fetchUserDislikes(userName string, respchan chan any) {
+	time.Sleep(time.Millisecond * 150)
+	respchan <- 3
+}
+
 func main() {
+	n := 2
+	donechan := make(chan any, n)
+
+	go fetchUserLikes("sdf", donechan)
+	go fetchUserDislikes("sdf", donechan)
+
+	// for resp := range donechan {
+	// n -= 1
+	// fmt.Println(resp)
+	// if n == 0 {
+	// 	close(donechan)
+	// }
+	// }
 	// basic()
 	// readWrite()
 	// completeonce()
 
-	tempChan := make(chan bool)
-	go grreth(tempChan)
-	log.Println(<-tempChan)
+	// tempChan := make(chan bool)
+	// go grreth(tempChan)
+	// log.Println(<-tempChan)
 
 }
