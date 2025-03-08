@@ -2,23 +2,21 @@ package main
 
 import "fmt"
 
-type User struct {
-	name string
-	age  string
-	Address
+type asf struct {
+	hello string
 }
 
-type Address struct {
-	street string
+func creathi() interface{} {
+	return asf{
+		hello: "sdfsdf",
+	}
 }
 
 func main() {
-	user := User{
-		name: "omkar",
-		age:  "32",
+	asdf := creathi()
+	data, ok := asdf.(asf)
+	if ok {
+		fmt.Println(data)
 	}
 
-	user.street = "hello"
-
-	fmt.Println(user)
 }

@@ -1,0 +1,97 @@
+import axios from 'axios';
+
+let isRefreshing = false; // Indicates if a refresh token request is in progress
+let failedQueue = []; // Stores requests while the refresh token request is pending
+
+// Helper function to process queued requests
+const processQueue = (error, token = null) => {
+  failedQueue.forEach((promise) => {
+    if (token) {
+      promise.resolve(token);
+    } else {
+      promise.reject(error);
+    }
+  });
+
+  failedQueue = [];
+};
+
+// Create an Axios instance
+const axiosInstance = axios.create({
+  baseURL: 'https://your-api-url.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Helper functions to manage tokens
+const getAccessToken = () => localStorage.getItem('accessToken');
+const getRefreshToken = () => localStorage.getItem('refreshToken');
+const saveTokens = (accessToken, refreshToken) => {
+  localStorage.setItem('accessToken', accessToken);
+  localStorage.setItem('refreshToken', refreshToken);
+};
+
+// Request interceptor to attach the access token
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const token = getAccessToken();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+// Response interceptor to handle 401 errors and refresh token logic
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const originalRequest = error.config;
+
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      if (isRefreshing) {
+        // If a refresh request is already in progress, queue the request
+        return new Promise((resolve, reject) => {
+          failedQueue.push({ resolve, reject });
+        })
+          .then((token) => {
+            originalRequest.headers.Authorization = `Bearer ${token}`;
+            return axiosInstance(originalRequest);
+          })
+          .catch((err) => Promise.reject(err));
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      try {
+        // Refresh the token
+        const refreshToken = getRefreshToken();
+        const response = await axios.post('https://your-api-url.com/refresh', { refreshToken });
+        const { accessToken, refreshToken: newRefreshToken } = response.data;
+
+        saveTokens(accessToken, newRefreshToken);
+        processQueue(null, accessToken); // Process queued requests with the new token
+
+        isRefreshing = false;
+
+        // Retry the original request
+        originalRequest.headers.Authorization = `Bearer ${accessToken}`;
+        return axiosInstance(originalRequest);
+      } catch (refreshError) {
+        processQueue(refreshError, null); // Reject queued requests
+        isRefreshing = false;
+
+        // Redirect to login or handle logout
+        window.location.href = '/login';
+        return Promise.reject(refreshError);
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
+
+export default axiosInstance;

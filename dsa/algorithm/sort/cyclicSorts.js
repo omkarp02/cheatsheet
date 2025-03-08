@@ -1,4 +1,5 @@
 /*
+  this you were able to solve
   cyclic sort
   check if current index have correct number like here
   3 2 1 4 5 
@@ -11,24 +12,26 @@
 
 */
 
-import { swap } from "./helper.js";
 
 function cyclicSort(nums) {
-  let i = 0;
-  while (i < nums.length) {
-    const elementOnCurrentIndex = nums[i];
-    const validElement = i + 1;
-    if (elementOnCurrentIndex === validElement) {
-      i++;
-    } else if (nums[elementOnCurrentIndex - 1] !== elementOnCurrentIndex) {
-      swap(i, elementOnCurrentIndex - 1, nums);
-    } else {
-      i++;
+  let i = 0
+  while(i < nums.length){
+    const curEle = nums[i]
+    if(curEle === nums[curEle - 1]){
+      i++
+    }else{
+      swap(i, curEle - 1, nums)
     }
   }
-  return nums;
+  return nums
 }
+
+function swap(first, second, arr) {
+  let temp = arr[first];
+  arr[first] = arr[second];
+  arr[second] = temp;
+}
+
 
 const arr5 = [3, 1, 3, 4, 2];
 console.log(cyclicSort(arr5));
-

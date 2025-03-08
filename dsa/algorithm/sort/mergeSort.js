@@ -1,3 +1,5 @@
+// this you were able to solve just figure out how to find mid
+
 function mergeSort(start, end, nums) {
   if (start === end) {
     return;
