@@ -1,5 +1,5 @@
 /*
-
+  this you were able to solve
     How to solve
 
     1. compare first two element is first element greater than second if yes than swap

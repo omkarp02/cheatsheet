@@ -35,7 +35,8 @@ console.log(findMissingNumberInArray(arr19));
 
 // console.log(moveAllNegativeElement(arr1));
 
-//find union intersection of two sorted array  this can be done using set
+//Find the Union and Intersection of the two sorted arrays
+//this can be done using set and two pointer
 
 //Write a program to cyclically rotate an array by one
 /*
@@ -409,6 +410,8 @@ const arr18 = [102, 4, 100, 1, 101, 3, 2];
 
 // console.log(longestConsecutive(arr18))
 
+
+//find Largest sum contiguous Subarray
 // Count Subarray sum Equals K
 function countSubarraySum(nums, k) {
   let cursum = 0;
