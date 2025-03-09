@@ -6,6 +6,8 @@
 
     Generate Paranthesis✅
 
+    Next Permuation
+
     Print all subsequences/Power Set✅
 
     Count all subsequences with sum K✅

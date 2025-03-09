@@ -410,7 +410,8 @@ const arr18 = [102, 4, 100, 1, 101, 3, 2];
 
 // console.log(longestConsecutive(arr18))
 
-
+//find same qustion by find subarray with equal amount of 0 and 1s 
+//this can be done same replace zero with -1 now question is find sum where k is zero
 //find Largest sum contiguous Subarray
 // Count Subarray sum Equals K
 function countSubarraySum(nums, k) {
@@ -511,6 +512,7 @@ what shashcode video
 
 */
 
+
 //------------------------------------------------------------------------------------------------------- helpers
 function swap(first, second, arr) {
   let temp = arr[first];
@@ -523,3 +525,5 @@ function swapInTwoArray(first, second, arr1, arr2) {
   arr1[first] = arr2[second];
   arr2[second] = temp;
 }
+
+

@@ -8,9 +8,9 @@ Find the maximum and minimum element in an array✅
 
 Find missing number in an array✅
 
-Find the number that appears once, and other numbers twice.
+Find the number that appears once, and other numbers twice.✅
 
-Find the "Kth" max and min element of an array
+Find the "Kth" max and min element of an array✅
 
 Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo✅
 
@@ -23,12 +23,9 @@ Write a program to cyclically rotate an array by one.✅
 Replace Elements with Greatest Element on Right Side✅
 
 find Largest sum contiguous Subarray [V. IMP]✅
-
-Minimise the maximum difference between heights [V.IMP]
+find same qustion by find subarray with equal amount of 0 and 1s
 
 Majority Element✅
-
-Minimum no. of Jumps to reach end of an array✅
 
 find duplicate in an array of N+1 Integers✅
 

@@ -1,3 +1,7 @@
+//intially take count as 0 
+//and in var ele take the first element like 7
+
+
 function majorityElement(nums) {
   let el;
   let count = 0;

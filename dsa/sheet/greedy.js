@@ -18,6 +18,8 @@
     	
     N meetings in one room✅
 
+    Minimum no. of Jumps to reach end of an array
+
     Jump Game
 
     Jump Game 2

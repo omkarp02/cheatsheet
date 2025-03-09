@@ -20,19 +20,20 @@ func greet(doneChan chan bool) {
 	doneChan <- true
 }
 
-// func main() {
-// myChannel := make(chan bool, 4)
+func main() {
+	myChannel := make(chan bool, 4)
 
-// //here we are using close keyword in the slowgreet so we need to know which guy is going to be slow
-// go greet(myChannel)
-// go slowGreet(myChannel)
-// go greet(myChannel)
-// go greet(myChannel)
+	//here we are using close keyword in the slowgreet so we need to know which guy is going to be slow
+	go greet(myChannel)
+	go slowGreet(myChannel)
+	go greet(myChannel)
+	go greet(myChannel)
 
-// for doneChan := range myChannel {
-// 	fmt.Println("ola")
-// 	fmt.Println(doneChan)
-// }
+	for doneChan := range myChannel {
+		fmt.Println("ola")
+		fmt.Println(doneChan)
+	}
+}
 
 // //here another way
 
@@ -41,8 +42,6 @@ func greet(doneChan chan bool) {
 // arr := []int{1, 1, 0, 1}
 
 // for doneChan := range
-
-// }
 
 // func main() {
 
@@ -261,4 +260,4 @@ func main() {
 	// go grreth(tempChan)
 	// log.Println(<-tempChan)
 
-}
+// }
