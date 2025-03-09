@@ -24,11 +24,7 @@ Replace Elements with Greatest Element on Right Side✅
 
 find Largest sum contiguous Subarray [V. IMP]✅
 
-Minimise the maximum difference between heights [V.IMP]
-
 Majority Element✅
-
-Minimum no. of Jumps to reach end of an array✅
 
 find duplicate in an array of N+1 Integers✅
 
@@ -42,13 +38,13 @@ Next Permutation✅
 
 Count Inversion✅
 
-Best time to buy and Sell stock
-
-Leader in Array✅
+Leader in Array - easy don't solve✅
 
 Count Subarray sum Equals K✅
 
 find all pairs on integer array whose sum is equal to given number✅
+
+Two sum ✅
 
 find common elements In 3 sorted arrays✅
 
@@ -64,17 +60,10 @@ Find longest consecutive subsequence✅
 
 Given an array of size n and a number k, find all elements that appear more than " n/k " times.✅
 
-Maximum profit by buying and selling a share atmost twice
-
 Find whether an array is a subset of another array✅
 
 Find the triplet that sum to a given value✅
 
-Trapping Rain water problem
-
-Chocolate Distribution problem
-
-Smallest Subarray with sum greater than a given value
 
 Three way partitioning of an array around a given value
 

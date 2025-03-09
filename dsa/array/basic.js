@@ -255,6 +255,10 @@ function findAllPairEqualToSum(nums, target) {
   return result;
 }
 
+// Two sum
+//this can be done using hash you reached till here yourself
+//next sort the array and find the target using two pointer approach
+
 const arr9 = [1, 2, 3];
 // console.log(findAllPairEqualToSum(arr9, 4));
 
@@ -295,6 +299,10 @@ const arr10 = [1, 5, 10, 20, 40, 80];
 const arr11 = [6, 7, 20, 80, 100];
 const arr12 = [3, 4, 15, 20, 30, 70, 80, 120];
 // console.log(findCommonElementInThreeSortedArray(arr10, arr11, arr12));
+
+//Rearrange the array in alternating positive and negative items
+//bruteforce keep two array postive and negative then merge
+//this can be done with n space complexity
 
 //Find if there is any subarray with sum equal to 0
 /*
@@ -357,6 +365,8 @@ console.log(replaceElements(arr20));
 /*
   This has a very great intuition check the striver video
   Try doing it yourself
+  you were able to do it yourself but check stiver video once
+  this can be done in o(n)
 */
 function subArrayWithMaximumProduct(nums) {
   let pre = 1;
@@ -383,6 +393,7 @@ const arr = [3, 2, -1, 4, -6, 3, -2, 6];
 /*
   For this optimal solution you were not able to find the intuition
   use set see this time you are able to find out
+  sort the array
 */
 
 var longestConsecutive = function (nums) {
