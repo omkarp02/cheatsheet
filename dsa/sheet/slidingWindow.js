@@ -2,7 +2,6 @@
 
     Medium
 
-	
     Longest Substring Without Repeating Characters✅
     
     Max Consecutive Ones III✅
@@ -10,6 +9,8 @@
     Fruit Into Baskets✅
     
     Longest repeating character replacement✅
+
+    Smallest Subarray with sum greater than a given value 
     
     Binary subarray with sum✅
     
@@ -19,6 +20,7 @@
     
     Maximum point you can obtain from cards✅
 
+     Chocolate Distribution problem
 
     Hard 
 
@@ -30,5 +32,8 @@
     Minimum Window Substring✅
 
     Minimum Window Subsequence
+
+	Chocolate Distribution problem
+
 
 */
