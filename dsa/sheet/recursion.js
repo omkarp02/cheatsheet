@@ -6,8 +6,6 @@
 
     Generate Paranthesis✅
 
-    Next Permuation
-
     Print all subsequences/Power Set✅
 
     Count all subsequences with sum K✅
@@ -23,6 +21,8 @@
     Subset Sum-II✅
 
     Combination Sum - III✅
+
+    Next Permuation
 
     Letter Combinations of a Phone number✅
 
@@ -45,6 +45,7 @@
     M Coloring Problem
 
     Sudoko Solver
+
 
 */
 

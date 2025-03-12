@@ -41,7 +41,7 @@ var maxScore = function (cardPoints, k) {
 
     Longest substring without repeating character
     This problem can be solved using shrink and expand algo
-
+    this you were able to solve yourself
 */
 
 var lengthOfLongestSubstring = function (s) {
@@ -70,6 +70,8 @@ const str = "abcabcbb";
 // console.log(lengthOfLongestSubstring(str));
 
 //Better Solution
+//Max Consecutive Ones III
+//this easy just check the optimal solution once
 var longestOnesBetter = function (nums, k) {
   let max = 0;
   let noOfZero = 0;
@@ -200,6 +202,13 @@ var numberOfSubstrings = function (s) {
 
 const str1 = "abc";
 console.log(numberOfSubstrings(str1));
+
+//Longest repeating character replacement - this you can do but try doing yourself once
+
+/*
+Longest Substring with At Most K Distinct Characters
+
+*/
 
 /*
 Subarray with k different integers 

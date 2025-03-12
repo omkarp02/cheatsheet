@@ -13,6 +13,7 @@ var maxDepth = function (root) {
 
 // Check if the Binary tree is height-balanced or not
 //was easy you were able to do yourself
+//this you were able to do yourself
 var isBalanced = function (root) {
   if (root === null) return true;
 
@@ -39,6 +40,7 @@ var isBalancedHlp = function (root) {
 };
 
 // Diameter of Binary Tree
+//this you were able to do yourself
 
 var diameterOfBinaryTree = function (root) {
   let max = 0;

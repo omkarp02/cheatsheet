@@ -20,7 +20,7 @@
     
     Maximum point you can obtain from cards✅
 
-     Chocolate Distribution problem
+    Chocolate Distribution problem
 
     Hard 
 

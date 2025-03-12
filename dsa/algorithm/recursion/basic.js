@@ -36,6 +36,7 @@ here this example function is returning something
 
 */
 
+//algo 1
 //this pattern print all subset
 function subset(nums, i, final) {
   if (i === nums.length) {
@@ -53,22 +54,55 @@ const arr = [3, 1, 2];
 
 // console.log(subset(arr, 0, []));
 
+
+//algo 2
 //this pattern find the target sum for the target value
-function subsetSum(nums, i, final, sum, target) {
+//here we are decreaseing the target till we get 0 
+function subsetSum(nums, i, final, target) {
   if (i === nums.length) {
-    if (sum === target) {
+    if (target === 0) {
       console.log(final);
     }
     return;
   }
 
-  final.push(nums[i]);
-  subsetSum(nums, i + 1, final, sum + nums[i], target);
+  if (nums[i] <= target) {
+    final.push(nums[i]);
+    subsetSum(nums, i + 1, final, target - nums[i]);
+    final.pop(nums[i]);
+  }
 
-  final.pop();
-  subsetSum(nums, i + 1, final, sum, target);
+  subsetSum(nums, i + 1, final, target);
 }
 const arr2 = [1, 2, 1];
+
+//algo 3
+//most of the priblem will be solved by this approach
+//try just setting this at start ''/aabc
+/*
+
+  ''/abc
+
+  a/bc   /bc like this take not take but you can use this to solve many things
+
+
+  like dice question
+
+  ''/4
+
+  1/3  2/2 3/1 4/0
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 // subsetSum(arr2, 0, [], 0, 2);
 

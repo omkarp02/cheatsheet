@@ -96,7 +96,7 @@ var countNodes = function (root) {
   const left = countLeftNode(root);
   const right = countRightNode(root);
 
-  if (left === right) return (1 << left) - 1;
+  if (left === right) Math.pow(2, left) - 1;
   return countNodes(root.left) + countNodes(root.right) + 1;
 };
 
