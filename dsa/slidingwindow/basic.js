@@ -139,13 +139,17 @@ const goal = 0;
 // console.log(numSubarraysWithSum(arr, goal));
 
 //Count number of nice subarrays
-//problem is exactly like above replace odd with 1 and event with 0
+/*
+problem is exactly like above replace odd with 1 and event with 0
 
-//Number of substring containing all three characters
+Number of substring containing all three characters
 
-//There is one problem that come from intuition which you figure out yourself
+There is one problem that come from intuition which you figure out yourself
 
-//This one is the optimal solution which is better solution
+This one is the optimal solution which is better solution
+
+this you were able to solve but check striver solution one time
+*/
 
 var numberOfSubstrings = function (s) {
   let r = 0;

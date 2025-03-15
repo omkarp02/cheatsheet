@@ -123,7 +123,7 @@ const generateParenthesisHlp = (result, str, openNo, closeNo) => {
   2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
   7 is a candidate, and 7 = 7.
   These are the only two combinations.
-
+  this you were able to do yourself
 
 */
 
@@ -181,6 +181,7 @@ const ans2 = [];
 // console.log(ans2);
 
 //Subset Sum-I
+//you were able to solve yourself
 function subsetsum(nums, i, sum) {
   if (i === nums.length) {
     console.log(sum);
@@ -246,6 +247,8 @@ function combinationSum3Hlp(k, n, i, cur, result) {
 
 // console.log(combinationSum3(3, 9));
 
+//Permuation was able to do yourself
+
 //Dice thrown
 //This is easy just draw the recursion tree you will get it
 
@@ -273,3 +276,5 @@ function soln(str, sentence) {
 }
 
 // console.log(soln(str1, sentence))
+
+// Palindrome Partitioning - this you were able not to do yourself put recursion on partition and think this time it will be something like dice question

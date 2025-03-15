@@ -2,6 +2,7 @@
 //this is easy but understand the question
 // input : 5 3 1 2 4 6
 // output: 6 4 2 4 6 -1
+//were able to solve yourself
 
 // so in output give the next greater number of that element
 
@@ -30,6 +31,8 @@ const arr1 = [5, 3, 1, 2, 4, 6];
 
 //This you will solve yourself don't code just draw
 // Next Greater Element 2
+
+//were able to solve yourself
 
 function nextGreaterElement2(nums) {
   const length = nums.length * 2;
@@ -134,6 +137,8 @@ const arr4 = [2, 1, 5, 6, 2, 3];
 //Brute force n2
 //This did not understand
 
+// Trapping Rainwater
+// this you were able to do yourself
 
 // Aestroid Collisions
 //This you were able to figure out by monotonic stack algo start from back
@@ -212,6 +217,7 @@ const k = 3
 // console.log(removeKdigits(str, k))
 
 //Largest rectangle in a histogram
+//very important first get the burteforce
 //bruteforce go to every index and find the left smallest and rirght smallest
 //Better get prevsmallestelement and nextsmallestelement and use formula arr[i] * (next - prev - 1)
 //Optimal try doing this pse and nse on the go so you will do pse and when you like found a bigger element can we can consider is as nse
@@ -277,10 +283,10 @@ console.log(largestRectangleInHistogram(nums));
 //just image histogram on each row
 
 //Sliding Window maximum
-//was easy 
+//was easy you were able to solve yourself
 
 // Stock Span Problem
-//was easy
+//was easy you were able to solve yourself
 
 //celibrity problem
 //understand the question and do it yourself

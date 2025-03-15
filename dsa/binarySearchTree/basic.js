@@ -83,6 +83,7 @@ function minVal(root) {
 }
 
 // Find K-th smallest/largest element in BST
+//can be done by inorder
 var kthSmallest = function (root, k) {
   let ans = null;
   const helper = (node) => {
@@ -103,7 +104,7 @@ var kthSmallest = function (root, k) {
 };
 
 // Check if a tree is a BST or BT
-//here you need to keep track of low bound and upper bound
+//here you need to keep track of low bound and upper bound using min max algo
 var isValidBST = function (root) {
   function helper(root, greaterThan, lessThan) {
     if (!(root.val > greaterThan && root.val < lessThan)) {
@@ -133,7 +134,7 @@ var lowestCommonAncestor = function (root, p, q) {
 
 // Construct a BST from a preorder traversal
 //better convert the preorder to inorder by sroting it as inorder sorted is the binary tree
-//keep upper boudn and lower boudn and keep constructing a binary tree
+//keep upper boudn and lower boudn and keep constructing a binary tree using the min max algo
 //here very important thing i should be passed as reference like once that the node on that index is set it can't be set again so we need to move forward for next index that is whay always pass as refernce so we set node once move to next node like that in every recursion
 
 var bstFromPreorder = function (preorder) {
@@ -160,6 +161,7 @@ var bstFromPreorder = function (preorder) {
 
 // Inorder Successor/Predecessor in BST
 //for inorder success just find the ceil of that val done
+
 
 // Binary Search Tree Iterator
 
@@ -190,12 +192,17 @@ BSTIterator.prototype.hasNext = function () {
 //This same from can be solved using the bst iterrot keep two iterator one that iterate from start and one from end and apply the same logic
 
 // Recover BST | Correct BST with two nodes swapped
+//this was easy your were able to do yourself
 //find the inorder store in array and again travese the tree and placing the correct inorder
 //my intuition keep a upper and lowerbound and find the incorrect one and swap so basically find element which is less than previous or a element which previous is less so the preious element is in violation so two cases here
 
 // Largest BST in Binary Tree
 //this one try doing yourself
 //find the smallest from left and largest from right
+
+//hthis you have different formula by min max and able to solve youself
+
+//striver way is same as my but he use postorder traversal so calcular left min max and right min and max then comparet to the cur node
 
 // [small, large, node]
 function findLargestBST(root) {
@@ -212,5 +219,8 @@ function findLargestBST(root) {
 
   return [Number.NEGATIVE_INFINITY, Infinity, Math.max(left[2], right[2])];
 }
+
+//Two Sum In BST | Check if there exists a pair with Sum K
+//this can be done by iterator and then 2 pointer like method
 
 

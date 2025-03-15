@@ -54,6 +54,8 @@ Implement Min Stack✅
     
     Sliding Window maximum
 
+    Celebrity Problem
+
     Stock Span Problem✅
 
 */
