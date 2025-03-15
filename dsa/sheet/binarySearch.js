@@ -12,8 +12,7 @@
 
     Floor/Ceil in Sorted Array✅
 
-Minimise the maximum difference between heights [V.IMP]
-
+    Minimise the maximum difference between heights [V.IMP]
 
     Find the first or last occurrence of a given number in a sorted array✅
 

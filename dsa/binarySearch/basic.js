@@ -1,4 +1,5 @@
 //Binary Search to find X in sorted array
+//you were able to do
 function binarySearch(nums, target) {
   let low = 0;
   let high = nums.length - 1;
@@ -20,6 +21,7 @@ const arr = [3, 4, 6, 7, 9, 12, 16, 17];
 // console.log(binarySearch(arr, 12))
 
 //Implement Upper Bound and Lower Bound
+//you were able to do
 //This might be the possible answer is the key
 function binarySearchUpperBound(nums, target) {
   let low = 0;
@@ -35,7 +37,7 @@ function binarySearchUpperBound(nums, target) {
     }
   }
 }
-
+//you were able to do
 function binarySearchLowerBound(nums, target) {
   let low = 0;
   let high = nums.length - 1;
@@ -64,6 +66,7 @@ Here is another great solution try to solve this using binary search yourself
 Here you do a binary search and if you find element equal to target than if you want to find the first occurance you apply binary search on the left side of the arr
 */
 
+//you were able to do
 //Count occurrences of a number in a sorted array with duplicates
 var searchRange = function (nums, target) {
   const fs = binarySearchFirstLastOccurnace(nums, target, true);
@@ -98,7 +101,9 @@ const arr3 = [5, 7, 7, 7, 7, 8, 8, 10];
 
 // console.log(searchRange(arr3, 7));
 
-//Search in Rotated Sorted Array I
+
+// 
+//you were able to do
 //This is easy use binary search to just element one side by checking mid and start and now solve by yourself
 const searchInRotatedSortedArr = function (nums, target) {
   let start = 0;
@@ -133,6 +138,7 @@ const arr4 = [3, 4, 5, 6, 7, 8, 1, 2];
 
 /*
 Search in Rotated Sorted Array II
+you were able to do
 
 here is s = m = e trim down the search place because this is making you the problem to identify which side to trim
 
@@ -278,6 +284,7 @@ let arr8 = [1, 2, 3, 4, 5, 6, 7, 8, 5, 1];
 // console.log(findPeakElement(arr8));
 
 //Find square root of a number in log n
+//you were able to solve yourself
 //so if you want to find the square root of 25
 //do binary search from 1 to 25
 //main things is to figure out start and end
@@ -299,6 +306,7 @@ function findSquareRoot(val) {
 }
 
 // console.log(findSquareRoot(25))
+//you were able to solve yourself
 
 function findKRoot(val, k) {
   let start = 0;
@@ -320,6 +328,7 @@ function findKRoot(val, k) {
 // console.log(findKRoot(8, 3))
 
 //Koko Eating Bananas
+//you were able to do yourself
 // This was easy like square root problem only like what if k is 1 then 2 then 3 like that and so  on so apply binary search like that only
 
 // Minimum days to make M bouquets
