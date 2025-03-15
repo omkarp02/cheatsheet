@@ -87,3 +87,11 @@ Binary Subarrays With Sum check this for algo 3
 
 
 */
+
+/*
+    Binary search tree
+
+    Check if a tree is a BST or BT - see this if conceptual or not - check this min max algo it is imp
+
+
+*/

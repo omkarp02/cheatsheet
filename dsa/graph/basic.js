@@ -1,7 +1,7 @@
 //graph representation
 
 // BFS
-
+//were able to do yourself
 function bfsTraversal(bfsGraph) {
   const vis = [];
   const queue = []; //only use shift and push
@@ -33,7 +33,7 @@ const bfsGraph = [[1, 2, 3], [], [4], [], []];
 // bfsTraversal(bfsGraph);
 
 // DFS
-
+//were able to do yourself
 function dfsOfGraph(dfsGraph) {
   const vis = [];
   const queue = []; //only use shift and push
@@ -60,7 +60,7 @@ const dfsGraph = [[2, 3, 1], [0], [0, 4], [0], [2]];
 // dfsOfGraph(dfsGraph);
 
 // Number of provinces
-
+//this was easy did sooled it
 var findCircleNum = function (isConnected) {
   const nodes = isConnected[0].length;
   const graph = {};
@@ -109,6 +109,7 @@ const isConnected = [
 // Connected Components Problem in Matrix
 
 // Rotten Oranges
+//this you can solve yourself but if there are two rotten then push both of them in queue
 // [row, col, level]
 var orangesRotting = function (grid) {
   const delrow = [-1, 0, +1, 0];

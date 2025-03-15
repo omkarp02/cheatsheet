@@ -111,6 +111,7 @@ ll.append(4);
 ll.append(5);
 ll.append(6);
 
+// Middle of a LinkedList
 //Find middle of linkedlist
 function findMiddle(head) {
   let slow = head;
@@ -314,7 +315,9 @@ llTwo.get(2).next = llThree.head;
 
 //Add 1 to a number represented by LinkedList
 //better reverse the linkedlist and add
+// Reverse a LinkedList [Recursive]
 //optimal recursion
+
 
 function addOneToNumberLL(head) {
   const temp = head;
