@@ -35,11 +35,19 @@ Nvidia
 
 -----------
 
-Google
-Netlix
+Google - can be refered
+Amazon - can be refered
+Dream11 - can be refered
+
+Netflix 
 Microsoft
 Uber
 Ola 
-Amazon
 Meta
 Atlassin
+Flipkart
+Paypal
+Sap
+Adobe
+
+https://www.reddit.com/r/developersIndia/comments/pzqhwk/list_of_productbased_companies_and_startups_that/

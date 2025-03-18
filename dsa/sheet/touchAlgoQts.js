@@ -31,7 +31,6 @@ count inversion - can be done using merge sort
 
 */
 
-
 /*
 Recursoin
 
@@ -93,5 +92,12 @@ Binary Subarrays With Sum check this for algo 3
 
     Check if a tree is a BST or BT - see this if conceptual or not - check this min max algo it is imp
 
+
+*/
+
+/*
+
+0/1 Matrix this uses bfs distance algo and it uses multi source bfs also check this once
+word ladder 2 check this out
 
 */
