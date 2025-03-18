@@ -100,4 +100,12 @@ Binary Subarrays With Sum check this for algo 3
 0/1 Matrix this uses bfs distance algo and it uses multi source bfs also check this once
 word ladder 2 check this out
 
+	
+Djisktra's Algorithm
+
+	
+Bellman Ford Algorithm
+
+Floyd Warshal Algorithm
+
 */
