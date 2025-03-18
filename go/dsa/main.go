@@ -1,23 +1,24 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	nums := []int{8, 3, 4, 12, 5, 6, 2}
-	mergeSort(0, len(nums)-1, nums)
+	nums := []int{2, 4, 6, 8, 8, 8, 11, 13}
+	getLowerbound(nums, 8)
 }
 
-func mergeSort(start int, end int, nums []int) {
-	if start == end {
-		return
+func getLowerbound(nums []int, target int) {
+	low := 0
+	high := len(nums) - 1
+	ans := -1
+	for low <= high {
+		mid := (low + high) / 2
+		if nums[mid] >= target {
+			ans = mid
+			high = mid - 1
+		} else {
+			low = mid + 1
+		}
 	}
-
-	mid := (start + end) / 2
-	fmt.Println(mid)
-}
-
-func mergeSortHlp() {
-
+	fmt.Println(ans)
 }
