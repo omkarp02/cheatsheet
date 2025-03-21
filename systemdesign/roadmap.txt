@@ -1,0 +1,4 @@
+Index
+
+hashindex => b-tree => lsm-tree and sstree
+

@@ -109,3 +109,25 @@ Bellman Ford Algorithm
 Floyd Warshal Algorithm
 
 */
+
+
+/*
+
+just seee the dp1 introductino video
+1dp was able to solve everything easily
+
+2dp
+
+Minimum/Maximum Falling Path Sum (DP-12)
+
+3-d DP : Ninja and his friends (DP-13)
+
+Subsequence dp
+
+Subset sum equal to target (DP- 14) take overlook of this
+Partition Set Into 2 Subsets With Min Absolute Sum Diff (DP- 16)
+Minimum Coins (DP - 20) -- this you can do if you want
+
+
+
+*/
