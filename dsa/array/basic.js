@@ -389,7 +389,7 @@ function subArrayWithMaximumProduct(nums) {
 const arr = [3, 2, -1, 4, -6, 3, -2, 6];
 // console.log(subArrayWithMaximumProduct(arr))
 
-//Find longest consecutive subsequence
+//	Longest Consecutive Sequence in an Array
 /*
   For this optimal solution you were not able to find the intuition
   use set see this time you are able to find out
