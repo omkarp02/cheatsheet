@@ -78,22 +78,56 @@ Longest Consecutive Sequence in an Array
 this one watch striver video for optimal solution
 Set Matrix Zeros
 
-
+ you can find a diagonal pattern here
 Rotate Matrix by 90 degrees
 
+this was easy try one time just the theory hint four for loop for four side don't try to complicate
 Print the matrix in spiral manner
 
+using prefix sum hashmap 
 Count subarrays with given sum
 
 
 
 
+******************************************************
+Hard
+
+this can be solve using some alog and other by find the upper index
+Pascal's Triangle
+
+better: hashing
+optimal: you know since it is n/3 there would be 2 element present which would be appearing n/3 times like if n = 8 then it would be 8/3 = 2 so 3 + 3 + 2 so 2 numbers
+see the optimal solution can be solved by twiking morees solution
+Majority Element (n/3 times)
 
 
+this need to do
+3-Sum Problem
+
+4-Sum Problem
+
+optimal this can be done using prefix sum
+Largest Subarray with 0 Sum
+
+Count number of subarrays with given xor K
 
 
+optimal: sort by both pair
+Merge Overlapping Subintervals
 
+Merge two sorted arrays without extra space
 
+missing number better: hash optimal: cyclic sort and maths 
+you can check stiver solution once
+Find the repeating and missing number
 
+merge sort
+Count Inversions
+
+Reverse Pairs
+
+kadn algo
+Maximum Product Subarray
 
 */
