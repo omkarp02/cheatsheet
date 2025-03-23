@@ -1,30 +1,39 @@
 /*
 
 
+Array
+
 Quick Sort
 
 Merge Sort
 
 Majority Element - Moore Voting algorithm
 
-count inversion - can be done using merge sort
+count inversion - can be done using merge sort just check the theory how to do it
+
+three sum
+
+Longest consecutive sequest 
+better sort the array
+optimal this can be solved using hashmap how figure out yourself
+
+Minimise the maximum difference between heights [V.IMP]
 
 
+*/
+
+/*
 
 
+Binary search
 
+Search in Rotated Sorted Array I - keep this algo in mind
 
+peak element algo of kunal kushwaha - just see the also
 
+Find square root of a number in log n - you can just see the algo
 
-
-
-
-
-
-
-
-
-
+Kth Missing Positive Number - see the algo
 
 
 
@@ -91,6 +100,16 @@ Binary Subarrays With Sum check this for algo 3
     Binary search tree
 
     Check if a tree is a BST or BT - see this if conceptual or not - check this min max algo it is imp
+
+*/
+
+/*
+    here in bfs  mark it as visited as soon as you find it in the adj list and dfs when you start the recurison for that element
+    khans algo
+
+    Find Eventual Safe States
+
+    Alien Dictionary
 
 
 */

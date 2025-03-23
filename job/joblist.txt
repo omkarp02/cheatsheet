@@ -52,6 +52,9 @@ Meta
 Atlassin
 Flipkart
 Paypal
+zepto
+blinkit
+swiggy
 Sap
 Adobe
 
