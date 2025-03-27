@@ -31,10 +31,10 @@ Capacity to Ship Packages within D Days
 watch striver video
 Kth Missing Positive Number
 
-did'nt do
+place cow at min dist like 1, 2, 3, 4 and so on
 Aggressive Cows
 
-did'nt do
+this is a problem that you must understand thoraly
 Book Allocation Problem
 
 did'nt do
@@ -52,7 +52,20 @@ Median of 2 sorted arrays
 did'nt do
 Kth element of 2 sorted arrays
 
+do binary search on every row easy
+Find the row with maximum number of 1's
 
+consider you flatten the matrix and  r = x % m  col = x % m
+Search in a 2 D matrix
+
+the top right corner you can implement binary search element on one side
+Search in a row and column wise sorted matrix
+
+this one not intuitive
+Find Peak Element (2D Matrix)
+
+this one not intuitive
+Matrix Median
 
 
 */
