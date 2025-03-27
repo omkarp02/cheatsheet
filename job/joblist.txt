@@ -44,6 +44,8 @@ Google - can be refered
 Amazon - can be refered
 Dream11 - can be refered
 
+
+
 Netflix 
 Microsoft
 Uber
@@ -56,6 +58,7 @@ zepto
 blinkit
 swiggy
 Sap
+Paytm
 Adobe
 
 https://www.reddit.com/r/developersIndia/comments/pzqhwk/list_of_productbased_companies_and_startups_that/

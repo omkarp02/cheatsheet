@@ -5,7 +5,7 @@ async function asdf(company, timeout) {
   //sciprt to get name and click on connect button
   let sentence = "";
   for (let containerElement of document.getElementsByClassName(
-    "JOPRExAlloYLStaFvBLsvalCJaUQAyWUFMrY OTWDgXTMfCvnQXwnjucvNEnhKOZXLkOH"
+    "KKXxoVhkewFfDDlMvNDLwlwLWKZeZEKLPqKcc UKjGMxoynWBTgPybJLiAoFFpeysIA"
   )) {
     await sleep(timeout)
     var button = containerElement.querySelector("button");
@@ -90,7 +90,7 @@ async function dothedeeds(timeout, sentence){
 }
 
 
-asdf("Microsoft", 5000);
+asdf("Swiggy", 1000);
 
 //*************************************************** */
 

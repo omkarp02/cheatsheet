@@ -102,16 +102,18 @@ see the optimal solution can be solved by twiking morees solution
 Majority Element (n/3 times)
 
 
-this need to do
+brute ncube
+better use 2 for loop and hashing - tc nsquare use set to handle duplicates
+sort the array keep i constant and move j and k make sure to handle duplicates according to queston
 3-Sum Problem
 
+just like 3 sum
 4-Sum Problem
 
 optimal this can be done using prefix sum
 Largest Subarray with 0 Sum
 
 Count number of subarrays with given xor K
-
 
 optimal: sort by both pair
 Merge Overlapping Subintervals
@@ -125,6 +127,7 @@ Find the repeating and missing number
 merge sort
 Count Inversions
 
+merge sort
 Reverse Pairs
 
 kadn algo

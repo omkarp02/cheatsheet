@@ -307,7 +307,7 @@ function findSquareRoot(val) {
 
 // console.log(findSquareRoot(25))
 //you were able to solve yourself
-
+// Find the Nth root of a number using binary search
 function findKRoot(val, k) {
   let start = 0;
   let end = val;
