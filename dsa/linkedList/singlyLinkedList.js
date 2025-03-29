@@ -505,6 +505,22 @@ const copyRandomList = function (head) {
   return copy;
 };
 
+	
+// Detect a loop in LL
+var hasCycle = function(head) {
+  let fast = head
+  let slow = head
+
+  while(fast !== null && fast.next !== null){
+      fast = fast.next.next
+      slow = slow.next
+      if(fast === slow) return true
+  }
+
+  return false
+
+};
+
 //Remove Duplicates in a sorted Linked List
 //this was easy did'nt do it
 

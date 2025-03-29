@@ -37,10 +37,10 @@ Aggressive Cows
 this is a problem that you must understand thoraly
 Book Allocation Problem
 
-did'nt do
+smae as book allocation
 Split array - Largest Sum
 
-did'nt do
+smae as book allocation
 Painter's partition
 
 did'nt do
