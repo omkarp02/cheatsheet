@@ -36,8 +36,15 @@ here this example function is returning something
 
 */
 
+//algo 4
+
+// https://www.youtube.com/watch?v=G1fRTGRxXU8&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=51
+//6:00
+
+
 //algo 1
 //this pattern print all subset
+//here there is also when we can pick one element infinte time at that time don't increase index
 function subset(nums, i, final) {
   if (i === nums.length) {
     console.log(final);

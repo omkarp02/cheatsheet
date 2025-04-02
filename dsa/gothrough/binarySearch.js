@@ -30,6 +30,8 @@ optimal: use inorder property and find first maximum
 Inorder Successor/Predecessor in BST
 
 
+binary search iterator
+
 brute: find inorder of both bst => merge both array => the convert inorder to bst
 better: convert bst to sorted linkedlist => merge => ll to bst
 Merge 2 BST's
@@ -42,7 +44,8 @@ brute: find inorder run inorder along with bst and check if it is correct if not
 find the inorder store in array and again travese the tree and placing the correct inorder
 Recover BST | Correct BST with two nodes swapped
 
-this one try doing yourself
+brute use validate  bst algo
+better : get left largest , get right smallest using the min max algo
 Largest BST in Binary Tree
 
 

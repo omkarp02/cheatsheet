@@ -47,9 +47,14 @@ Bipartite Graph (DFS)
 use backtracking
 Cycle Detection in Directed Graph (DFS)
 
+dfs + hash map 
+Clone Graph
 
 do dfs once you reach end put in stack
 Topo Sort (dfs)
+
+start dfs from the atlanic and pacific ocean means from the border
+Pacific Atlantic Water Flow
 
 this only for directed asyclic graph
 so basically find the node with indegree 0 and put them in queue and start decreasing the neighboring and pop whose indegree is 0
@@ -94,17 +99,31 @@ Cheapest flights within k stops
 
 Network Delay time
 
-need to maintain two array one for dist and another for ways
+need to maintain two array one for dist and another for ways and a minheap
 Number of ways to arrive at destination
 
 Minimum steps to reach end from start by performing multiplication and mod operations with array elements
 
+Step 1 : relax all edges
 Bellman Ford Algorithm
 
 Floyd Warshal Algorithm
 
 Find the city with the smallest number of neighbors in a threshold distance
 
+Minimum spanning tree
+a tree in which we have n nodes and n-1 edges and all nodes are reachable from each other
+tree with least sum is called minimum spanning tree
 
+
+keep minheap with wt, node, parent
+when you pop then maark it as visited
+Prim's Algorithm
+
+Disjoint set
+
+Krushal algo
+	
+Number of operations to make network connected
 
 */

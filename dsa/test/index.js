@@ -1,18 +1,22 @@
-function soln(arr, target) {
+var lengthOfLongestSubstring = function (s) {
   const obj = {};
+  let l = 0;
+  let r = 0;
   let max = 0;
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    if (obj[sum - target] !== undefined) {
-      max = Math.max(i - obj[sum - target], max);
+  while (r < s.length) {
+    const cur = s[r];
+    if (obj[cur] !== undefined) {
+      if(obj[cur] >= l){
+        l = obj[cur] + 1;
+      }
     }
-    if(obj[sum] === undefined){
-      obj[sum] = i;
-    }
-  }
-console.log(obj)
-  return max;
-}
 
-console.log(soln([2, 0, 0, 3], 3));
+    obj[cur] = r;
+    max = Math.max(max, r - l + 1);
+    r++;
+  }
+  return max;
+};
+
+const s = "abba";
+console.log(lengthOfLongestSubstring(s));

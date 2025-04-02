@@ -1,24 +1,23 @@
 // Longest Substring Without Repeating Characters
 //you were able to solve just understand the second algo or just see this sum algo
 var lengthOfLongestSubstring = function (s) {
+  const obj = {};
   let l = 0;
   let r = 0;
   let max = 0;
-  const obj = {};
   while (r < s.length) {
     const cur = s[r];
-
-    if (obj[cur] !== undefined && obj[cur] > 1) {
-      l = obj[cur] + 1;
+    if (obj[cur] !== undefined) {
+      if(obj[cur] >= l){
+        l = obj[cur] + 1;
+      }
     }
 
     obj[cur] = r;
-
     max = Math.max(max, r - l + 1);
-
-    r += 1;
+    r++;
   }
-  console.log(obj);
+  return max;
 };
 
 const str = "abcabcbb";
