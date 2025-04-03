@@ -1,0 +1,8 @@
+1. Case to follow
+
+lowercase with hyphens (kebab-case)  for component filenames and folders
+camelCase  for naming functions and variables
+
+2. Creating a folder at root
+
+whenever you create a folder at src make sure you create a alias for it update in vite.config.ts, tsconfig.json and tsconfig.app.json
