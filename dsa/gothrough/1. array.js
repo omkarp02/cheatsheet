@@ -43,6 +43,9 @@ Longest subarray with given sum K(positives)
 encode using length of the string like abc will be 3#abc
 Enocode and decode
 
+two pointer
+Container with most water 
+
 */
 
 /*
