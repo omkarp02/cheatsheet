@@ -11,16 +11,17 @@ Next Smaller Element
 
 Number of NGEs to the right
 
-find left max and right max
+find left max and right max see the optimal solutions one time
 Trapping Rainwater
 
-see the video
+see the individula contribution and apply use nse and pse
 Sum of subarray minimum
 
-monotonic stack algo
-Asteroid Collision
-
+just find sum of subarray minimum and maximum and subract
 Sum of subarray ranges
+
+you can use a stack
+Asteroid Collision
 
 monotonic stack algo
 Remove k Digits
@@ -36,12 +37,13 @@ Sliding Window maximum
 prev greater element
 Stock span problem
 
-see once
+this one is mermorized
 The Celebrity Problem
 
-do yourself
+watch before interview
 LRU cache (IMPORTANT)
 
+watch before interview
 LFU cache
 
 

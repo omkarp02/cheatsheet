@@ -318,7 +318,6 @@ llTwo.get(2).next = llThree.head;
 // Reverse a LinkedList [Recursive]
 //optimal recursion
 
-
 function addOneToNumberLL(head) {
   const temp = head;
   const carry = addHelper(temp);
@@ -393,20 +392,66 @@ var addTwoNumbers = function (l1, l2) {
 };
 
 const oneNumber = new LinkedList();
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
-oneNumber.append(9);
+oneNumber.append(1);
+oneNumber.append(2);
+oneNumber.append(3);
+oneNumber.append(4);
+oneNumber.append(5);
 
-const secondNumber = new LinkedList();
-secondNumber.append(9);
-secondNumber.append(9);
-secondNumber.append(9);
-secondNumber.append(9);
+oneNumber.print(oneNumber.head);
+
+var reorderList = function (head) {
+  const mid = reverseSecondHalf(head);
+
+  let first = head;
+  let second = mid;
+
+  while (first !== mid) {
+    let temp = first.next;
+    first.next = second;
+    first = temp;
+    temp = second.next;
+    if (first !== mid) {
+      second.next = first;
+      second = temp;
+    }
+  }
+
+  return head;
+};
+
+function reverseSecondHalf(head) {
+  let slow = head;
+  let fast = head;
+  let start = slow;
+  while (fast !== null && fast.next !== null) {
+    start = slow;
+    slow = slow.next;
+    if (fast.next) {
+      fast = fast.next.next;
+    }
+  }
+
+  let prev = null;
+  let cur = slow;
+  let next = slow.next;
+
+  while (cur !== null) {
+    cur.next = prev;
+    prev = cur;
+    cur = next;
+    if (next) {
+      next = next.next;
+    }
+  }
+
+  start.next = prev;
+  return prev;
+}
+
+const head = reorderList(oneNumber.head);
+console.log(">>>>>>>>>>");
+oneNumber.print(head);
 
 // const newHead = addTwoNumbers(oneNumber.head, secondNumber.head)
 // ll.print(newHead)
@@ -451,9 +496,9 @@ function reverseKthNode(head, k) {
   return newHead;
 }
 
-ll.print(ll.head);
-const newHead = reverseKthNode(ll.head, 2);
-ll.print(newHead);
+// ll.print(ll.head);
+// const newHead = reverseKthNode(ll.head, 2);
+// ll.print(newHead);
 
 //Rotate a LL
 //This seems easy you did't do it
@@ -505,20 +550,18 @@ const copyRandomList = function (head) {
   return copy;
 };
 
-	
 // Detect a loop in LL
-var hasCycle = function(head) {
-  let fast = head
-  let slow = head
+var hasCycle = function (head) {
+  let fast = head;
+  let slow = head;
 
-  while(fast !== null && fast.next !== null){
-      fast = fast.next.next
-      slow = slow.next
-      if(fast === slow) return true
+  while (fast !== null && fast.next !== null) {
+    fast = fast.next.next;
+    slow = slow.next;
+    if (fast === slow) return true;
   }
 
-  return false
-
+  return false;
 };
 
 //Remove Duplicates in a sorted Linked List

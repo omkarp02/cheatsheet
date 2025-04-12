@@ -31,6 +31,10 @@ Longest Substring with At Most K Distinct Characters
 this will be solved using 3rd algo
 Subarray with k different integers
 
+brute
+better find the character and check the neighbour to find palindrome for the odd one for even just add another condition
+Longest Palindromic Substring
+
 if you want see from 12:45
 Minimum Window Substring
 

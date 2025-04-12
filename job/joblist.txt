@@ -55,6 +55,7 @@ Atlassin
 Flipkart
 Paypal
 zepto
+myntra
 blinkit
 swiggy
 Sap

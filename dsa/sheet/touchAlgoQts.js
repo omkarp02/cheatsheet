@@ -44,7 +44,7 @@ Kth Missing Positive Number - see the algo
 Recursoin
 
 
-see the algo 1 and algo 2 and algo 3 in  algo folder
+see the algo 1 and algo 2 and algo 3 algo 4 in  algo folder
 see the combination 2 problem algo one time directly wathc the video on this follow up watch quesiton subeset 2
 
 
@@ -141,10 +141,19 @@ Minimum/Maximum Falling Path Sum (DP-12)
 
 Subsequence dp
 
+tabulatino would be first loop of index then target
 Subset sum equal to target (DP- 14) take overlook of this
 Partition Set Into 2 Subsets With Min Absolute Sum Diff (DP- 16)
 Minimum Coins (DP - 20) -- this you can do if you want
 
 
+
+*/
+
+/*
+
+Heap
+
+heapify algo
 
 */

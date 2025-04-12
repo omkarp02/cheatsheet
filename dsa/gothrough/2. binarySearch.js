@@ -2,11 +2,12 @@
 
 Alogirthm
 
-binary search
-binary search on answer => square root
-min (max) => aggressive cow
+algo 1 don't increase index at take
+Combination Sum
 
-****************
+brute : algo 1 and set
+optimal: 
+Combination Sum-II
 
 
 easy using binary algo
@@ -52,59 +53,21 @@ Find peak element
 using binary search
 Find square root of a number in log n
 
-using binary search
-Find the Nth root of a number using binary search
+brute pick not pick and set
+optimal algo 4
+Subset Sum-II
 
-using binary search
-Koko Eating Bananas
+pick not pick
+Combination Sum - III
 
-using binary search
-Minimum days to make M bouquets
+easy -/2   => a/1 b/1 c/1 => ad/0 bd/0 cd/0 and so on
+Letter Combinations of a Phone number
 
-using binary search
-Find the smallest Divisor
+do recursino on partition like see where you can put partition
+Palindrome Partitioning
 
-using binary search
-Capacity to Ship Packages within D Days
-
-watch striver video
-Kth Missing Positive Number
-
-place cow at min dist like 1, 2, 3, 4 and so on
-Aggressive Cows
-
-this is a problem that you must understand thoraly
-Book Allocation Problem
-
-smae as book allocation
-Split array - Largest Sum
-
-smae as book allocation
-Painter's partition
-
-did'nt do
-Minimize Max Distance to Gas Station
-
-did'nt do
-Median of 2 sorted arrays
-
-did'nt do
-Kth element of 2 sorted arrays
-
-do binary search on every row easy
-Find the row with maximum number of 1's
-
-consider you flatten the matrix and  r = x % m  col = x % m
-Search in a 2 D matrix
-
-the top right corner you can implement binary search element on one side
-Search in a row and column wise sorted matrix
-
-this one not intuitive
-Find Peak Element (2D Matrix)
-
-this one not intuitive
-Matrix Median
+easy recursion
+Word Search
 
 
 

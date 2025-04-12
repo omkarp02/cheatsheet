@@ -40,6 +40,12 @@ here there is edge case with zero suppose the array is [2, 0, 0, 3] your answer 
 optimal:  can be done using sliding window
 Longest subarray with given sum K(positives)
 
+encode using length of the string like abc will be 3#abc
+Enocode and decode
+
+two pointer
+Container with most water 
+
 */
 
 /*
@@ -78,14 +84,20 @@ Longest Consecutive Sequence in an Array
 this one watch striver video for optimal solution
 Set Matrix Zeros
 
- you can find a diagonal pattern here
+better:  transpose the matrix than reverse how to transpose hint diagonal
+hashmap: 1e, 1a, 1t is the key
 Rotate Matrix by 90 degrees
 
 this was easy try one time just the theory hint four for loop for four side don't try to complicate
+keep top, left at 0 then bottom right at 5
+then for  loop left to right and so on
 Print the matrix in spiral manner
 
 using prefix sum hashmap 
 Count subarrays with given sum
+
+brute:  sort every word
+Group anagram
 
 
 
@@ -115,7 +127,7 @@ Largest Subarray with 0 Sum
 
 Count number of subarrays with given xor K
 
-optimal: sort by both pair
+optimal: sort by both pair first sort by first element and if both elelent are equeal sort by last element
 Merge Overlapping Subintervals
 
 Merge two sorted arrays without extra space

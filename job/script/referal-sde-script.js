@@ -5,11 +5,13 @@ async function asdf(company, timeout) {
   //sciprt to get name and click on connect button
   let sentence = "";
   for (let containerElement of document.getElementsByClassName(
-    "KKXxoVhkewFfDDlMvNDLwlwLWKZeZEKLPqKcc UKjGMxoynWBTgPybJLiAoFFpeysIA"
+    "juhoJQdIhVniCrgehEugyDgNlCxqYmpHPQK WsQopqXvIaIMgOuqMAHQMoiWTgfsMPYIqXXFxg"
   )) {
     await sleep(timeout)
     var button = containerElement.querySelector("button");
-    var ariaLabel = button.getAttribute("aria-label");
+    if(!button) continue
+    var ariaLabel = button?.getAttribute("aria-label");
+    if(!ariaLabel) continue
     if (ariaLabel.startsWith("Invite")) {
       var name = ariaLabel.split(" ")[1];
       console.log(name); // Output the name
@@ -90,7 +92,7 @@ async function dothedeeds(timeout, sentence){
 }
 
 
-asdf("Swiggy", 1000);
+asdf("PWC", 1000);
 
 //*************************************************** */
 
