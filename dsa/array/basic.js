@@ -421,7 +421,7 @@ const arr18 = [102, 4, 100, 1, 101, 3, 2];
 
 // console.log(longestConsecutive(arr18))
 
-//find same qustion by find subarray with equal amount of 0 and 1s 
+//find same qustion by find subarray with equal amount of 0 and 1s
 //this can be done same replace zero with -1 now question is find sum where k is zero
 //find Largest sum contiguous Subarray
 // Count Subarray sum Equals K
@@ -462,6 +462,30 @@ const arr21 = [1, 2, 3, -3, 1, 1, 1, 4, 2, -3];
   This optimized I have not solved this you try to solve or you can memerize
 
 */
+
+var majorityElement = function (nums) {
+  let count1 = 0;
+  let count2 = 0;
+  let ele1;
+  let ele2;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (count1 === 0 && nums[i] !== ele2) {
+      count1 = 1;
+      ele1 = nums[i];
+    } else if (count2 === 0 && nums[i] !== ele1) {
+      count2 = 1;
+      ele2 = nums[i];
+    } else if (ele1 === nums[i]) {
+      count1++;
+    } else if (ele2 === nums[i]) {
+      count2++;
+    } else {
+      count1--;
+      count2--;
+    }
+  }
+};
 
 //Find whether an array is a subset of another array
 /*  This was very easy so did'nt solved it */
@@ -523,7 +547,6 @@ what shashcode video
 
 */
 
-
 //------------------------------------------------------------------------------------------------------- helpers
 function swap(first, second, arr) {
   let temp = arr[first];
@@ -536,5 +559,3 @@ function swapInTwoArray(first, second, arr1, arr2) {
   arr1[first] = arr2[second];
   arr2[second] = temp;
 }
-
-

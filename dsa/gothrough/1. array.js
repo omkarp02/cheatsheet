@@ -25,19 +25,21 @@ Move Zeros to end
 don't need to solve
 Find the Union
 
+formula for sum of n natural number is (n * (n + 1)) / 2  
+can be done using xor
 don't need to solve
 Find missing number in an array
 
-sliding window
+can be done in single traversal
 Maximum Consecutive Ones
 
 better: hashing
-optimal: sum all the number
+optimal: using xor
 Find the number that appears once, and other numbers twice.
 
 better: hashing
 here there is edge case with zero suppose the array is [2, 0, 0, 3] your answer will be index 3 to 3 but it is 1 to 3 just remember the edge case solution is easy
-optimal:  can be done using sliding window
+optimal:  prefix sum by anuj here for 0 edge case just do not reudpate
 Longest subarray with given sum K(positives)
 
 encode using length of the string like abc will be 3#abc
@@ -64,7 +66,7 @@ Majority Element (>n/2 times)
 
 Kadane's Algorithm, maximum subarray sum
 
-this you did'nt do as it is covered in dp
+this was easy can be done in o(n) useLowestSoFar
 Stock Buy and Sell
 
 better: can be done using an extra array
@@ -81,10 +83,11 @@ better: sort the array
 optimal: use set
 Longest Consecutive Sequence in an Array
 
-this one watch striver video for optimal solution
+brute you were able to solve easily see the mapping
+better O(2n) space complixisty 0(1) convert to -1 instead of zero in first iteration
 Set Matrix Zeros
 
-better:  transpose the matrix than reverse how to transpose hint diagonal
+better:  transpose the matrix than reverse
 hashmap: 1e, 1a, 1t is the key
 Rotate Matrix by 90 degrees
 
@@ -130,6 +133,7 @@ Count number of subarrays with given xor K
 optimal: sort by both pair first sort by first element and if both elelent are equeal sort by last element
 Merge Overlapping Subintervals
 
+better start from first array end and second array first and compare
 Merge two sorted arrays without extra space
 
 missing number better: hash optimal: cyclic sort and maths 
@@ -142,7 +146,7 @@ Count Inversions
 merge sort
 Reverse Pairs
 
-kadn algo
+this can be done using suffix and prefix
 Maximum Product Subarray
 
 */
