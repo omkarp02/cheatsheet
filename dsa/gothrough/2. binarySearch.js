@@ -1,5 +1,15 @@
 /*
 
+Alogirthm
+
+algo 1 don't increase index at take
+Combination Sum
+
+brute : algo 1 and set
+optimal: 
+Combination Sum-II
+
+
 easy using binary algo
 Binary Search to find X in sorted array
 
@@ -39,44 +49,26 @@ Single element in a Sorted Array
 e[mid] > e[mid + 1] decresing part of array , e[mid] < e[mid + 1] increasing part of array
 Find peak element
 
+
+using binary search
 Find square root of a number in log n
 
-Find the Nth root of a number using binary search
+brute pick not pick and set
+optimal algo 4
+Subset Sum-II
 
-Koko Eating Bananas
+pick not pick
+Combination Sum - III
 
-Minimum days to make M bouquets
+easy -/2   => a/1 b/1 c/1 => ad/0 bd/0 cd/0 and so on
+Letter Combinations of a Phone number
 
-Find the smallest Divisor
+do recursino on partition like see where you can put partition
+Palindrome Partitioning
 
-Capacity to Ship Packages within D Days
+easy recursion
+Word Search
 
-Kth Missing Positive Number
-
-Aggressive Cows
-
-Book Allocation Problem
-
-Split array - Largest Sum
-
-Painter's partition
-code
-
-Minimize Max Distance to Gas Station
-
-Median of 2 sorted arrays
-
-Kth element of 2 sorted arrays
-
-Find the row with maximum number of 1's
-
-Search in a 2 D matrix
-
-Search in a row and column wise sorted matrix
-
-Find Peak Element (2D Matrix)
-
-Matrix Median
 
 
 
