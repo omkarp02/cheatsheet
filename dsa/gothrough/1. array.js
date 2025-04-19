@@ -96,7 +96,7 @@ keep top, left at 0 then bottom right at 5
 then for  loop left to right and so on
 Print the matrix in spiral manner
 
-using prefix sum hashmap 
+using prefix sum ,  hashmap store [sum, count]
 Count subarrays with given sum
 
 brute:  sort every word
@@ -128,6 +128,7 @@ just like 3 sum
 optimal this can be done using prefix sum
 Largest Subarray with 0 Sum
 
+prefix sum just like Count subarrays with given sum  here hashmap store [sum, count]
 Count number of subarrays with given xor K
 
 optimal: sort by both pair first sort by first element and if both elelent are equeal sort by last element

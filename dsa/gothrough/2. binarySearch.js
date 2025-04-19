@@ -2,6 +2,10 @@
 
 Alogirthm
 
+make sure this is code
+
+if(a <= b){}else {} make sure you put = every time
+
 algo 1 don't increase index at take
 Combination Sum
 
@@ -9,7 +13,7 @@ brute : algo 1 and set
 optimal: 
 Combination Sum-II
 
-
+  const mid = Math.floor((high + low) / 2);
 easy using binary algo
 Binary Search to find X in sorted array
 
@@ -25,53 +29,78 @@ Search Insert Position
 easy using binary algo
 Floor/Ceil in Sorted Array
 
+optimal find lower bound and upper bound
 easy using binary algo
 Find the first or last occurrence of a given number in a sorted array
 
 lower and upper  bound
 Count occurrences of a number in a sorted array with duplicates
 
-lower value is smaller then the mid value
+better: find peak search in first half then in second half
+optimal: meorize this algo 
 Search in Rotated Sorted Array I
 
 arr[low] = arr[mid] = arr[high] do low++ and high--
 Search in Rotated Sorted Array II
 
-pick the sorted half and store the lowest 
+pick the sorted half store the minimum from it and elimite whole sorted half
 Find minimum in Rotated Sorted Array
 
-find the peak
+find the minimum in array can solve this problem
 Find out how many times has an array been rotated
 
 odd even index pattern
-Single element in a Sorted Array
+Single element in a Sorted Array  
 
 e[mid] > e[mid + 1] decresing part of array , e[mid] < e[mid + 1] increasing part of array
+here just write condition for increasing part of array and decreasing part of array
 Find peak element
 
 
-using binary search
+answers pattern
 Find square root of a number in log n
 
-brute pick not pick and set
-optimal algo 4
-Subset Sum-II
+same as above	
+Find the Nth root of a number using binary search
 
-pick not pick
-Combination Sum - III
-
-easy -/2   => a/1 b/1 c/1 => ad/0 bd/0 cd/0 and so on
-Letter Combinations of a Phone number
-
-do recursino on partition like see where you can put partition
-Palindrome Partitioning
-
-easy recursion
-Word Search
+so here binary search will on distance between cow like at start you take atleast 1 distance and place cows
+Aggresive Cows
 
 
+here see you need to find min book you can allocate so start from 49 like we can allocate till 49 books then increase
+if able to allocate exactly n student condition to break for linear search
+Allocate Book
 
 
+same as above
+Split array - Largest Sum
+
+same as above
+Painter's partition
+
+very easy 
+brute: normal merge two sorted array using extra space and find median
+better: we have two sorted array find the middle index and do with two pointer method
+Median of 2 sorted arrays
+
+easy just like above
+K-th element of two sorted arrays 
+
+brute you know
+better using lower boudn and upper boudn on every array
+Find the row with maximum number of 1's
+
+brute
+better do binary search on inner array
+optimal hypotetically flatten a 2d array to 1d array so start is 0 and end is n * m - 1
+here to get row index / m and to get col index % m
+Search in a 2 D matrix
+
+optimal: stand on grid[0][col - 1] and start elementing
+Search in a row and column wise sorted matrix
+
+
+Find Peak Element (2D Matrix)
 
 
 */

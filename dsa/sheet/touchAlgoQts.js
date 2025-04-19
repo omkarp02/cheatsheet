@@ -33,6 +33,8 @@ peak element algo of kunal kushwaha - just see the also
 
 Find square root of a number in log n - you can just see the algo
 
+better: see the stiver solution
+optimal using binary search you can find how many number are missing using index and that element
 Kth Missing Positive Number - see the algo
 
 
