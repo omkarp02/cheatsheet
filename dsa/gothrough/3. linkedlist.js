@@ -42,6 +42,7 @@ Sort a LL of 0's 1's and 2's by changing links
 
 brute = traversing both list + hashing
 optiml = this has one memeriosed solutino that you know start trversing both node than finish move the ponter of first to second
+break point for no interseciton is when both node are null
 Find the intersection point of Y LL
 
 better: reverse
