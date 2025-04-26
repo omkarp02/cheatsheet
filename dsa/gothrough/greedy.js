@@ -14,6 +14,7 @@ easy
 Lemonade Change
 
 try out all possible combination check for valid parathens while recursion using count
+use count to validate the parenthitis
 optimal keep min and max hint count maintain a range
 Valid Paranthesis Checker
 
@@ -32,11 +33,10 @@ Jump Game
 you were able to do yourself
 Jump Game 2
 
-intersection how many intersection that much platform required for this you can use merge interval approach
-striver approach => sort the arrival and departure and keep pointer
+striver approach => sort the arrival and departure array and keep pointer and some what merge interval
 Minimum number of platforms required for a railway
 
-sort the array by profit maintain a array of last deadline day
+sort the array by profit maintain a array of last deadline day keep an array of size max deadline to solv
 Job sequencing Problem
 
 brute => once go from left and then go from right

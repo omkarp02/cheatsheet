@@ -3,6 +3,8 @@
 was  can be done using the monotonic algo
 Next Greater Element
 
+this can be donw using nge and pge my solution
+and also by adding an hypthetical array
 was  can be done using the monotonic algo
 Next Greater Element 2
 
@@ -12,6 +14,7 @@ Next Smaller Element
 Number of NGEs to the right
 
 find left max and right max see the optimal solutions one time
+done using prefix max and suffix max this is not nge
 Trapping Rainwater
 
 see the individula contribution and apply use nse and pse
@@ -29,6 +32,7 @@ Remove k Digits
 next smallest and prev smallest
 Largest rectangle in a histogram
 
+for  optimzatin get the prefixsum see striver video
 Maximal Rectangles
 
 easy dont' solve

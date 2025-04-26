@@ -9,7 +9,7 @@ Max Consecutive Ones III
 2nd algo
 Fruit Into Baskets
 
-2nd algo
+2nd algo make sure this can be done using (r - l + 1) - maxfrequency > k
 longest repeating character replacement
 
 this is done by third algo where you find the subarray less than equal to goal and then find subarray which is less than equal to goal - 1 and return the difference
@@ -19,6 +19,7 @@ Binary subarray with sum
 problem is exactly like above replace odd with 1 and event with 0
 Count number of nice subarrays
 
+this do by keeping a = index , b = index, c = index
 can be solved by normal sliding window
 Number of substring containing all three characters
 
