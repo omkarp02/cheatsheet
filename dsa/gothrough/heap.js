@@ -7,6 +7,7 @@ it is represented in array from 1
 
 Insert in last index and compare above
 
+delte the first node bring the last node to first and then start comparing from above
 in heap only root node is deleted
 
 
@@ -16,15 +17,16 @@ Kth largest element in an array [use priority queue]
 max heap
 Kth smallest element in an array [use priority queue]
 
-
+min heap just keep the next k element in min heap
 Sort K sorted array
 
-make a custom heap with data {array current index value, index, array number}
+min heap of (value, node)
 Merge M sorted Lists
 
 use min priority queue and store (value and index)
 Replace each array element by its corresponding rank
 
+process the most frequent character first
 your solutoin hash map
 optimal can be done using max heap and queue
 see needtcode video
