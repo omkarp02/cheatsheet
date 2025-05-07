@@ -1,3 +1,16 @@
+also you can refer to this website 
+https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed
+
+Functional Requirement
+
+user can quickly see who they are following adn who follow
+we can quickly load all post for given user
+low latancy news feed from post that a user follow
+post can have configurable privacy types, as followers
+user can comment on posts, and comments can be infinitely nested
+
+
+
 Instagram
 
 
@@ -31,6 +44,10 @@ Solutions
 
 
 Database cassandra good for write
+cassandra is good because it uses leader less replication and write are first buffered in memory due to lsm tree
+here you can explain advantage of lsm tree
+
+so here we are using kafka so that none of the write are lost and flink for checkpointing
 
 so partioning key is userid  sort key and use hash range partitioning
 

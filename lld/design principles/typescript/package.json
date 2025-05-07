@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "json-parser": "^3.1.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4"
+  }
+}

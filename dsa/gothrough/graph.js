@@ -1,9 +1,11 @@
 /*
 
 easy
+make vis true in for loop while iterating adj
 BFS
 
 easy
+here do vis true at start
 DFS
 
 easy use bfs or dfs
@@ -27,7 +29,7 @@ put all 1 in queue and do bfs
 dfs
 Surrounded Regions (dfs)
 
-easy
+put all boundary element in array first 
 Number of Enclaves [flood fill implementation - multisource]
 
 bfs algo
@@ -49,6 +51,8 @@ Cycle Detection in Directed Graph (DFS)
 
 dfs + hash map 
 Clone Graph
+
+topo sort only work on dag directed acyclic graph
 
 do dfs once you reach end put in stack
 Topo Sort (dfs)
@@ -83,7 +87,7 @@ Shortest Path in UG with unit weights
 do topo sort => take node out from stack and start marking the distance of there adj node 
 Shortest Path in DAG
 
-use min heap + dist arr
+use min heap + dist arr in queue put this [dist, node] ( this fail in negative edges and negative cycle)
 Djisktra's Algorithm
 
 Why priority Queue is used in Djisktra's Algorithm

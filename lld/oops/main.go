@@ -1,5 +1,5 @@
 package main
 
-func Orginal() {
+func main() {
 
 }

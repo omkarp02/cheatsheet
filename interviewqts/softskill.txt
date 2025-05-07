@@ -1,0 +1,79 @@
+Tell me about yourself
+
+1. Present past future
+Present - snapshot fo you current professional capacity
+what you do in your current role , succe matrics , recent achivement
+1min
+
+2. past
+identfy 2 - 3 attribute related to role
+match you  experice to the atrribute
+select 1 key moment to highlight that experience
+
+3. future
+
+
+
+
+
+
+Tell me about yourself
+
+
+"I’m a Full Stack Developer with 3 years of experience, and I also have some hands-on experience in DevOps. Currently, I’m leading a team of 5 developers on an internal system project for our organization. Along with coding, I’m involved in planning, coordinating tasks, and ensuring that all sprints are completed on time"
+
+I started my journey at a startup, where I got hands-on experience working across the full stack—frontend, backend, and DevOps. In just 9 months, I worked on around 5 different projects, which helped me quickly build a strong foundation in a variety of technologies. But I wanted to gain experience in larger-scale systems to understand how big projects are planned and managed, so I moved to an insurance-based company. There, I worked on a fintech project and built microservices from scratch.
+
+Looking ahead, I’m excited to take on new challenges, grow both technically and as a team leader, and contribute to building scalable, high-quality solutions. With my mix of hands-on development, DevOps knowledge, and leadership experience, I believe I can be a valuable asset to your team and contribute meaningfully to the success of your projects.
+
+Project worked on codeb : eplannerpro, icall, finvax, react flow, pixis
+
+
+
+
+So why you move from monolith to microservices
+
+
+
+
+all the services were very tightly couple like payment, activity tracking, auth, event handling so as i tolded we have this insurance project and we were just refactoring or put some new functionality and doing thing so we needed to de couple this thing so that developer can focus on that particular thing and this thing can be seamlessly integrated or updated in future if needed while we just focus on the core logic like we have many external api called for verification we want so we build a likek strucrure response for that , than there is the payment, tracking, event, master, incentive services which were used in most of insurance applicatin which were reused
+
+also scability was an issue like the admin ,user all were on same system we needed so that we scale this sercies indivual also we need some services to be high available
+
+
+
+
+tell about one project you worked on
+
+
+
+So i don't recall now since it's like 10month i have not worked on anything complex and i don't  understand what cmplexity level you have in mind,  but if i had to say I like never worked on bug fixing or things like this i always worked on entire project or entire module so i difficulty i faced was make the inital decision like what the schema design, what structure for my project, what library would be best suited for this requirement because we can't mess up here. like current project i have working on tanstack router 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

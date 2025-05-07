@@ -1,3 +1,6 @@
+https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly 
+refer to this link
+
 🔗 URL Shortener System Design Notes
 ✅ Requirements
 Given a long URL, generate a unique short link (TinyURL).
