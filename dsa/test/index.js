@@ -25,11 +25,7 @@ root.right.left = new TreeNode(6);
 root.right.right = new TreeNode(7);
 
 var flatten = function(root) {
-    if(root === null){
-      return null
-    }
-
-    flatten(root.right)
+    
 
     
 
