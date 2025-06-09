@@ -1,3 +1,5 @@
+https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox
+
 Requirement
 
 user can create and upload fiels
@@ -15,6 +17,7 @@ document permission table
 userid, docid
 
 here multileader or leaderless replication can create permission explain with example
+i think this is basically overkill
 
 so we will go with single leader replication
 
