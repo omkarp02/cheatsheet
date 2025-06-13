@@ -148,6 +148,13 @@ Subset sum equal to target (DP- 14) take overlook of this
 Partition Set Into 2 Subsets With Min Absolute Sum Diff (DP- 16)
 Minimum Coins (DP - 20) -- this you can do if you want
 
+lcs
+
+this are not touch but algo to solve problem
+
+longest common subsequest 
+print lcs
+
 
 
 */

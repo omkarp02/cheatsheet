@@ -46,6 +46,41 @@ var lengthOfLIS = function (nums) {
 };
 
 
+function listnonintuvative(nums) {
+  const lisCount = [];
+  const backtrack = [];
+  let maxIndex = 0;
+
+  let max = 1;
+  for (let i = 0; i < nums.length; i++) {
+    lisCount[i] = 1;
+    backtrack[i] = i;
+    for (let j = 0; j < i; j++) {
+      if (nums[j] < nums[i]) {
+        if (lisCount[i] < 1 + lisCount[j]) {
+          lisCount[i] = 1 + lisCount[j];
+          backtrack[i] = j;
+        }
+      }
+    }
+    if (lisCount[i] > max) {
+      max = lisCount[i];
+      maxIndex = i;
+    }
+  }
+  console.log(max[maxIndex]);
+
+  let res = [nums[maxIndex]];
+  while (backtrack[maxIndex] !== maxIndex) {
+    res.unshift(nums[backtrack[maxIndex]])
+    maxIndex = backtrack[maxIndex]
+  }
+
+  return res;
+}
+
+
+
 const nums = [10, 9, 2, 5, 3, 7, 101, 18];
 
 console.log(lengthOfLIS(nums));

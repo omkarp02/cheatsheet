@@ -26,7 +26,7 @@ Segrregate odd and even nodes in LL
 
 
 better =  find length and delete the node
-optimal = fast and slow move fast n time then move fast and slow togethere
+optimal = first traversal first pointer n times then move first and second pointer one by one
 Remove Nth node from the back of the LL
 
 fast and slow pointer
@@ -67,7 +67,9 @@ optimal => make chain of two list like 1 -> 1 -> 2 -> 2 -> 3 -> 3
 Clone a Linked List with random and next pointer
 
 
+****************** fuckedup question *******************
 
+Reverse LL in group of given size K
 
 
 

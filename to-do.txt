@@ -1,0 +1,13 @@
+func main() {
+	swap(nums, i, j)
+}
+
+
+check why here pass by reference is working
+func swap(arr []int, i int, j int) {
+	temp := arr[i]
+	arr[i] = arr[j]
+	arr[j] = temp
+}
+
+see like there is array then we can have slice of array which is reference to that array find how to deep clone this

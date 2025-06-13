@@ -112,10 +112,29 @@ node -> right = prev
 node -> left = null
 prev = root
 
-try yourself once anuj vidoe
-binary tree to dll 
-sorted linkedlist to bst
+Sorted LinkedList to BST
 
 Flatten Binary Tree to LinkedList
+
+Convert Binary Tree to DoublyLinkedList
+
+
+
+
+
+
+
+******************* fucked up question *************************
+
+post-order traversal of binary tree using 2 stack
+post-order traversal of binary tree using 1 stack
+
+preorder, inorder and post order traversl ain on traversal
+
+maximum widht of binary tree
+
+morris preorder traversal of binary tree
+
+Sorted LinkedList to BST
 
 */

@@ -51,7 +51,10 @@ watch before interview
 LFU cache
 
 
+*************** fucked up question *****************
 
+Sum of subarray minimum
+largest rectange in histogram just once see the optimal solution
 
 
 

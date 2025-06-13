@@ -108,7 +108,10 @@ Number of ways to arrive at destination
 
 Minimum steps to reach end from start by performing multiplication and mod operations with array elements
 
-Step 1 : relax all edges
+this help you to detect negative cycle, this only work in directed graph
+Step 1 : relax all edges n-1 times sequentially
+step 2 : relax => if(dist[u] + wt < dist[v]) {dist[v] = dist[u] + w}0
+
 Bellman Ford Algorithm
 
 Floyd Warshal Algorithm
@@ -128,6 +131,10 @@ Disjoint set
 
 Krushal algo
 	
+easy using disjoint set
 Number of operations to make network connected
+
+make row 1 to 4 then col 5 to 8 and start connecting
+Most Stones Removed with Same Row or Column
 
 */

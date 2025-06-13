@@ -55,4 +55,9 @@ Merge Intervals
 sort by ending time
 Non-overlapping Intervals
 
+************* fucked up questin ***************
+
+platform you can see this if you want
+
+
 */

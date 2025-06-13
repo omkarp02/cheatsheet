@@ -16,16 +16,20 @@ Remove duplicates from Sorted array
 don't need to solve
 Left Rotate an array by one place
 
+Step 1: Reverse the last k elements of the array
+Step 2: Reverse the first n-k elements of the array.
+Step 3: Reverse the whole array.
 don't need to solve
 Left rotate an array by D places
 
+put i on zero and j on next non zero and swap if j is non zero
 don't need to solve
 Move Zeros to end
 
 don't need to solve
 Find the Union
 
-formula for sum of n natural number is (n * (n + 1)) / 2  
+formula for sum of n natural number  
 can be done using xor
 don't need to solve
 Find missing number in an array
@@ -94,6 +98,7 @@ Rotate Matrix by 90 degrees
 this was easy try one time just the theory hint four for loop for four side don't try to complicate
 keep top, left at 0 then bottom right at 5
 then for  loop left to right and so on
+ while (left <= right && top <= right) remainber this condiatino put this for last two 
 Print the matrix in spiral manner
 
 using prefix sum ,  hashmap store [sum, count]
@@ -114,6 +119,9 @@ Pascal's Triangle
 better: hashing
 optimal: you know since it is n/3 there would be 2 element present which would be appearing n/3 times like if n = 8 then it would be 8/3 = 2 so 3 + 3 + 2 so 2 numbers
 see the optimal solution can be solved by twiking morees solution
+
+(count1 === 0 && item != cur2) don't forgot the second condition
+(count2 === 0 && item != cur1) don't forgot the second condition
 Majority Element (n/3 times)
 
 
@@ -151,3 +159,19 @@ this can be done using suffix and prefix
 Maximum Product Subarray
 
 */
+
+
+/*
+  ***************** fucked up question ***************
+    3 sum
+    can see merge inteval like edge case don't forgot to
+    if (interval[1] >= cur[0] || interval[1] >= cur[1]) {
+      interval = [interval[0], Math.max(cur[1], interval[1])];
+    }
+
+    count inversion you can check just 19:16 if you want
+
+
+
+*/
+

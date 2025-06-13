@@ -6,13 +6,6 @@ make sure this is code
 
 if(a <= b){}else {} make sure you put = every time
 
-algo 1 don't increase index at take
-Combination Sum
-
-brute : algo 1 and set
-optimal: 
-Combination Sum-II
-
   const mid = Math.floor((high + low) / 2);
 easy using binary algo
 Binary Search to find X in sorted array
@@ -63,7 +56,7 @@ Find square root of a number in log n
 same as above	
 Find the Nth root of a number using binary search
 
-so here binary search will on distance between cow like at start you take atleast 1 distance and place cows
+you are like maintian a minimum distance of x 
 Aggresive Cows
 
 
@@ -71,6 +64,9 @@ here see you need to find min book you can allocate so start from 49 like we can
 if able to allocate exactly n student condition to break for linear search
 Allocate Book
 
+this first try with brute force like finding max diff then placing the gas statin in center of it
+optimal try using priorty queue for inner loop
+Minimise Maximum Distance between Gas Stations
 
 same as above
 Split array - Largest Sum
@@ -101,6 +97,11 @@ Search in a row and column wise sorted matrix
 
 
 Find Peak Element (2D Matrix)
+
+*********** fucked up question **************
+
+peak element
+kth missing number
 
 
 */

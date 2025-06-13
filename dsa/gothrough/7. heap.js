@@ -11,12 +11,13 @@ delte the first node bring the last node to first and then start comparing from 
 in heap only root node is deleted
 
 
-can be done using min heap
+can be done using min heap, quick select
 Kth largest element in an array [use priority queue]
 
 max heap
 Kth smallest element in an array [use priority queue]
 
+this is very easy   
 min heap just keep the next k element in min heap
 Sort K sorted array
 
@@ -55,7 +56,11 @@ optimal = bucket sort
 K most frequent elements
 
 
+******************** fuckedup question **********************
 
+quick select 
+job schedular
+bucket sort
 
 
 

@@ -10,6 +10,7 @@ Max Consecutive Ones III
 Fruit Into Baskets
 
 2nd algo make sure this can be done using (r - l + 1) - maxfrequency > k
+map[character] = frequency
 longest repeating character replacement
 
 this is done by third algo where you find the subarray less than equal to goal and then find subarray which is less than equal to goal - 1 and return the difference
@@ -21,6 +22,7 @@ Count number of nice subarrays
 
 this do by keeping a = index , b = index, c = index
 can be solved by normal sliding window
+map[character] = index
 Number of substring containing all three characters
 
 was easy don't solve
@@ -40,6 +42,19 @@ if you want see from 12:45
 Minimum Window Substring
 
 Minimum Window Subsequence
+
+
+
+
+************* FUCKED UP QUESTION ***********
+
+Longest Substring Without Repeating Characters 
+note: remainber this edge case
+  if(map[cur] + 1 > l){
+        l = map[cur] + 1;
+      }
+
+see binary subarray one time
 
 
 */
