@@ -104,4 +104,11 @@ peak element
 kth missing number
 
 
+question you can solve
+
+peak element just see solution
+Aggressive Cows (just see solution)
+book allocation problem (just see solutin)
+Median of 2 sorted arrays (just see solution)
+
 */

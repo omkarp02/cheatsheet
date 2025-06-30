@@ -33,9 +33,13 @@ Height of a Binary Tree
 recursion
 Check if the Binary tree is height-balanced or not
 
+   
 recursion
 Diameter of Binary Tree
 
+ const left = Math.max(helper(root.left), 0);
+    const right = Math.max(helper(root.right), 0);
+    remember to handle negative
 recursion
 Maximum path sum
 
@@ -131,7 +135,9 @@ post-order traversal of binary tree using 1 stack
 
 preorder, inorder and post order traversl ain on traversal
 
-maximum widht of binary tree
+this you were able to solve yourseflt
+left 2 * i + 1 ,right 2 * i + 2 now build intuitino on this
+Maximum width of a Binary Tree
 
 morris preorder traversal of binary tree
 

@@ -55,6 +55,7 @@ note: remainber this edge case
       }
 
 see binary subarray one time
+longest repeating character replacement you can just see this one time
 
 
 */

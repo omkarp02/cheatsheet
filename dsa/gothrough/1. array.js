@@ -172,6 +172,13 @@ Maximum Product Subarray
     count inversion you can check just 19:16 if you want
 
 
+    question you can solve
+
+    next permutation
+    Count subarrays with given sum
+
 
 */
+
+
 

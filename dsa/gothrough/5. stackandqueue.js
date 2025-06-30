@@ -53,6 +53,7 @@ LFU cache
 
 *************** fucked up question *****************
 
+Trapping Rainwater
 Sum of subarray minimum
 largest rectange in histogram just once see the optimal solution
 
