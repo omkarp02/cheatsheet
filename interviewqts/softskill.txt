@@ -50,6 +50,19 @@ tell about one project you worked on
 So i don't recall now since it's like 10month i have not worked on anything complex and i don't  understand what cmplexity level you have in mind,  but if i had to say I like never worked on bug fixing or things like this i always worked on entire project or entire module so i difficulty i faced was make the inital decision like what the schema design, what structure for my project, what library would be best suited for this requirement because we can't mess up here. like current project i have working on tanstack router 
 
 
+Interview 
+
+https://www.youtube.com/watch?v=gfoqygqCW38
+
+you should be clear what you are explaining to the interviewer
+explaining tradeoff not just passion of tool
+did i answer your question fully
+clear structure in answer
+knowing when to  say i don't know
+sharing your failure honestly
+using  a visula metaphor
+
+
 
 
 
