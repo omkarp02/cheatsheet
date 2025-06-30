@@ -12,7 +12,7 @@ subsequence
 
 solved every thing
 
-dp on strings
+dp on strings this the whole you were able to do yourself
 
 you were able to do yourself
 longest common subsequest 
@@ -20,7 +20,7 @@ longest common subsequest
 you were able to do yourself
 print lcs
 
-you were able to do by your method but check striver method
+you were able to do yourself
 longest common substring
 
 
