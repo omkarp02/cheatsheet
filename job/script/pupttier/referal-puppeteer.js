@@ -6,6 +6,7 @@ const openAndVisitProfiles = async ({
   profilePicClassName,
   connectBtnClassName,
   message,
+  target,
 }) => {
   const browser = await puppeteer.launch({
     headless: false,
@@ -14,6 +15,7 @@ const openAndVisitProfiles = async ({
     defaultViewport: null,
   });
 
+  let count = 0;
   const page = await browser.newPage();
 
   // Set LinkedIn session cookie
@@ -23,52 +25,125 @@ const openAndVisitProfiles = async ({
     domain: ".www.linkedin.com",
   });
 
+    
+  let pageNumber = getPageFromUrl(url)
+
   // Go to search result page
-  await page.goto(url, { waitUntil: "load" });
+  while (count < target) {
+    await page.goto(url, { waitUntil: "load" });
 
-  // await page.waitForSelector(profilePicClassName);
-  // let profileUrls = await page.$$eval(
-  //   "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down",
-  //   (anchors) => anchors.map((a) => a.href)
-  // );
+    await page.waitForSelector(profilePicClassName);
+    let profileUrls = await page.$$eval(
+      "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down",
+      (anchors) => anchors.map((a) => a.href)
+    );
 
-  // console.log("Found profiles:", profileUrls.length);
+    
 
-  profileUrls = ["https://www.linkedin.com/in/vrindagupta6828/"];
+    for (let i = 0; i < profileUrls.length; i++) {
+      const url = profileUrls[i];
+      console.log(`Visiting profile ${i + 1}: ${url}`);
+      await page.goto(url, { waitUntil: "load", timeout: 60000 });
 
-  for (let i = 0; i < profileUrls.length; i++) {
-    const url = profileUrls[i];
-    console.log(`Visiting profile ${i + 1}: ${url}`);
-    await page.goto(url, { waitUntil: "load", timeout: 60000 });
+      await sleep(2000);
 
-    await sleep();
+      try {
+        const connectButtonSelector =
+          "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.HPcxDmiFjMinmNTnZZCqqqBWZrSFpBBBS";
 
-    try {
-      const connectButtonSelector =
-        "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.HPcxDmiFjMinmNTnZZCqqqBWZrSFpBBBS";
+        await page.waitForSelector(connectButtonSelector, { timeout: 5000 });
 
-      await page.waitForSelector(connectButtonSelector, { timeout: 5000 });
+        // Extract the button's visible text
+        const buttonText = await page.$eval(connectButtonSelector, (el) =>
+          el.innerText.trim()
+        );
 
-      // Extract the button's visible text
-      const buttonText = await page.$eval(connectButtonSelector, (el) =>
-        el.innerText.trim()
-      );
+        if (buttonText.toLowerCase() === "connect") {
+          await page.click(connectButtonSelector);
+          await connectButtonClickedNowHandleRest(page, message);
+          count++;
+        } else if (buttonText.toLowerCase() === "follow") {
+          await handleIfBtnTextIsFollow(page, message);
+          count++;
+        }
 
-      console.log(buttonText, "<<<<<<<")
-
-      if (buttonText.toLowerCase() === "connect") {
-        await page.click(connectButtonSelector);
-        await connectButtonClickedNowHandleRest(page, message);
-      } else if(buttonText.toLowerCase() === "follow") {
-        
+        sleep(1000);
+      } catch (e) {
+        console.log("❌ Follow button not found on this profile");
       }
-    } catch (e) {
-      console.log("❌ Follow button not found on this profile");
     }
+
+    url = updatePageInUrl(url, pageNumber+1)
+    await sleep(1000)
   }
 
   await browser.close();
 };
+
+function updatePageInUrl(url, newPageNumber) {
+  const urlObj = new URL(url);
+
+  // Update or set the `page` parameter
+  urlObj.searchParams.set('page', newPageNumber);
+
+  return urlObj.toString();
+}
+
+function getPageFromUrl(url) {
+  try {
+    const urlObj = new URL(url);
+    const pageParam = urlObj.searchParams.get('page');
+    return pageParam ? parseInt(pageParam, 10) : null;
+  } catch (err) {
+    console.error('Invalid URL:', err.message);
+    return null;
+  }
+}
+
+async function handleIfBtnTextIsFollow(page, message) {
+  // Partial class-based selector, omitting dynamic hash class (which may change)
+  const selector =
+    ".artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.HPcxDmiFjMinmNTnZZCqqqBWZrSFpBBBS.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2";
+
+  // Wait until at least one button with this class appears
+  await page.waitForSelector(selector);
+
+  // Get all matching buttons
+  const buttons = await page.$$(selector);
+
+  for (const btn of buttons) {
+    const text = await btn.evaluate((el) => el.innerText.trim().toLowerCase());
+    if (text.toLowerCase() === "more") {
+      await btn.click();
+
+      const selector =
+        ".artdeco-dropdown__item.artdeco-dropdown__item--is-dropdown.ember-view.full-width.display-flex.align-items-center";
+
+      // Wait for elements to be present
+      await page.waitForSelector(selector);
+
+      // Get all matching divs
+      const items = await page.$$(selector);
+
+      for (const item of items) {
+        // Get inner text and role
+        const [text, role] = await Promise.all([
+          item.evaluate((el) => el.innerText.trim().toLowerCase()),
+          item.evaluate((el) => el.getAttribute("role")),
+        ]);
+
+        // Check both conditions
+        if (text === "connect" && role === "button") {
+          await item.click();
+          await connectButtonClickedNowHandleRest(page, message);
+          break;
+        }
+      }
+
+      break;
+    }
+  }
+}
 
 async function connectButtonClickedNowHandleRest(page, message) {
   await sleep(1000);
@@ -79,7 +154,7 @@ async function connectButtonClickedNowHandleRest(page, message) {
     await page.click(sendButtonSelector);
     await sleep(1000);
     await page.waitForSelector("#custom-message");
-    await page.type("#custom-message", message, { delay: 100 });
+    await page.type("#custom-message", message, { delay: 10 });
 
     await page.waitForSelector(
       "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1"
@@ -98,11 +173,18 @@ const sleep = (milli = 5000) =>
   new Promise((res) => setTimeout(() => res(), milli));
 
 const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221441%22%5D&keywords=software%20developer%20in%20goole&origin=FACETED_SEARCH&sid=whc";
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221441%22%5D&keywords=software%20developer%20in%20goole&origin=FACETED_SEARCH&page=1&sid=w0b";
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
 const profilePicClassName = "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down";
 const connectBtnClassName = "";
 const message = `Hi, I'm a full stack dev with 3+ yrs exp. For the past 1 year (and continuing), I’ve been prepping 8+ hrs daily for product roles (Striver A2Z, 500+ DSA Qs, Sys Design via HelloInterview & JHNL). A referral could truly change my career. Can share resume & job code!`;
+const target = 50;
 
-openAndVisitProfiles({ url, accessToken, profilePicClassName, message });
+openAndVisitProfiles({
+  url,
+  accessToken,
+  profilePicClassName,
+  message,
+  target,
+});
