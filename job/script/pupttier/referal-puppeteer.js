@@ -25,8 +25,7 @@ const openAndVisitProfiles = async ({
     domain: ".www.linkedin.com",
   });
 
-    
-  let pageNumber = getPageFromUrl(url)
+  let pageNumber = getPageFromUrl(url);
 
   // Go to search result page
   while (count < target) {
@@ -38,11 +37,8 @@ const openAndVisitProfiles = async ({
       (anchors) => anchors.map((a) => a.href)
     );
 
-    
-
     for (let i = 0; i < profileUrls.length; i++) {
       const url = profileUrls[i];
-      console.log(`Visiting profile ${i + 1}: ${url}`);
       await page.goto(url, { waitUntil: "load", timeout: 60000 });
 
       await sleep(2000);
@@ -72,9 +68,10 @@ const openAndVisitProfiles = async ({
         console.log("❌ Follow button not found on this profile");
       }
     }
-
-    url = updatePageInUrl(url, pageNumber+1)
-    await sleep(1000)
+    pageNumber += 1;
+    url = updatePageInUrl(url, pageNumber);
+    await sleep(1000);
+    console.log(`Count till now >>>>>>>>> ${count}`);
   }
 
   await browser.close();
@@ -84,7 +81,7 @@ function updatePageInUrl(url, newPageNumber) {
   const urlObj = new URL(url);
 
   // Update or set the `page` parameter
-  urlObj.searchParams.set('page', newPageNumber);
+  urlObj.searchParams.set("page", newPageNumber);
 
   return urlObj.toString();
 }
@@ -92,10 +89,10 @@ function updatePageInUrl(url, newPageNumber) {
 function getPageFromUrl(url) {
   try {
     const urlObj = new URL(url);
-    const pageParam = urlObj.searchParams.get('page');
+    const pageParam = urlObj.searchParams.get("page");
     return pageParam ? parseInt(pageParam, 10) : null;
   } catch (err) {
-    console.error('Invalid URL:', err.message);
+    console.error("Invalid URL:", err.message);
     return null;
   }
 }
@@ -173,12 +170,12 @@ const sleep = (milli = 5000) =>
   new Promise((res) => setTimeout(() => res(), milli));
 
 const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221441%22%5D&keywords=software%20developer%20in%20goole&origin=FACETED_SEARCH&page=1&sid=w0b";
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2211174522%22%2C%229390173%22%2C%222646%22%5D&keywords=walmart%20software%20engineer&origin=FACETED_SEARCH&searchId=e1d01085-ae11-4fbf-8c47-4ca90772f792&page=1&sid=ES8";
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
 const profilePicClassName = "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down";
 const connectBtnClassName = "";
-const message = `Hi, I'm a full stack dev with 3+ yrs exp. For the past 1 year (and continuing), I’ve been prepping 8+ hrs daily for product roles (Striver A2Z, 500+ DSA Qs, Sys Design via HelloInterview & JHNL). A referral could truly change my career. Can share resume & job code!`;
+const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, deeply focused on breaking into a product role — been prepping intensely for a year 📚 (500+ DSA Qs, system design, Striver A2Z). A referral from you could mean the world to me 🌟. I’ll share everything needed — this could truly change my life 🙏.`;
 const target = 50;
 
 openAndVisitProfiles({
