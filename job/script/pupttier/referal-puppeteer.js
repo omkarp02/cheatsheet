@@ -33,7 +33,7 @@ const openAndVisitProfiles = async ({
 
     await page.waitForSelector(profilePicClassName);
     let profileUrls = await page.$$eval(
-      "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down",
+      profilePicClassName,
       (anchors) => anchors.map((a) => a.href)
     );
 
@@ -45,7 +45,7 @@ const openAndVisitProfiles = async ({
 
       try {
         const connectButtonSelector =
-          "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.HPcxDmiFjMinmNTnZZCqqqBWZrSFpBBBS";
+          `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
 
         await page.waitForSelector(connectButtonSelector, { timeout: 5000 });
 
@@ -59,7 +59,7 @@ const openAndVisitProfiles = async ({
           await connectButtonClickedNowHandleRest(page, message);
           count++;
         } else if (buttonText.toLowerCase() === "follow") {
-          await handleIfBtnTextIsFollow(page, message);
+          await handleIfBtnTextIsFollow(page, message, connectBtnClassName);
           count++;
         }
 
@@ -97,10 +97,10 @@ function getPageFromUrl(url) {
   }
 }
 
-async function handleIfBtnTextIsFollow(page, message) {
+async function handleIfBtnTextIsFollow(page, message, connectBtnClassName) {
   // Partial class-based selector, omitting dynamic hash class (which may change)
   const selector =
-    ".artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.HPcxDmiFjMinmNTnZZCqqqBWZrSFpBBBS.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2";
+    `.artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.${connectBtnClassName}.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2`;
 
   // Wait until at least one button with this class appears
   await page.waitForSelector(selector);
@@ -170,11 +170,11 @@ const sleep = (milli = 5000) =>
   new Promise((res) => setTimeout(() => res(), milli));
 
 const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2211174522%22%2C%229390173%22%2C%222646%22%5D&keywords=walmart%20software%20engineer&origin=FACETED_SEARCH&searchId=e1d01085-ae11-4fbf-8c47-4ca90772f792&page=1&sid=ES8";
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221382%22%5D&keywords=goldman%20sachs%20software%20engineer%20&origin=FACETED_SEARCH&sid=Bk9";
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
-const profilePicClassName = "a.wsMvqdsCQwHMdXuvCLlSAkmVYButhGSUc.scale-down";
-const connectBtnClassName = "";
+const profilePicClassName = "a.dGCAEBVXgkGQKLntuWxHvfKkpBSICAYQaUlZpU.scale-down";
+const connectBtnClassName = "EeYIWzeiqATqFnhXAqFbyWyvQsVhzXIFrIGqA";
 const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, deeply focused on breaking into a product role — been prepping intensely for a year 📚 (500+ DSA Qs, system design, Striver A2Z). A referral from you could mean the world to me 🌟. I’ll share everything needed — this could truly change my life 🙏.`;
 const target = 50;
 
@@ -182,6 +182,7 @@ openAndVisitProfiles({
   url,
   accessToken,
   profilePicClassName,
+  connectBtnClassName,
   message,
   target,
 });
