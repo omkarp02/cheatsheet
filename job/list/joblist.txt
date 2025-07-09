@@ -45,6 +45,7 @@ Amazon - can be refered
 Dream11 - can be refered
 
 
+top:
 
 Netflix 
 Microsoft
@@ -62,13 +63,21 @@ Sap
 Paytm
 Adobe
 Hotstar
+coinbase
+phonepe
+
+mid:
+https://takeuforward.org/
+
 
 https://www.reddit.com/r/developersIndia/comments/pzqhwk/list_of_productbased_companies_and_startups_that/
 
 
 
+current target
 
-
-
-compnay list_of_productbased_companies_and_startups_that
-service now
+jp morgan
+tower reasearch
+confluent
+rubrik
+intuit

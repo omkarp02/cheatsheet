@@ -1,2 +1,0 @@
-design pub sub library
-design distributed key value store
