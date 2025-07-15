@@ -1,0 +1,8 @@
+Tell me about yourself
+
+
+Hey, I’m a full-time coder. I don’t have many hobbies outside of building things—I’m not athletic, don’t dance, and don’t drink. Writing code is the one thing I’m good at, and it’s what I love doing. You can check out some of my work here: https://pawaromkar.in
+
+Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta. I’ve worked across the stack—building scalable backend systems in MERN, Go, and Java, and deploying infrastructure on AWS using Kubernetes. From drag-and-drop form builders to real-time chat apps and fintech/insurance platforms, I’ve consistently shipped impactful, end-to-end features.
+
+What drives me is being close to the problem—solving real user pain points, collaborating tightly with a small team, and growing fast. That’s exactly the kind of journey I’m excited to be part of at Happenstance.
