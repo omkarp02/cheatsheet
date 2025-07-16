@@ -40,7 +40,7 @@ const openAndVisitProfiles = async ({
       const url = profileUrls[i];
       await page.goto(url, { waitUntil: "load", timeout: 60000 });
 
-      await sleep(2000);
+      await sleep(1000);
 
       try {
         const connectButtonSelector = `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
@@ -177,13 +177,13 @@ const sleep = (milli = 5000) =>
   new Promise((res) => setTimeout(() => res(), milli));
 
 const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%222506186%22%5D&keywords=hubspire&origin=FACETED_SEARCH&sid=)p.";
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221482%22%5D&keywords=paypal%20software%20engineer&origin=FACETED_SEARCH&sid=*Io";
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
 const profilePicClassName =
-  "a.ndZLunsmRywyagpqSTKSzifoKwlCqZnbXsnbFA.scale-down";
-const connectBtnClassName = "gsFHhsRxZibpSuKMfIrWxMeiBJgEPiyCDfwQ";
-const message = `I saw a job opening at your company and would really appreciate a referral. I'm a full-stack dev with 3+ yrs of experience, prepping hard (500+ DSA Qs, system design, Striver A2Z). Happy to share my resume—thanks a ton in advance!`;
+  "a.kSBUiJRrsOOWKMOBBAaRdPUuGpbtisnNvRqrs.scale-down";
+const connectBtnClassName = "CwwUIQGWQwzYRmgjILbfcssXxWhNYzeLGZs";
+const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself `;
 const target = 25;
 
 openAndVisitProfiles({
