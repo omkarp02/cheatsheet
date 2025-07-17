@@ -62,6 +62,10 @@ const openAndVisitProfiles = async ({
           
         }
 
+        if(count > target){
+          return
+        }
+
         sleep(1000);
       } catch (e) {
         console.log("❌ Follow button not found on this profile");
@@ -177,12 +181,12 @@ const sleep = (milli = 5000) =>
   new Promise((res) => setTimeout(() => res(), milli));
 
 const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221482%22%5D&keywords=paypal%20software%20engineer&origin=FACETED_SEARCH&sid=*Io";
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2276108196%22%2C%2212903958%22%5D&keywords=zepto%20software%20engineer&origin=FACETED_SEARCH&sid=-tZ";
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
 const profilePicClassName =
-  "a.kSBUiJRrsOOWKMOBBAaRdPUuGpbtisnNvRqrs.scale-down";
-const connectBtnClassName = "CwwUIQGWQwzYRmgjILbfcssXxWhNYzeLGZs";
+  "a.jZvAZrABmogoqueQgpFRmQxiYws.scale-down";
+const connectBtnClassName = "CsxDsEEFjhjMVzkHWhOfnjPxZLGFufNuFZA";
 const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself `;
 const target = 25;
 
