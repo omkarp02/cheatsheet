@@ -1,0 +1,3 @@
+“Hi ____, my name is _____ and I’m currently a _[role]___ at __[company]____.
+
+I saw your post about __[job]_ at ______ and I’m very interested because... (not more than 2 lines of WHY you are interested)

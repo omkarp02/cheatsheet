@@ -1,4 +1,10 @@
 const puppeteer = require("puppeteer");
+const {
+  updatePageInUrl,
+  sleep,
+  getPageFromUrl,
+  visitUserProfile,
+} = require("./utils");
 
 const openAndVisitProfiles = async ({
   url,
@@ -36,40 +42,18 @@ const openAndVisitProfiles = async ({
       anchors.map((a) => a.href)
     );
 
-    for (let i = 0; i < profileUrls.length; i++) {
-      const url = profileUrls[i];
-      await page.goto(url, { waitUntil: "load", timeout: 60000 });
-
-      await sleep(1000);
-
-      try {
-        const connectButtonSelector = `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
-
-        await page.waitForSelector(connectButtonSelector, { timeout: 5000 });
-
-        // Extract the button's visible text
-        const buttonText = await page.$eval(connectButtonSelector, (el) =>
-          el.innerText.trim()
-        );
-
-        if (buttonText.toLowerCase() === "connect") {
-          await page.click(connectButtonSelector);
-          await connectButtonClickedNowHandleRest(page, message);
-          count++;
-        } else {
-          const res = await handleIfBtnTextIsFollow(page, message, connectBtnClassName);
-          if(res) count++;
-          
-        }
-
-        if(count > target){
-          return
-        }
-
-        sleep(1000);
-      } catch (e) {
-        console.log("❌ Follow button not found on this profile");
-      }
+    const c = await visitUserProfile(
+      profileUrls,
+      page,
+      message,
+      connectBtnClassName,
+      target,
+      count
+    );
+    count = c;
+    if (count >= target) {
+      console.log(`Target reached: ${count} connections made.`);
+      return;
     }
     pageNumber += 1;
     url = updatePageInUrl(url, pageNumber);
@@ -80,118 +64,22 @@ const openAndVisitProfiles = async ({
   await browser.close();
 };
 
-function updatePageInUrl(url, newPageNumber) {
-  const urlObj = new URL(url);
 
-  // Update or set the `page` parameter
-  urlObj.searchParams.set("page", newPageNumber);
 
-  return urlObj.toString();
-}
-
-function getPageFromUrl(url) {
-  try {
-    const urlObj = new URL(url);
-    const pageParam = urlObj.searchParams.get("page");
-    return pageParam ? parseInt(pageParam, 10) : null;
-  } catch (err) {
-    console.error("Invalid URL:", err.message);
-    return null;
-  }
-}
-
-async function handleIfBtnTextIsFollow(page, message, connectBtnClassName) {
-  return new Promise(async (res) => {
-    // Partial class-based selector, omitting dynamic hash class (which may change)
-    const selector = `.artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.${connectBtnClassName}.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2`;
-
-    // Wait until at least one button with this class appears
-    await page.waitForSelector(selector);
-
-    // Get all matching buttons
-    const buttons = await page.$$(selector);
-
-    for (const btn of buttons) {
-      const text = await btn.evaluate((el) =>
-        el.innerText.trim().toLowerCase()
-      );
-      if (text.toLowerCase() === "more") {
-        await btn.click();
-
-        const selector =
-          ".artdeco-dropdown__item.artdeco-dropdown__item--is-dropdown.ember-view.full-width.display-flex.align-items-center";
-
-        // Wait for elements to be present
-        try {
-          await page.waitForSelector(selector, { timeout: 1000 });
-        } catch (error) {
-          res(false)
-        }
-
-        // Get all matching divs
-        const items = await page.$$(selector);
-
-        for (const item of items) {
-          // Get inner text and role
-          const [text, role] = await Promise.all([
-            item.evaluate((el) => el.innerText.trim().toLowerCase()),
-            item.evaluate((el) => el.getAttribute("role")),
-          ]);
-
-          // Check both conditions
-          if (text === "connect" && role === "button") {
-            await item.click();
-            await connectButtonClickedNowHandleRest(page, message);
-            res(true)
-            break;
-          }
-        }
-        res(false)
-        break;
-      }
-    }
-  });
-}
-
-async function connectButtonClickedNowHandleRest(page, message) {
-  await sleep(1000);
-  const sendButtonSelector =
-    "button.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--secondary.ember-view.mr1";
-  try {
-    await page.waitForSelector(sendButtonSelector, { timeout: 5000 });
-    await page.click(sendButtonSelector);
-    await sleep(1000);
-    await page.waitForSelector("#custom-message");
-    await page.type("#custom-message", message, { delay: 1 });
-
-    await page.waitForSelector(
-      "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1"
-    );
-    await page.click(
-      "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1"
-    );
-  } catch (error) {
-    console.log(
-      "⚠️ Send button not found (maybe already sent or modal didn't open)"
-    );
-  }
-}
-
-const sleep = (milli = 5000) =>
-  new Promise((res) => setTimeout(() => res(), milli));
-
-const url =
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2276108196%22%2C%2212903958%22%5D&keywords=zepto%20software%20engineer&origin=FACETED_SEARCH&sid=-tZ";
+const url = [
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2222688%22%5D&keywords=atlassin%20software%20engineer&origin=FACETED_SEARCH&sid=68P",
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221382%22%5D&keywords=goldman%20sach%20software%20engineer&origin=FACETED_SEARCH&sid=B%3AY",
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221068%22%5D&keywords=jpmorgan%20software%20engineer&origin=GLOBAL_SEARCH_HEADER&sid=dTR"
+];
 const accessToken =
   "AQEFAHUBAAAAABZj3swAAAGV-gW6YwAAAZfKxFhoTQAAGHVybjpsaTptZW1iZXI6MTA2MTgwOTY2N47s_HRD-fq3WzQaPCUEdsP7L7H6c7KaNVqtWeFgf9MZPmmpKXjqe9XsKVLAfxr-C-tseghgUQMGLZMz8PaBYya85zA1eY86ZF92SSe2CWVupDV0UrLpx6T2GerAe9rr7KK4uC5eDa8WviXhhADiT02mV7lobpu32Vrb7Uk43UyKMILfIdPO9mbvD0F-uTb_4utnHOQ";
-const profilePicClassName =
-  "a.jZvAZrABmogoqueQgpFRmQxiYws.scale-down";
-const connectBtnClassName = "CsxDsEEFjhjMVzkHWhOfnjPxZLGFufNuFZA";
-const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself `;
-const target = 25;
+const profilePicClassName = "a.DGvtWMHHFxUFucvarCuTmPvyMuWuwlaQNuYA.scale-down";
+const connectBtnClassName = "faqzinvCiVXCcrTKmfaOyagkrhoCys";
+const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself`;
+const target = 20;
 
 openAndVisitProfiles({
-  url,
+  url: url[2],
   accessToken,
   profilePicClassName,
   connectBtnClassName,

@@ -6,3 +6,10 @@ Hey, I’m a full-time coder. I don’t have many hobbies outside of building th
 Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta. I’ve worked across the stack—building scalable backend systems in MERN, Go, and Java, and deploying infrastructure on AWS using Kubernetes. From drag-and-drop form builders to real-time chat apps and fintech/insurance platforms, I’ve consistently shipped impactful, end-to-end features.
 
 What drives me is being close to the problem—solving real user pain points, collaborating tightly with a small team, and growing fast. That’s exactly the kind of journey I’m excited to be part of at Happenstance.
+
+------------------------------------------------------------
+
+Most of my peers treat job applications like a numbers game—polish the resume, click apply, and move on.That’s never been me. I’m looking for a place where I can bring not just my engineering skills, but my ambition to build things that matter—things that scale. I’m excited by companies that are solving real problems with thoughtful systems, and I want to be part of a team where that kind of thinking is encouraged from the ground up.
+In my current and past roles, I often found myself thinking beyond the ticket—challenging whether the architecture we were building today would hold up when the product scaled 10x. I’ve pitched design approaches that optimize for long-term maintainability and performance. Often, I was told we didn’t yet have the user base to “worry about all that.” While I understand tradeoffs, I’m eager to work in an environment where thinking at scale isn’t seen as overengineering—but as foresight. I want to contribute in ways that go beyond closing tickets—to be part of product and system 
+decisions that shape the future of the platform.
+Thank you for considering my application. I’d love the opportunity to talk about how I can contribute to your team—not just with code, but with the kind of product-first, systems-aware mindset that builds lasting software.
