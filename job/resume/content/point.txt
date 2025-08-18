@@ -1,0 +1,39 @@
+ 	Omkar Pawar – Full stack developer – 3 yrs experience
+Mobile: 7715950254 | Social: LinkedIn, GitHub | Email: opwebdev01@gmail.com | Portfolio: pawaromkar.in
+SKILLS
+
+Languages: Java, Javascript, Typescript, Golang, HTML		                                         Database: MongoDB, PostgreSQL
+Technologies: Spring Boot, React.js, Next.js, Spring, Hibernate  			     AWS: EC2, ECS, EKS, LAMBDA, S3, SNS, SQS)
+Others: Docker, Kubernetes, GIT, Kafka, Redis, CI/CD, Github Actions
+
+WORK EXPERIENCE
+
+Programming            		                                                                                                  		    July 2024 – Present
+Senior Software Engineer											 Maharashtra
+  Developed a scalable, reliable, real-time chat application using web sockets with Redis Pub/Sub for state management, with multi-device sync, typing indicators, message history persistence during network loss.
+  Built a centralized authentication system enabling single sign-on (SSO) across multiple internal applications, allowing users to log in once via a secure central website and improving both usability and security consistency.
+  Led digital transformation projects by designing and deploying applications that shifted manual processes to 
+streamline, automated systems reducing manual effort by 40% and improving efficiency
+  Directed a team of 4 developers, collaborating directly with clients to translate technical requirements.
+Iorta Technology Solutions										    July 2024 – Present
+Software Engineer												  Maharashtra
+  Studied the existing monolithic application and transformed it into a monorepo-based microservices architecture using Nx, integrating gRPC and TCP for inter-service communication, enabling scalable deployments and 20% faster feature delivery.
+  Implemented CI/CD pipelines in GitHub Actions for automated deployment of microservices, configured Kubernetes pods, services and deployed to EKS with rolling updates for zero-downtime releases.
+  Contributed to 3 foundational projects within the first 6 months while gaining expertise in the insurance domain, and reduced infrastructure costs by 10% through S3 lifecycle policies, EC2 right-sizing, and eliminating unused resources.
+  Built an end-to-end insurance on-boarding flow with Aadhaar/PAN eKYC, capture of required customer details and images, document upload/validation, auto-generation of proposal forms, and secure e-signature streamlining submission to underwriting.
+Code B													    July 2024 – Present
+Software Engineer												  Maharashtra
+  Developed an automated video processing pipeline using AWS Lambda functions to trigger and manage video processing workflows, utilized S3 for storage, and integrated AWS MediaConvert for transcoding.
+  Integrated AWS Cognito for SSO and traditional username/password authentication, implementing JWT and refresh tokens with reuse detection and refresh token rotation to enhance security.
+  Build a fully customizable drag & drop form builder, managed state across entire form life cycle and engineered the 
+module for seamless integration into any web application.
+  Led development of high-impact apps, managing 5 projects in 9 months and improving client productivity by 25%.
+
+EDUCATION
+
+BSC in Computer Science, V.K Krishna Menon College - CGPA 8.7    
+
+INITIATIVES AND PROJECTS
+
+  WYSE - Clothing Brand - Developed a full-stack clothing e-commerce platform as a freelance project, with features like product search, cateogory filters, wishlist add to cart an admin dashboard you can check out the website here.
+  Took the initiative to built a reusable UI component library and a customizable data table library, helping accelerate development speed, maintain design consistency, and reduce duplicate code across projects
