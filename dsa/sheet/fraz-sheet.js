@@ -1425,3 +1425,17 @@ function getRandomTitle(titles) {
 
 console.log(getRandomTitle(data));
 
+
+/*
+
+Touch questions
+
+Power of Heroes
+Removing Minimum Number of Magic Beans
+Longest Valid Parentheses
+Smallest Subsequence of Distinct Characters
+The Number of Weak Characters in the Game
+Maximum Subarray Min-Product
+
+*/
+
