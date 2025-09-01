@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { sleep, visitUserProfile } = require("./utils");
+const { sleep, visitUserProfile } = require("../utils");
 
 const openAndVisitProfiles = async ({
   url,

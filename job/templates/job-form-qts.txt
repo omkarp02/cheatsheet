@@ -7,9 +7,29 @@ Over the last 3 years, I’ve been part of early engineering teams at startups l
 
 What drives me is being close to the problem—solving real user pain points, collaborating tightly with a small team, and growing fast. That’s exactly the kind of journey I’m excited to be part of at Happenstance.
 
-------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 
 Most of my peers treat job applications like a numbers game—polish the resume, click apply, and move on.That’s never been me. I’m looking for a place where I can bring not just my engineering skills, but my ambition to build things that matter—things that scale. I’m excited by companies that are solving real problems with thoughtful systems, and I want to be part of a team where that kind of thinking is encouraged from the ground up.
 In my current and past roles, I often found myself thinking beyond the ticket—challenging whether the architecture we were building today would hold up when the product scaled 10x. I’ve pitched design approaches that optimize for long-term maintainability and performance. Often, I was told we didn’t yet have the user base to “worry about all that.” While I understand tradeoffs, I’m eager to work in an environment where thinking at scale isn’t seen as overengineering—but as foresight. I want to contribute in ways that go beyond closing tickets—to be part of product and system 
 decisions that shape the future of the platform.
 Thank you for considering my application. I’d love the opportunity to talk about how I can contribute to your team—not just with code, but with the kind of product-first, systems-aware mindset that builds lasting software.
+
+
+------------------------------------------------------
+tell me aoub tyourself
+
+Hey, I’m a full-time coder, Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta, working across the stack with Java, Go, and MERN while also deploying scalable infrastructure.
+
+I’ve built and shipped end-to-end features such as form builders, real-time chat applications, video learning platforms, and fintech/insurance solutions. Writing code is what I’m best at, and what excites me most is solving real user pain points, collaborating in small teams, and growing quickly with the product.
+
+I’d love to connect and explore if my background could be a fit for your team at [Company Name].
+
+
+--------------------------------------------------------------
+
+why do you want to join thsi job
+
+
+One of the main reasons I want to join is the opportunity to work on a product that truly operates at scale. In my current experience, I’ve often felt limited by the mindset of ‘we don’t need to scale beyond this,’ but I’m eager to face the challenges of building systems that serve millions of users. I want to be in an environment where scale, performance, and reliability are at the core of the work.
+
+Equally important, I’m looking to surround myself with brilliant engineers. I don’t want to always be the smartest person in the room; I want to be in a place where I’m constantly pushed, challenged, and inspired by the talent around me.

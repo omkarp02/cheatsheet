@@ -59,7 +59,7 @@ async function handleIfBtnTextIsFollow(page, message, connectBtnClassName) {
           // Check both conditions
           if (text === "connect" && role === "button") {
             await item.click();
-            await connectButtonClickedNowHandleRest(page, message);
+            await connectButtonClickedNowHandleRest(page, message, sleepTime);
             res(true);
             break;
           }
@@ -71,16 +71,16 @@ async function handleIfBtnTextIsFollow(page, message, connectBtnClassName) {
   });
 }
 
-async function connectButtonClickedNowHandleRest(page, message) {
-  await sleep(1000);
+async function connectButtonClickedNowHandleRest(page, message, sleepTime) {
+  await sleep(sleepTime);
   const sendButtonSelector =
     "button.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--secondary.ember-view.mr1";
   try {
     await page.waitForSelector(sendButtonSelector, { timeout: 5000 });
     await page.click(sendButtonSelector);
-    await sleep(1000);
+    await sleep(sleepTime);
     await page.waitForSelector("#custom-message");
-    await page.type("#custom-message", message, { delay: 1 });
+    await page.type("#custom-message", message, { delay: 100 });
 
     await page.waitForSelector(
       "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1"
@@ -101,14 +101,15 @@ async function visitUserProfile(
   message,
   connectBtnClassName,
   target,
-  countUntilNow
+  countUntilNow,
+  sleepTime
 ) {
   let count = countUntilNow;
   for (let i = 0; i < profileUrls.length; i++) {
     const url = profileUrls[i];
     await page.goto(url, { waitUntil: "load", timeout: 60000 });
 
-    await sleep(1000);
+    await sleep(sleepTime);
 
     try {
       const connectButtonSelector = `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
@@ -122,7 +123,7 @@ async function visitUserProfile(
 
       if (buttonText.toLowerCase() === "connect") {
         await page.click(connectButtonSelector);
-        await connectButtonClickedNowHandleRest(page, message);
+        await connectButtonClickedNowHandleRest(page, message, sleepTime);
         count++;
       } else {
         const res = await handleIfBtnTextIsFollow(
@@ -137,7 +138,7 @@ async function visitUserProfile(
         return count;
       }
 
-      sleep(1000);
+      await sleep(sleepTime);
     } catch (e) {
       console.log("❌ Follow button not found on this profile");
     }

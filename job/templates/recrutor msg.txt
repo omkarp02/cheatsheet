@@ -1,3 +1,31 @@
 “Hi ____, my name is _____ and I’m currently a _[role]___ at __[company]____.
 
 I saw your post about __[job]_ at ______ and I’m very interested because... (not more than 2 lines of WHY you are interested)
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+I viewed the job description for [Job Title] at [Company Name], and it really resonated with me—it matches my background and the kind of work I love doing. Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta, working across the stack with Java, Go, and MERN while also deploying scalable infrastructure.
+
+I’ve built and shipped end-to-end features such as form builders, real-time chat applications, video learning platforms, and fintech/insurance solutions. Writing code is what I’m best at, and what excites me most is solving real user pain points, collaborating in small teams, and growing quickly with the product.
+
+I’d love to connect and explore if my background could be a fit for your team at [Company Name].
+
+Best regards,
+Omkar Pawar
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+Hi [Name],
+
+I viewed the job description for [Job Title] at [Company Name], and it really resonated with me—it matches my background and the kind of work I love doing. Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta, working across the stack with Java, Go, and MERN while also deploying scalable infrastructure.
+
+I’ve built and shipped end-to-end features such as form builders, real-time chat applications, video learning platforms, and fintech/insurance solutions. Writing code is what I’m best at, and what excites me most is solving real user pain points, collaborating in small teams, and growing quickly with the product.
+
+I’d love to connect and explore if my background could be a fit for your team at [Company Name].
+
+Best regards,
+Omkar Pawar

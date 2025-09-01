@@ -2220,7 +2220,7 @@ function getRandomTitle(titles) {
   return titles[randomIndex];
 }
 
-console.log(data2.length)
+//data2 have 795 count
 console.log(getRandomTitle(data2));
 
 
