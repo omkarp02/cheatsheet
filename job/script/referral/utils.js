@@ -18,7 +18,7 @@ function getPageFromUrl(url) {
   }
 }
 
-async function handleIfBtnTextIsFollow(page, message, connectBtnClassName) {
+async function handleIfBtnTextIsFollow(page, message, connectBtnClassName, sleepTime) {
   return new Promise(async (res) => {
     // Partial class-based selector, omitting dynamic hash class (which may change)
     const selector = `.artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.${connectBtnClassName}.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2`;
@@ -80,7 +80,7 @@ async function connectButtonClickedNowHandleRest(page, message, sleepTime) {
     await page.click(sendButtonSelector);
     await sleep(sleepTime);
     await page.waitForSelector("#custom-message");
-    await page.type("#custom-message", message, { delay: 100 });
+    await page.type("#custom-message", message, { delay: 40 });
 
     await page.waitForSelector(
       "button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.ml1"
@@ -129,7 +129,8 @@ async function visitUserProfile(
         const res = await handleIfBtnTextIsFollow(
           page,
           message,
-          connectBtnClassName
+          connectBtnClassName,
+          sleepTime
         );
         if (res) count++;
       }
