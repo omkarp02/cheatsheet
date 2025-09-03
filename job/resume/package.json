@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "office-to-pdf": "^4.0.0"
+  }
+}
