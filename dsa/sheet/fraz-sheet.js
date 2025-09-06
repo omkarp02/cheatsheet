@@ -491,7 +491,6 @@ const data1 = [
   "Check if a Parentheses String Can Be Valid",
   "Reverse Substrings Between Each Pair of Parentheses",
   "Score of Parentheses",
-  "Minimum Insertions to Balance a Parentheses String",
   "Longest Valid Parentheses",
   "Redundant Parenthesis",
   "Min Stack",
@@ -528,7 +527,6 @@ const data1 = [
   "Remove K Digits",
   "Beautiful Towers I",
   "Beautiful Towers II",
-  "Online Stock Span",
   "Minimum Number of Increments on Subarrays to Form a Target Array",
   "Maximum Score of a Good Subarray",
   "Number of Visible People in a Queue",
@@ -809,7 +807,6 @@ const data1 = [
   "Unique Binary Search Trees",
   "Recover Binary Search Tree",
   "Number of Ways to Reorder Array to Get Same BST",
-  "Binary Search Tree Iterator",
   "Lowest Common Ancestor of a Binary Search Tree",
   "Closest Nodes Queries in a Binary Search Tree",
   "Implementation of Priority Queue using Binary Heap",
@@ -1050,7 +1047,6 @@ const data1 = [
   "Filling Bookcase Shelves",
   "Video Stitching",
   "Maximize Total Cost of Alternating Subarrays",
-  "Pizza With 3n Slices",
   "Minimum Swaps To Make Sequences Increasing",
   "Profitable Schemes",
   "Reducing Dishes",
@@ -1432,7 +1428,6 @@ const data2 = [
   "Minimum Length of String After Deleting Similar Ends",
   "String Compression",
   "Separate Black and White Balls",
-  "Move Pieces to Obtain a String",
   "Sentence Similarity III",
   "Count Vowel Strings in Ranges",
   "Minimum Penalty for a Shop",
@@ -1535,7 +1530,6 @@ const data2 = [
   "Count Number of Bad Pairs",
   "Continuous Subarray Sum",
   "Count of Interesting Subarrays",
-  "Count Number of Nice Subarrays",
   "Count Beautiful Substrings II",
   "Sum of Digit Differences of All Pairs",
   "Binary Subarrays with Sum",
@@ -1855,7 +1849,6 @@ const data2 = [
   "Find Median from Data Stream",
   "Meeting Rooms III",
   "Time to Cross a Bridge",
-  "Implement Trie (Prefix Tree)",
   "Trie Delete",
   "Design Add and Search Words Data Structure",
   "Map Sum Pairs",
@@ -1909,7 +1902,6 @@ const data2 = [
   "Optimal Partition of String",
   "Minimum Swaps to Make Strings Equal",
   "Maximum Number of Non-Overlapping Substrings",
-  "Lexicographically Smallest Beautiful String",
   "Count K-Subsequences of a String with Maximum Beauty",
   "Bag of Tokens",
   "Boats to Save People",
@@ -1948,7 +1940,6 @@ const data2 = [
   "Knight Dialer",
   "Partition Equal Subset Sum",
   "Triangle",
-  "Student Attendance Record Leetcode",
   "Find the Maximum Length of a Good Subsequence II",
   "K Inverse Pairs Array",
   "Combination Sum IV",
@@ -2222,5 +2213,6 @@ function getRandomTitle(titles) {
 
 //data2 have 795 count
 console.log(getRandomTitle(data2));
+
 
 
