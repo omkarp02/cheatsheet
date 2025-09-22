@@ -19,8 +19,9 @@ pub sub / kafka fb live stream video
 quad tree vs geohash
 whole jordan series
 hashring pros cons
- data processing pipeline ads aggregator
- map reduce
+data processing pipeline ads aggregator
+map reduce
+tcp udp
 
 database
 

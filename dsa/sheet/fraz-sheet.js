@@ -1428,6 +1428,7 @@ const data2 = [
   "Minimum Length of String After Deleting Similar Ends",
   "String Compression",
   "Separate Black and White Balls",
+  "Move Pieces to Obtain a String",
   "Sentence Similarity III",
   "Count Vowel Strings in Ranges",
   "Minimum Penalty for a Shop",
@@ -1530,6 +1531,7 @@ const data2 = [
   "Count Number of Bad Pairs",
   "Continuous Subarray Sum",
   "Count of Interesting Subarrays",
+  "Count Number of Nice Subarrays",
   "Count Beautiful Substrings II",
   "Sum of Digit Differences of All Pairs",
   "Binary Subarrays with Sum",
@@ -1849,6 +1851,7 @@ const data2 = [
   "Find Median from Data Stream",
   "Meeting Rooms III",
   "Time to Cross a Bridge",
+  "Implement Trie (Prefix Tree)",
   "Trie Delete",
   "Design Add and Search Words Data Structure",
   "Map Sum Pairs",
@@ -1902,6 +1905,7 @@ const data2 = [
   "Optimal Partition of String",
   "Minimum Swaps to Make Strings Equal",
   "Maximum Number of Non-Overlapping Substrings",
+  "Lexicographically Smallest Beautiful String",
   "Count K-Subsequences of a String with Maximum Beauty",
   "Bag of Tokens",
   "Boats to Save People",
@@ -1940,6 +1944,7 @@ const data2 = [
   "Knight Dialer",
   "Partition Equal Subset Sum",
   "Triangle",
+  "Student Attendance Record Leetcode",
   "Find the Maximum Length of a Good Subsequence II",
   "K Inverse Pairs Array",
   "Combination Sum IV",
@@ -2212,6 +2217,7 @@ function getRandomTitle(titles) {
 }
 
 //data2 have 795 count
+console.log(data2.length);
 console.log(getRandomTitle(data2));
 
 
