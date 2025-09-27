@@ -1,0 +1,2 @@
+chatpt what is transaction, atmoicity
+play isolation just read the header  and chat gpt it and see video from 19min

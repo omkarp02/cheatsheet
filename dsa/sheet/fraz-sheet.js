@@ -491,7 +491,6 @@ const data1 = [
   "Check if a Parentheses String Can Be Valid",
   "Reverse Substrings Between Each Pair of Parentheses",
   "Score of Parentheses",
-  "Minimum Insertions to Balance a Parentheses String",
   "Longest Valid Parentheses",
   "Redundant Parenthesis",
   "Min Stack",
@@ -528,7 +527,6 @@ const data1 = [
   "Remove K Digits",
   "Beautiful Towers I",
   "Beautiful Towers II",
-  "Online Stock Span",
   "Minimum Number of Increments on Subarrays to Form a Target Array",
   "Maximum Score of a Good Subarray",
   "Number of Visible People in a Queue",
@@ -809,7 +807,6 @@ const data1 = [
   "Unique Binary Search Trees",
   "Recover Binary Search Tree",
   "Number of Ways to Reorder Array to Get Same BST",
-  "Binary Search Tree Iterator",
   "Lowest Common Ancestor of a Binary Search Tree",
   "Closest Nodes Queries in a Binary Search Tree",
   "Implementation of Priority Queue using Binary Heap",
@@ -1050,7 +1047,6 @@ const data1 = [
   "Filling Bookcase Shelves",
   "Video Stitching",
   "Maximize Total Cost of Alternating Subarrays",
-  "Pizza With 3n Slices",
   "Minimum Swaps To Make Sequences Increasing",
   "Profitable Schemes",
   "Reducing Dishes",
@@ -2221,6 +2217,8 @@ function getRandomTitle(titles) {
 }
 
 //data2 have 795 count
+console.log(data2.length);
 console.log(getRandomTitle(data2));
+
 
 
