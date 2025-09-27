@@ -74,17 +74,27 @@ const openAndVisitProfiles = async ({
 };
 
 const url = [
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%22105004962%22%2C%2210288516%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=5c6f6e6e-ec5a-43ee-b9c5-f8584dd98667&sid=%2CQY",
+ 
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer%20goldman%20sachs&origin=SWITCH_SEARCH_VERTICAL&searchId=fe81c71f-bf26-421f-9ada-e04fc69b8a68&sid=dAA",
   "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221068%22%2C%221067%22%5D&keywords=jp%20morgan%20software%20engineer&origin=FACETED_SEARCH&sid=%408p",
-  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221337%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=B%2CC",
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221035%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=H-~",
+  "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2280918929%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=93S",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%22497017%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=I7Z",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221482%22%5D&keywords=paypal%20software%20engineer&origin=FACETED_SEARCH&searchId=1d561ecd-3c9f-40e1-bc60-e4d6cf76cbf9&sid=-Em",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%222340144%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=y3a",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2210479149%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=X%3B~",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2217988315%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=lLq",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%221815218%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=EDp",
+  // "https://www.linkedin.com/search/results/people/?currentCompany=%5B%2211174522%22%2C%229390173%22%2C%222646%22%5D&keywords=walmart%20software%20engineer&origin=FACETED_SEARCH&sid=a~X",
 ];
 
 const accessToken =
-  "AQEDAT9J7gMEajj3AAABmPYCcZgAAAGZGg71mE0ArF9h3qrqZie1BO19qEoHcNuKzGckcjNDy-4WVFhQ7u_6kn6kPJrzQgQzBLWora7_PGV8W6kpT4Vr93asJ_u64OLSKwLvc0aDRN7KXS4CPzSFzQdG";
-const profilePicClassName = "a.nIAHbkFFVPLJLbowytqQfPWpsWSECpfKtotE.scale-down";
-const connectBtnClassName = "AlEWhEmDAWrktQzxvycffpHmqHVcZYIhioRf";
-const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself`;
-const target = 10;
+  "AQEDAT9J7gMD0g2nAAABmS51whEAAAGZhivWu00AXr177QMmh0XNygE7Gs_b64xRDxxQA8UupST1IomTkScqI9duobu-qCur7pxRRIB_nm765urkhEqPNo2PByhGjRr_aMp9_ZRZII-M1ZI8KYfF8jpc";
+const profilePicClassName = "a.pVgHQJscSHWSyOoSAQIMWsVcRbnRZrJxuo.scale-down";
+const connectBtnClassName = "gyZFeomkAChcAYBbVgryEqYTorPWI";
+const message = `Hey, I was wondering if you could kindly review my resume. I recently applied to your company through a referral, but unfortunately, my resume didn’t make it through. I’d really appreciate any suggestions or feedback that could help me improve for future opportunities. Resume: https://surl.lt/nbeuwi`;
+// const message = `Hi, I’m a full stack dev with 3+ yrs of exp 👨‍💻, been putting in 8+ hrs a day for the past year to move into a product role — 500+ DSA Qs, system design, Striver A2Z. I’ve been giving it my all. A referral from you could mean a lot. I’ll share everything needed — just need a shot to prove myself`;
+const target = 20;
 const sleepTime = 2000;
 
 async function start() {

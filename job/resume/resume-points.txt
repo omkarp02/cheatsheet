@@ -1,0 +1,5 @@
+Designed and developed a real-time chat application supporting 5K+ concurrent users using WebSockets with Redis Pub/Sub, supporting multi-device sync, data persistence during network loss, <200ms latency.
+Built a centralized authentication system with Single Sign-On (SSO) for multiple internal applications, enabling one-time secure login, enhancing user experience, and standardizing security across platforms.
+Built a reusable UI component library to maintain design consistency, reduce duplicate code, and ensure full accessibility and responsive design across all screen sizes.
+Developed a high-performance data table library capable of efficiently handling millions of rows, with advanced features including filtering, sorting, column visibility, and centralized state management.
+Led a team of 4 developers, delivering 3 critical projects ahead of deadlines through agile sprint planning and direct client collaboration.
