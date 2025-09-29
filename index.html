@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Example</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      tr {
+        height: 30px;
+        border: 1px solid black;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sample Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr></tr>
+        <tr></tr>
+      </tbody>
+    </table>
 
-<script>
- 
-</script>
+    <script>
+      const tbody = document.querySelector("tbody");
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 1; i <= 100000; i++) {
+        const tr = document.createElement("tr");
+        fragment.appendChild(tr);
+      }
+
+      tbody.appendChild(fragment);
+    </script>
+  </body>
 </html>
