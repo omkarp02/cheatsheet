@@ -1,5 +1,22 @@
-Designed and developed a real-time chat application supporting 5K+ concurrent users using WebSockets with Redis Pub/Sub, supporting multi-device sync, data persistence during network loss, <200ms latency.
-Built a centralized authentication system with Single Sign-On (SSO) for multiple internal applications, enabling one-time secure login, enhancing user experience, and standardizing security across platforms.
-Built a reusable UI component library to maintain design consistency, reduce duplicate code, and ensure full accessibility and responsive design across all screen sizes.
-Developed a high-performance data table library capable of efficiently handling millions of rows, with advanced features including filtering, sorting, column visibility, and centralized state management.
-Led a team of 4 developers, delivering 3 critical projects ahead of deadlines through agile sprint planning and direct client collaboration.
+•	Designed and implemented a real-time chat application supporting 4K+ concurrent users using WebSockets with Redis Pub/Sub, enabling multi-device sync, data persistence during network loss, <200ms latency.
+•	Enabled seamless access to 10+ internal web applications by designing and developing a centralized Single Sign-On (SSO) system, reducing login time by 40% and improving security compliance across platforms.
+•	Developed a reusable UI component library to maintain design consistency, reduce duplicate code, and ensure full accessibility and responsive design across all screen sizes.
+•	Engineered a high-performance data table library capable of efficiently handling millions of rows, with advanced features including filtering, sorting, column visibility, and centralized state management.
+•	Revamped a legacy insurance monolith application into a scalable microservices architecture using Nx, introducing new features, improving scalability, reducing build times by 40%, and shortening development cycle time by 30%.
+•	Implemented CI/CD pipelines using GitHub Actions for a monorepo, automating microservices deployment to AWS EKS with rolling updates, reducing deployment time by 60% and increasing release frequency from weekly to daily with zero downtime.
+•	Contributed to 3 foundational projects within 6 months, gaining deep expertise in the insurance domain.
+•	Reduced infrastructure costs by 10% through S3 lifecycle policies, EC2 right-sizing, and eliminating unused resources.
+•	Built an end-to-end insurance onboarding flow with eKYC (Aadhaar/PAN), document upload and validation, automated proposal PDF generation, and data workflow from QC (with re-upload for invalid details) to underwriter.
+•	Engineered  an online learning platform for financial literacy, building an automated video processing and delivery pipeline with AWS Lambda, S3, and MediaConvert, reducing manual processing time by 80%.
+•	Integrated AWS Cognito for SSO and username/password login, implementing JWT refresh token rotation for enhanced security.
+•	Built a fully customizable drag-and-drop form builder and event planner, managing state across the lifecycle with     
+    configurable fields, UI styling, inter-field dependencies, multi-form support, and flexible validation for scalable form creation.
+•	Led the development of 5 high-impact projects in 9 months, improving client productivity by 25%.
+•	Developed a fault-tolerant daily batch pipeline handling ~1M shipments/day to validate orders and generate     
+    loyalty points; introduced batching, parallel workers, and backoff/retry strategies which reduced manual failures by 15%.
+•	Automated the generation of 100K+ policy and proposal PDFs per day by building a cron-based pipeline that validated KYC 
+    data and dynamically populated customer details — reducing document processing time by 90% and eliminating manual intervention.
+•	Built a auto-scaling, resiliant PDF generation service on AWS that processed 100K+ daily order events via SQS. 
+    Introduced retries, DLQs, and monitoring to reduce failures by X%, cut processing time by Y%, and achieved near real-time receipt generation even during traffic spikes.
+   •	Automated video processing for 100+ course uploads per week using S3-triggered Lambda + MediaConvert; reduced manual video preparation time by 90% and enabled smooth multi-resolution streaming for learners.
+
