@@ -20,3 +20,5 @@
     Introduced retries, DLQs, and monitoring to reduce failures by X%, cut processing time by Y%, and achieved near real-time receipt generation even during traffic spikes.
    •	Automated video processing for 100+ course uploads per week using S3-triggered Lambda + MediaConvert; reduced manual video preparation time by 90% and enabled smooth multi-resolution streaming for learners.
 
+   Led a cost saving intiative by identifying unused AWS resources and establishing S3 bucket expiration policies, leading to an annual cost reduction exceeding 2L in AWS expenditures
+

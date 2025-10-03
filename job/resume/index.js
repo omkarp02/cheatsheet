@@ -18,7 +18,8 @@ const nameMapping = {
   "Java": "OmkarResume.pdf",
   "JavaGo": "Omkar CV.pdf",
   "JavaNode": "Omkar-Resume.pdf",
-  "Node": "Omkar_Resume.pdf"
+  "Node": "Omkar_Resume.pdf",
+  "Node_React": "OmkarCV.pdf"
 };
 
 async function convertDocs() {
@@ -50,4 +51,5 @@ async function convertDocs() {
   }
 }
 
+// node job/resume/index.js 
 convertDocs();
