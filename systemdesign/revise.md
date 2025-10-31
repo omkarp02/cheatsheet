@@ -1,5 +1,4 @@
 deep dives
-
 load balancer 4 and 7
 udp/ tcp
 tls
