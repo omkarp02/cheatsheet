@@ -5,6 +5,16 @@ const officeToPdf = require("office-to-pdf");
 const inputDir = path.join(__dirname, "AllResume");
 const outputDir = path.join(__dirname, "AllResumePdf");
 
+const { execSync } = require("child_process");
+
+try {
+  execSync("soffice --version", { stdio: "ignore" });
+} catch {
+  console.error("❌ LibreOffice not found! Please install it or add to PATH.");
+  process.exit(1);
+}
+
+
 // Ensure output folder exists
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
@@ -18,8 +28,9 @@ const nameMapping = {
   "Java": "OmkarResume.pdf",
   "JavaGo": "Omkar CV.pdf",
   "JavaNode": "Omkar-Resume.pdf",
+  "JavaReact": "Omkar resume.pdf",
   "Node": "Omkar_Resume.pdf",
-  "Node_React": "OmkarCV.pdf"
+  "Node_React": "OmkarCV.pdf",
 };
 
 async function convertDocs() {

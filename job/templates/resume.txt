@@ -1,5 +1,5 @@
 Java
-https://tinyurl.com/4929xj59
+Resume: https://tinyurl.com/4929xj59
 
 Mern
 https://tinyurl.com/bdz5fzyv
@@ -13,3 +13,15 @@ https://tinyurl.com/bdz6xhw4
 
 Java go
 https://tinyurl.com/uudzfu8k
+
+
+
+const resumeOptions = [
+  { label: "Java", value: "OmkarResume.pdf" },
+  { label: "Mern Stack", value: "Omkar_Resume.pdf" },
+  { label: "Frontend", value: "Omkar_CV.pdf" },
+  { label: "Generic", value: "Omkar Resume.pdf" },
+  { label: "Go", value: "Omkar-CV.pdf" },
+  { label: "Java_Node", value: "Omkar-Resume.pdf" },
+  { label: "Java_Go", value: "Omkar CV.pdf" },
+];
