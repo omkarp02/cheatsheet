@@ -18,7 +18,16 @@ function getPageFromUrl(url) {
   }
 }
 
-async function handleIfBtnTextIsFollow(page, message, connectBtnClassName, sleepTime) {
+function randomDelay(min = 1500, max = 4000) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+async function handleIfBtnTextIsFollow(
+  page,
+  message,
+  connectBtnClassName,
+  sleepTime
+) {
   return new Promise(async (res) => {
     // Partial class-based selector, omitting dynamic hash class (which may change)
     const selector = `.artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.${connectBtnClassName}.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2`;
@@ -72,13 +81,13 @@ async function handleIfBtnTextIsFollow(page, message, connectBtnClassName, sleep
 }
 
 async function connectButtonClickedNowHandleRest(page, message, sleepTime) {
-  await sleep(sleepTime);
+  await sleep(randomDelay());
   const sendButtonSelector =
     "button.artdeco-button.artdeco-button--muted.artdeco-button--2.artdeco-button--secondary.ember-view.mr1";
   try {
     await page.waitForSelector(sendButtonSelector, { timeout: 5000 });
     await page.click(sendButtonSelector);
-    await sleep(sleepTime);
+    await sleep(randomDelay());
     await page.waitForSelector("#custom-message");
     await page.type("#custom-message", message, { delay: 40 });
 
@@ -108,8 +117,7 @@ async function visitUserProfile(
   for (let i = 0; i < profileUrls.length; i++) {
     const url = profileUrls[i];
     await page.goto(url, { waitUntil: "load", timeout: 60000 });
-
-    await sleep(sleepTime);
+    await sleep(randomDelay());
 
     try {
       const connectButtonSelector = `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
@@ -138,8 +146,7 @@ async function visitUserProfile(
       if (count >= target) {
         return count;
       }
-
-      await sleep(sleepTime);
+      await sleep(randomDelay());
     } catch (e) {
       console.log("❌ Follow button not found on this profile");
     }
@@ -157,4 +164,5 @@ module.exports = {
   getPageFromUrl,
   handleIfBtnTextIsFollow,
   connectButtonClickedNowHandleRest,
+  randomDelay,
 };

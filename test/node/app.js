@@ -1,22 +1,19 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const fs = require("fs");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const file = "text.txt";
 
-// Replace <DB_URI> with your MongoDB connection string
-const dbURI = 'mongodb+srv://opwebdev:Omkar^100@omkar.iuqcpfi.mongodb.net/testdb';
+function readFileCallback(err, data) {
+  if (err) {
+    console.error("Error reading file:", err);
+    return;
+  }
+  console.log("File contents:", data.toString());
+}
 
-// Connect to MongoDB
-mongoose.connect(dbURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch((error) => console.error('Error connecting to MongoDB:', error));
+fs.readFile(file, readFileCallback);
 
-// Middleware and routes here
+for (let i = 0; i < 10_000_000_000; i++) {
+  
+}
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+setImmediate(() => console.log("setimmediate "))
