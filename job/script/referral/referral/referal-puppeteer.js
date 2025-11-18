@@ -86,6 +86,10 @@ const openAndVisitProfiles = async ({
         );
 
         console.log(`Found ${profileUrls.length} profile urls on page.`);
+        if(profileUrls.length === 0){
+          console.log("No profile URLs found, ending process.");
+          break;
+        }
 
         try {
           const c = await visitUserProfile(
@@ -130,21 +134,22 @@ const openAndVisitProfiles = async ({
 };
 
 const url = [
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%225034%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=~av",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%222716085%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=M5)",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2214653154%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=h%40%2C",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%221636%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=Jk0",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2210045372%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=WSs",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%223076895%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=1BD",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22101237397%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=ODE",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2282087387%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=)b!",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22612239%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=EGV",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%227107613%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&searchId=db29acd9-56f2-415b-bee7-b0fbd525b661&sid=y1d"
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%221974%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=yON",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%221974%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=yON",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2220882%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=N)Y",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22236924%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=Bn*",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2299177329%22%5D&keywords=software%20engineer&origin=GLOBAL_SEARCH_HEADER&sid=6pS",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2280726005%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=6pS",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2233237670%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=bw%40",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22101881336%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=%3Bsn",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%223882691%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=LA1",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2240836719%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=OtU",
+"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2274370473%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=fe(",
 ];
 
 const accessToken = "AQEDAT9J7gMA5GDbAAABmhcVOIkAAAGaOyG8iU0AmWWuVGnSqTx8CUOV3BaE82yZhRXHPhlBGKUd8mO-eFE3eEbf0TXYOeVQPIvoCmtwFaFCQ-lslc9GqfO8jiOH3rdeUTdd8Owk_iJs8wE6OR_MrzKT";
-const profilePicClassName = "a.DJZxjMmjvRjrlgkfexJvTUxNqCHEnFKxUSdJm.scale-down";
-const connectBtnClassName = "pNQKjWRqUBZFmjxgECSWBSHYLbTDrrCXU";
+const profilePicClassName = "a.yRgCVsjrzAHkdCEjqvAcmnsmCUhbwIZbY.scale-down";
+const connectBtnClassName = "DhBcSsKzUnyKdEOWwBJmWavDjlHFWuqygdMVO";
 const message = `Hi! I came across a job opening at your company. Over the past year, I’ve been putting in 8+ hrs daily solving 500+ DSA problems, system design, and Striver A2Z, Fraz prep, and I’d truly value a referral. I’ll share everything needed just need a chance to prove myself.`;
 
 const target = 10; // Conservative target
