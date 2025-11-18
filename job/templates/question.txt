@@ -1,0 +1,7 @@
+Brief summary of me
+
+Hey, I’m a full-time coder, Over the last 3 years, I’ve been part of early engineering teams at startups like CodeB and Iorta, working across the stack with Java, Go, and MERN while also deploying scalable infrastructure.
+
+I’ve built and shipped end-to-end features such as form builders, real-time chat applications, video learning platforms, and fintech/insurance solutions. Writing code is what I’m best at, and what excites me most is solving real user pain points, collaborating in small teams, and growing quickly with the product.
+
+I’d love to connect and explore if my background could be a fit for your team at [Company Name].

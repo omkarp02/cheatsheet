@@ -1,55 +1,23 @@
-function soln(nums) {
-  nums.sort((a, b) => a - b);
-  const dp = [];
-  const backtrack = [];
-
-  for (let i = 0; i < nums.length; i++) {
-    dp[i] = 1;
-    backtrack[i] = i;
-  }
-
-  let max = 0;
-  for (let i = 1; i < nums.length; i++) {
-    const cur = nums[i];
-    for (let j = 0; j < i; j++) {
-      if (getLongestStringChain(nums[j], cur) && dp[j] + 1 > dp[i]) {
-        dp[i] = dp[j] + 1;
-        backtrack[i] = j;
-      }
+var minFlips = function (target) {
+  let prev = "0";
+  let count = 0;
+  for (let i = 0; i < target.length; i++) {
+    if (target[i] !== prev) {
+      count++;
     }
-    if (dp[i] > dp[max]) {
-      max = i;
-    }
+    prev = target[i];
   }
+  return count;
+};
 
-  const result = [];
-  let count = dp[max] - 1;
-  while (backtrack[max] !== max) {
-    result[count] = nums[max];
-    count--;
-    max = backtrack[max];
+function flipFromIndex(cur, index) {
+  let newCur = cur.slice(0, index);
+  for (let i = index; i < cur.length; i++) {
+    newCur += cur[i] === "0" ? "1" : "0";
   }
-  result[0] = nums[max];
-  return result;
+  return newCur;
 }
 
-function getLongestStringChain(word1, word2) {
-  if (word1.length + 1 !== word2.length) return false;
-  let noOfNotMatch = 0;
-  let i = 0,
-    j = 0;
-  while (i < word1.length && j < word2.length) {
-    if (word1[i] !== word2[j]) {
-        noOfNotMatch++;
-        j++;
-        if (noOfNotMatch > 1) return false;
-    }else{
-        i++
-        j++
-    }
-  }
-  return true;  
-}
+const target = "10111";
 
-const nums = ["a", "b", "ba", "bca", "bda", "bdca"];
-console.log(soln(nums));
+console.log(minFlips(target));
