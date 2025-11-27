@@ -25,6 +25,9 @@ const openAndVisitProfiles = async ({
   sleepTime,
 }) => {
   return new Promise(async (res, rej) => {
+
+    profilePicClassName = profilePicClassName.split(" ").join(".");
+
     try {
       const browser = await puppeteer.launch({
         headless: false,
@@ -134,22 +137,27 @@ const openAndVisitProfiles = async ({
 };
 
 const url = [
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%221974%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=yON",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%221974%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=yON",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2220882%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=N)Y",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22236924%22%5D&keywords=software%20enginer&origin=FACETED_SEARCH&searchId=80a1a2fd-3ed9-42cd-9e19-bb7d05a9c681&sid=Bn*",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2299177329%22%5D&keywords=software%20engineer&origin=GLOBAL_SEARCH_HEADER&sid=6pS",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2280726005%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=6pS",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2233237670%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=bw%40",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%22101881336%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=%3Bsn",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%223882691%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=LA1",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2240836719%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=OtU",
-"https://www.linkedin.com/search/results/people/?currentCompany=%5B%2274370473%22%5D&keywords=software%20engineer&origin=FACETED_SEARCH&sid=fe(",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2228843444%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%221481%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223527547%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%224617%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%222337411%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22272972%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223165356%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22106714672%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2214606010%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2280260499%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223878180%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2280856410%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223882691%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%222337411%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223495%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%221068920%22%5D",
 ];
 
-const accessToken = "AQEDAT9J7gMA5GDbAAABmhcVOIkAAAGaOyG8iU0AmWWuVGnSqTx8CUOV3BaE82yZhRXHPhlBGKUd8mO-eFE3eEbf0TXYOeVQPIvoCmtwFaFCQ-lslc9GqfO8jiOH3rdeUTdd8Owk_iJs8wE6OR_MrzKT";
-const profilePicClassName = "a.yRgCVsjrzAHkdCEjqvAcmnsmCUhbwIZbY.scale-down";
-const connectBtnClassName = "DhBcSsKzUnyKdEOWwBJmWavDjlHFWuqygdMVO";
+const accessToken = "AQEDAT9J7gMA5GDbAAABmhcVOIkAAAGa30ZbtU0AMSlNUhuPlBD5PCw3_je6huCYIpH3KUWgrpiFU6Wf_oenijt7wtYeZ_Ix7ULd00Bg1X_wz0gtNBuFtGB6oLLSu-Pp4OQOSlIx6Rx3xrXN5yArL7Y1";
+const profilePicClassName = "a.fd341caa _38dfe71d _366480e3 _0959399f _41e6e8fd _38952a3d f5755ef5 e9329a8f bb545261 _0aab64e7";
+const connectBtnClassName = "csErJNUJFqXwezdDYcFzqtghwqluDBWGhHhw";
 const message = `Hi! I came across a job opening at your company. Over the past year, I’ve been putting in 8+ hrs daily solving 500+ DSA problems, system design, and Striver A2Z, Fraz prep, and I’d truly value a referral. I’ll share everything needed just need a chance to prove myself.`;
 
 const target = 10; // Conservative target
