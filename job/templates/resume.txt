@@ -1,20 +1,37 @@
 Java
+
+Job Link: 
+
 Resume: https://tinyurl.com/4929xj59
+If you need any other details just ping me, Thank you😊
+
 
 Mern
+
+Job Link: 
+
 Resume: https://tinyurl.com/bdz5fzyv
+If you need any other details just ping me, Thank you😊
 
 go
+Job Link: 
+
+If you need any other details just ping me, Thank you😊
 Resume: https://tinyurl.com/2fk9jpcs
 
 
 Java node
+Job Link: 
+
+If you need any other details just ping me, Thank you😊
 Resume: https://tinyurl.com/bdz6xhw4
 
 Java go
-Resume: https://tinyurl.com/uudzfu8k
+Job Link: 
 
-If you need any other details just ping me, Thank you
+Resume: https://tinyurl.com/uudzfu8k
+If you need any other details just ping me, Thank you😊
+
 
 const resumeOptions = [
   { label: "Java", value: "OmkarResume.pdf" },
