@@ -111,7 +111,6 @@ const data = [
   "Maximum Equal Frequency",
   "Rearranging Fruits",
   "Subarray Sum Equals K",
-  "Subarray Sums Divisible by K",
   "Make Sum Divisible by P",
   "Count Number of Bad Pairs",
   "Continuous Subarray Sum",
@@ -794,6 +793,7 @@ const data = [
 const notDone = [
   "Max Value of Equation",
   "Length of Longest Fibonacci Subsequence",
+  "Sum of Imbalance Numbers of All Subarrays"
 ];
 
 function getRandomTitle(titles) {
