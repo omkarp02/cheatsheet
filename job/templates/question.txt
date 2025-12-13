@@ -5,3 +5,12 @@ Hey, I’m a full-time coder, Over the last 3 years, I’ve been part of early e
 I’ve built and shipped end-to-end features such as form builders, real-time chat applications, video learning platforms, and fintech/insurance solutions. Writing code is what I’m best at, and what excites me most is solving real user pain points, collaborating in small teams, and growing quickly with the product.
 
 I’d love to connect and explore if my background could be a fit for your team at [Company Name].
+
+
+
+
+Why you want to  join this company
+
+I want to join this company because it’s working on meaningful products with real-world impact, and that strongly aligns with what I look for in my next role. From my research, the company values strong engineering practices, ownership, and continuous learning, which matches the way I like to work.
+
+I’m also excited about the opportunity to contribute my experience in building scalable applications while continuing to grow by working with a skilled team and challenging problems. Overall, this feels like a place where I can add value while growing both technically and professionally.
