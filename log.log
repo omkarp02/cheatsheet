@@ -1,0 +1,354 @@
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 0
+referal-puppeteer.js:78
+at index  1
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 1
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 1
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+7
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 4
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 4
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 4
+referal-puppeteer.js:78
+at index  2
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 8 profile urls on page.
+referal-puppeteer.js:90
+8
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 8 profile urls on page.
+referal-puppeteer.js:90
+8
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 0
+referal-puppeteer.js:78
+at index  3
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 1
+referal-puppeteer.js:125
+Error in openAndVisitProfiles: Error: net::ERR_NETWORK_CHANGED at https://www.linkedin.com/search/results/people/?keywords=software+engineer&origin=FACETED_SEARCH&currentCompany=%5B%229498084%22%5D&page=2
+    at navigate (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:184:27)
+    at async Deferred.race (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:36:20)
+    at async CdpFrame.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:150:25)
+    at async CdpPage.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:574:20)
+    at async C:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:70:9 {stack: 'Error: net::ERR_NETWORK_CHANGED at https://ww…referral\\referral\\referal-puppeteer.js:70:9', message: 'net::ERR_NETWORK_CHANGED at https://www.link…CH&currentCompany=%5B%229498084%22%5D&page=2'}
+
+referal-puppeteer.js:131
+Error: net::ERR_NETWORK_CHANGED at https://www.linkedin.com/search/results/people/?keywords=software+engineer&origin=FACETED_SEARCH&currentCompany=%5B%229498084%22%5D&page=2
+    at navigate (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:184:27)
+    at async Deferred.race (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\util\Deferred.js:36:20)
+    at async CdpFrame.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Frame.js:150:25)
+    at async CdpPage.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:574:20)
+    at async C:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:70:9 {stack: 'Error: net::ERR_NETWORK_CHANGED at https://ww…referral\\referral\\referal-puppeteer.js:70:9', message: 'net::ERR_NETWORK_CHANGED at https://www.link…CH&currentCompany=%5B%229498084%22%5D&page=2'}
+
+referal-puppeteer.js:184
+at index  3
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+8
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 2
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 3
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 3
+referal-puppeteer.js:78
+at index  4
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 1
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 1
+referal-puppeteer.js:78
+at index  5
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Profile elements not found, Then End at page: 0
+referal-puppeteer.js:78
+at index  6
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+8
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 5 profile urls on page.
+referal-puppeteer.js:90
+5
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 0 profile urls on page.
+referal-puppeteer.js:90
+No profile URLs found, ending process. 6 <<<<<<<< here is index
+referal-puppeteer.js:92
+at index  7
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 9 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 2 profile urls on page.
+referal-puppeteer.js:90
+2
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 0 profile urls on page.
+referal-puppeteer.js:90
+No profile URLs found, ending process. 7 <<<<<<<< here is index
+referal-puppeteer.js:92
+at index  8
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+10
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 9 profile urls on page.
+referal-puppeteer.js:90
+9
+❌ Follow button not found on this profile
+utils.js:151
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Found 10 profile urls on page.
+referal-puppeteer.js:90
+4
+❌ Follow button not found on this profile
+utils.js:151
+Error in visitUserProfile: Attempted to use detached Frame '20F4373EA084A812A1319B5E6D83C117'.
+referal-puppeteer.js:112
+Count till now >>>>>>>>> 0
+referal-puppeteer.js:125
+Error in openAndVisitProfiles: Error: Attempted to use detached Frame '20F4373EA084A812A1319B5E6D83C117'.
+    at CdpFrame.<anonymous> (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\util\decorators.js:107:23)
+    at CdpPage.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:574:43)
+    at c:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:70:20
+    at runNextTicks (c:\Omkar\cheatsheet\lib\internal\process\task_queues.js:60:5)
+    at process.processTimers (node:internal/timers:516:9) {stack: "Error: Attempted to use detached Frame '20F43…ss.processTimers (node:internal/timers:516:9)", message: "Attempted to use detached Frame '20F4373EA084A812A1319B5E6D83C117'."}
+
+referal-puppeteer.js:131
+Error: Attempted to use detached Frame '20F4373EA084A812A1319B5E6D83C117'.
+    at CdpFrame.<anonymous> (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\util\decorators.js:107:23)
+    at CdpPage.goto (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\api\Page.js:574:43)
+    at c:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:70:20
+    at runNextTicks (c:\Omkar\cheatsheet\lib\internal\process\task_queues.js:60:5)
+    at process.processTimers (node:internal/timers:516:9) {stack: "Error: Attempted to use detached Frame '20F43…ss.processTimers (node:internal/timers:516:9)", message: "Attempted to use detached Frame '20F4373EA084A812A1319B5E6D83C117'."}
+
+referal-puppeteer.js:184
+at index  8
+referal-puppeteer.js:186
+Continuing to next URL...
+referal-puppeteer.js:187
+Error in openAndVisitProfiles: Error: Protocol error: Connection closed.
+    at Connection._rawSend (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Connection.js:97:35)
+    at Connection.send (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Connection.js:90:21)
+    at TargetManager.initialize (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\TargetManager.js:102:32)
+    at process.processTicksAndRejections (c:\Omkar\cheatsheet\lib\internal\process\task_queues.js:95:5)
+    at async CdpBrowser._attach (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Browser.js:68:9)
+    at async CdpBrowser._create (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Browser.js:26:9)
+    at async ChromeLauncher.launch (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\node\BrowserLauncher.js:155:31)
+    at async PuppeteerExtra.launch (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-extra\dist\index.cjs.js:128:25)
+    at async C:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:32:23 {stack: 'Error: Protocol error: Connection closed.
+   …eferral\\referral\\referal-puppeteer.js:32:23', message: 'Protocol error: Connection closed.'}
+
+referal-puppeteer.js:131
+Error: Protocol error: Connection closed.
+    at Connection._rawSend (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Connection.js:97:35)
+    at Connection.send (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Connection.js:90:21)
+    at TargetManager.initialize (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\TargetManager.js:102:32)
+    at process.processTicksAndRejections (c:\Omkar\cheatsheet\lib\internal\process\task_queues.js:95:5)
+    at async CdpBrowser._attach (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Browser.js:68:9)
+    at async CdpBrowser._create (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\cdp\Browser.js:26:9)
+    at async ChromeLauncher.launch (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-core\lib\cjs\puppeteer\node\BrowserLauncher.js:155:31)
+    at async PuppeteerExtra.launch (c:\Omkar\cheatsheet\job\script\referral\node_modules\puppeteer-extra\dist\index.cjs.js:128:25)
+    at async C:\Omkar\cheatsheet\job\script\referral\referral\referal-puppeteer.js:32:23 {stack: 'Error: Protocol error: Connection closed.
+   …eferral\\referral\\referal-puppeteer.js:32:23', message: 'Protocol error: Connection closed.'}
+
+referal-puppeteer.js:184
+at index  8
+referal-puppeteer.js:186
+Continuing to next URL...

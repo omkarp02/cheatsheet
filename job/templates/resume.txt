@@ -15,6 +15,7 @@ Java go
 Resume: https://tinyurl.com/uudzfu8k
 
 
+If you need any details please ping me
 
 const resumeOptions = [
   { label: "Java", value: "OmkarResume.pdf" },
