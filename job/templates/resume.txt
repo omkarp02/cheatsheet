@@ -1,19 +1,36 @@
 Java
+
+Job Link: 
+
 Resume: https://tinyurl.com/4929xj59
+If you need any other details just ping me, Thank you😊
+
 
 Mern
+
+Job Link: 
+
 Resume: https://tinyurl.com/bdz5fzyv
+If you need any other details just ping me, Thank you😊
 
 go
+Job Link: 
+
+If you need any other details just ping me, Thank you😊
 Resume: https://tinyurl.com/2fk9jpcs
 
 
 Java node
+Job Link: 
+
+If you need any other details just ping me, Thank you😊
 Resume: https://tinyurl.com/bdz6xhw4
 
 Java go
-Resume: https://tinyurl.com/uudzfu8k
+Job Link: 
 
+Resume: https://tinyurl.com/uudzfu8k
+If you need any other details just ping me, Thank you😊
 
 If you need any details please ping me
 
@@ -26,3 +43,8 @@ const resumeOptions = [
   { label: "Java_Node", value: "Omkar-Resume.pdf" },
   { label: "Java_Go", value: "Omkar CV.pdf" },
 ];
+
+Languages: Javascript, Typescript, Golang, HTML, CSS 
+Database: MongoDB, PostgreSQL
+Skills & Tools: Node.js, Nest.js React.js, Next.js, Next.js, Express.js, Kafka, Redis, Operating System, DSA
+Cloud & DevOps: AWS (EC2, ECS, EKS, Lambda, S3, SNS, SQS), Docker, Kubernetes, CI/CD (GitHub Actions)
