@@ -116,7 +116,7 @@ async function visitUserProfile(
   let count = countUntilNow;
   for (let i = 0; i < profileUrls.length; i++) {
     const url = profileUrls[i];
-    await page.goto(url, { waitUntil: "load", timeout: 60000 });
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
     await sleep(randomDelay());
 
     try {

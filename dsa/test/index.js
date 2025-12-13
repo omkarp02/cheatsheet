@@ -1,23 +1,33 @@
-var minFlips = function (target) {
-  let prev = "0";
-  let count = 0;
-  for (let i = 0; i < target.length; i++) {
-    if (target[i] !== prev) {
-      count++;
-    }
-    prev = target[i];
+const PromisePollyfill = function (cb) {
+  let res, rej;
+
+  function onResolve(value) {
+    res(value);
   }
-  return count;
+
+  function onReject(value) {
+    rej(value);
+  }
+
+  this.then = function (onRes) {
+    res = onRes;
+    return this;
+  };
+
+  this.catch = function (onRej) {
+    rej = onRej;
+    return this;
+  };
+
+  cb(onResolve, onReject);
 };
 
-function flipFromIndex(cur, index) {
-  let newCur = cur.slice(0, index);
-  for (let i = index; i < cur.length; i++) {
-    newCur += cur[i] === "0" ? "1" : "0";
-  }
-  return newCur;
-}
+const myPromise = new PromisePollyfill((resolve, reject) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 300);
+});
 
-const target = "10111";
-
-console.log(minFlips(target));
+myPromise.then((value) => {
+  console.log(value);
+});
