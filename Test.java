@@ -10,46 +10,44 @@ class Test {
 
         // nums1 = [1,2,3,2,1], nums2 = [2,1,3,2,1,4,7]
 
-        String word1 = "sea";
-        String word2 = "eat";
-        int result = solution.minDistance(word1, word2);
+        int[] nums = { 24, 13, 1, 100, 0, 94, 3, 0, 3 };
+        int result = solution.longestArithSeqLength(nums);
         System.out.println(result);
 
     }
 }
 
-// asdf
-
-// word1 = "sea", word2 = "eat"
+// nums = [1, 7, 10, 13, 14, 19], 1, 7, 13, 19
 class Solution {
-    public int minDistance(String word1, String word2) {
-        return dp( word1, word2);
+    List<Integer> asdf = new ArrayList<>();
+
+    public int longestArithSeqLength(int[] nums) {
+        return helper(0, -1, null, nums);
     }
 
-
-    public int dp(String w1, String w2){
-        int n = w1.length();
-        int m = w2.length();
-
-        int[][] dp = new int[n + 1][m + 1];
-
-
-        for (int i = 0; i <= n; i++) {
-            for (int j = 0; j <= m; j++) {
-                if (i == 0) {
-                    dp[i][j] = j;
-                } else if (j == 0) {
-                    dp[i][j] = i;
-                } else if (w1.charAt(i - 1) == w2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else {
-                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1;
-                }
-            }
+    public int helper(int i, int prev, Integer diff, int[] nums) {
+        if (i == nums.length) {
+            return 0;
         }
 
-        return dp[n][m];
+        int count = 0;
+        if (prev == -1) {
+            count = helper(i + 1, i, null, nums) + 1;
+        } else {
+            int d = nums[i] - nums[prev];
+            if(diff == null || d == diff){
+                count = helper(i + 1, i, diff == null ? d : diff, nums)  + 1;
+            }
+        }
+        int b = helper(i + 1, prev, diff, nums);
+        count = Math.max(b, count);
+
+        return count;
     }
+
+
 }
+
+
 
 // asdf

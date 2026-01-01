@@ -26,11 +26,9 @@ const data = [
   "Movement of Robots",
   "Range Sum Query 2D - Immutable",
   "Increment Submatrices by One",
-  "Power of Heroes",
   "Minimum Cost to Make Array Equal",
   "Pongal Bunk",
   "Car Pooling",
-  "My Calendar II",
   "Shifting Letters II",
   "Perfect Rectangle",
   "Rectangle Area II",
@@ -73,7 +71,6 @@ const data = [
   "Groups of Special Equivalent Strings",
   "Word Subsets",
   "Find the Maximum Number of Elements in Subset",
-  "Count the Number of Good Partitions",
   "Optimal Partition of String",
   "Custom Sort String",
   "Finding the Users Active Minutes",
@@ -107,7 +104,6 @@ const data = [
   "Count Number of Bad Pairs",
   "Continuous Subarray Sum",
   "Count of Interesting Subarrays",
-  "Count Number of Nice Subarrays",
   "Sum of Digit Differences of All Pairs",
   "Binary Subarrays with Sum",
   "Number of Wonderful Substrings",
@@ -152,7 +148,6 @@ const data = [
   "Minimum Insertions to Balance a Parentheses String",
   "Longest Valid Parentheses",
   "Redundant Parenthesis",
-  "Min Stack",
   "Maximum Frequency Stack",
   "Design a Stack With Increment Operation",
   "Dinner Plate Stacks",
@@ -196,7 +191,6 @@ const data = [
   "Dota2 Senate",
   "Find the Winner of the Circular Game",
   "Reveal Cards in Increasing Order",
-  "Minimum Number of K Consecutive Bit Flips",
   "Stamping the Sequence",
   "Design Circular Deque",
   "Jump Game VI",
@@ -735,7 +729,9 @@ const notDone = [
   "Number of Subarrays with Bounded Maximum",
   "Minimum Cost to Cut the Stick", //this will be solved by paritition DP
   "Delete Columns to Make Sorted III",
-  "Sum of Imbalance Numbers of All Subarrays"
+  "Sum of Imbalance Numbers of All Subarrays",
+  "http://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/description/",
+  "Longest Arithmetic Subsequence"
 ];
 
 function getRandomTitle(titles) {

@@ -25,18 +25,12 @@ function randomDelay(min = 1500, max = 4000) {
 async function handleIfBtnTextIsFollow(
   page,
   message,
-  connectBtnClassName,
   sleepTime
 ) {
   return new Promise(async (res) => {
-    // Partial class-based selector, omitting dynamic hash class (which may change)
-    const selector = `.artdeco-dropdown__trigger.artdeco-dropdown__trigger--placement-bottom.ember-view.${connectBtnClassName}.artdeco-button.artdeco-button--secondary.artdeco-button--muted.artdeco-button--2`;
 
-    // Wait until at least one button with this class appears
-    await page.waitForSelector(selector);
-
-    // Get all matching buttons
-    const buttons = await page.$$(selector);
+    const btnSelector = `button[aria-label="More actions"]`;
+    const buttons = await page.$$(btnSelector);
 
     for (const btn of buttons) {
       const text = await btn.evaluate((el) =>
@@ -108,7 +102,6 @@ async function visitUserProfile(
   profileUrls,
   page,
   message,
-  connectBtnClassName,
   target,
   countUntilNow,
   sleepTime
@@ -120,24 +113,25 @@ async function visitUserProfile(
     await sleep(randomDelay());
 
     try {
-      const connectButtonSelector = `button.artdeco-button.artdeco-button--2.artdeco-button--primary.ember-view.${connectBtnClassName}`;
+      await page.waitForSelector("h1", { timeout: 100000 });
 
-      await page.waitForSelector(connectButtonSelector, { timeout: 5000 });
+      const name = await page.$eval("h1", (el) => el.innerText.trim());
 
-      // Extract the button's visible text
-      const buttonText = await page.$eval(connectButtonSelector, (el) =>
-        el.innerText.trim()
-      );
+      console.log("Name:", name);
 
-      if (buttonText.toLowerCase() === "connect") {
-        await page.click(connectButtonSelector);
+      const ariaLabel = `Invite ${name} to connect`;
+
+      const btnSelector = `button[aria-label="${ariaLabel}"]`;
+      const btnElementExist = await page.$$(btnSelector);
+
+      if (btnElementExist.length >= 2) {
+        await btnElementExist[1].click();
         await connectButtonClickedNowHandleRest(page, message, sleepTime);
         count++;
       } else {
         const res = await handleIfBtnTextIsFollow(
           page,
           message,
-          connectBtnClassName,
           sleepTime
         );
         if (res) count++;

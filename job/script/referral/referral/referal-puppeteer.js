@@ -19,10 +19,10 @@ const randomDelay = (min = 1000, max = 3000) => {
 const humanMouseMove = async (page) => {
   const width = await page.evaluate(() => window.innerWidth);
   const height = await page.evaluate(() => window.innerHeight);
-  
+
   // Random movements (3-7 movements)
   const movements = Math.floor(Math.random() * 5) + 3;
-  
+
   for (let i = 0; i < movements; i++) {
     const x = Math.floor(Math.random() * width);
     const y = Math.floor(Math.random() * height);
@@ -34,25 +34,25 @@ const humanMouseMove = async (page) => {
 // Random scrolling behavior
 const humanScroll = async (page) => {
   const scrolls = Math.floor(Math.random() * 3) + 2; // 2-4 scrolls
-  
+
   for (let i = 0; i < scrolls; i++) {
     await page.evaluate(() => {
       window.scrollBy({
         top: Math.random() * 300 + 200,
         left: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     });
     await sleep(randomDelay(500, 1500));
   }
-  
+
   // Scroll back up sometimes
   if (Math.random() > 0.5) {
     await page.evaluate(() => {
       window.scrollBy({
         top: -(Math.random() * 200 + 100),
         left: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     });
     await sleep(randomDelay(500, 1000));
@@ -62,15 +62,12 @@ const humanScroll = async (page) => {
 const openAndVisitProfiles = async ({
   url,
   accessToken,
-  profilePicClassName,
-  connectBtnClassName,
   message,
   target,
   sleepTime,
   index,
 }) => {
   return new Promise(async (res, rej) => {
-    profilePicClassName = profilePicClassName.split(" ").join(".");
 
     try {
       const browser = await puppeteer.launch({
@@ -98,40 +95,39 @@ const openAndVisitProfiles = async ({
         Object.defineProperty(navigator, "webdriver", {
           get: () => undefined,
         });
-        
+
         // Override plugins
-        Object.defineProperty(navigator, 'plugins', {
+        Object.defineProperty(navigator, "plugins", {
           get: () => [1, 2, 3, 4, 5],
         });
-        
+
         // Override languages
-        Object.defineProperty(navigator, 'languages', {
-          get: () => ['en-US', 'en'],
+        Object.defineProperty(navigator, "languages", {
+          get: () => ["en-US", "en"],
         });
-        
+
         // Chrome runtime
         window.chrome = {
           runtime: {},
         };
-        
+
         // Permissions
         const originalQuery = window.navigator.permissions.query;
-        window.navigator.permissions.query = (parameters) => (
-          parameters.name === 'notifications' ?
-            Promise.resolve({ state: Notification.permission }) :
-            originalQuery(parameters)
-        );
+        window.navigator.permissions.query = (parameters) =>
+          parameters.name === "notifications"
+            ? Promise.resolve({ state: Notification.permission })
+            : originalQuery(parameters);
       });
-      
+
       // Set realistic user agent
       await page.setUserAgent(
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
       );
-      
+
       // Set extra headers
       await page.setExtraHTTPHeaders({
-        'accept-language': 'en-US,en;q=0.9',
-        'accept-encoding': 'gzip, deflate, br',
+        "accept-language": "en-US,en;q=0.9",
+        "accept-encoding": "gzip, deflate, br",
       });
 
       // Set LinkedIn session cookie
@@ -148,7 +144,7 @@ const openAndVisitProfiles = async ({
         // Small random delay before each page
         await sleep(randomDelay(3000, 6000));
 
-        await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
 
         // Human-like behavior after page load
         await sleep(randomDelay(2000, 4000));
@@ -158,17 +154,28 @@ const openAndVisitProfiles = async ({
         await sleep(randomDelay(1500, 3000));
 
         try {
-          await page.waitForSelector(profilePicClassName, { timeout: 10000 });
+          await page.waitForSelector('a[href^="https://www.linkedin.com/in/"]', {
+            timeout: 15000,
+          });
         } catch (err) {
           console.warn("Profile elements not found, Then End at page:", count);
           break;
         }
 
-        let profileUrls = await page.$$eval(profilePicClassName, (anchors) =>
+
+        const profileAnchorClass = await page.$$eval('a[href^="https://www.linkedin.com/in/"]', anchors =>
+          anchors
+            .map(a => a.className)
+        );
+
+        const classSelector =
+          "a." + profileAnchorClass[0].trim().split(/\s+/).join(".");
+
+        let profileUrls = await page.$$eval(classSelector, (anchors) =>
           anchors
             .map((a) => a.href)
             .filter(
-              (href) => href && href.startsWith("https://www.linkedin.com/in")
+              (href) => href && href.startsWith("https://www.linkedin.com/in/")
             )
         );
 
@@ -187,7 +194,6 @@ const openAndVisitProfiles = async ({
             profileUrls,
             page,
             message,
-            connectBtnClassName,
             target,
             count,
             sleepTime
@@ -225,27 +231,22 @@ const openAndVisitProfiles = async ({
   });
 };
 
-
-
 const url = [
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2262902%22%5D&page=2&spellCorrectionEnabled=true",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223762143%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%225360261%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%229498084%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250135%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250912%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22104967197%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2228843444%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2280856410%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223882691%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223495%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22104967197%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223762143%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%225360261%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%229498084%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250135%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250912%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22104967197%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2228843444%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2280856410%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223882691%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223495%22%5D",
 ];
 
 const accessToken =
   "AQEDAT9J7gMDcQ13AAABmwgox3YAAAGbLDVLdk0Av9Nd-Mg-zQJjTyLM_eozjiSY76D1a0MiEqgZp5EEixO3G-5Rwcf5DWH3fYbRSy5XMB8t8ggr1uAznUrrM0lIlNSCr93hoUnd7y9yo0LqncYhRLym";
-const profilePicClassName =
-  "a.e9240e9a f3d5ab7d _0bfecead b4471907 ebea0ded _8d65a587 _29926e15 _9a2dc561 daa05862 _94d7787d";
-const connectBtnClassName = "OSHnKSWBmVVluHcAUeYNgSjYqReAwvDgpkTRbuQ";
 const message = `Hi! I came across a job opening at your company. Over the past year, I’ve been putting in 8+ hrs daily solving 500+ DSA problems, system design, and Striver A2Z, Fraz prep, and I’d truly value a referral. I’ll share everything needed just need a chance to prove myself.`;
 
 const target = 5; // Very conservative target to avoid detection (reduced from 10)
@@ -258,8 +259,6 @@ async function start() {
       await openAndVisitProfiles({
         url: item,
         accessToken,
-        profilePicClassName,
-        connectBtnClassName,
         message,
         target,
         sleepTime,
