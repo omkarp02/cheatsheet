@@ -249,7 +249,7 @@ const accessToken =
   "AQEDAT9J7gMDcQ13AAABmwgox3YAAAGbLDVLdk0Av9Nd-Mg-zQJjTyLM_eozjiSY76D1a0MiEqgZp5EEixO3G-5Rwcf5DWH3fYbRSy5XMB8t8ggr1uAznUrrM0lIlNSCr93hoUnd7y9yo0LqncYhRLym";
 const message = `Hi! I came across a job opening at your company. Over the past year, I’ve been putting in 8+ hrs daily solving 500+ DSA problems, system design, and Striver A2Z, Fraz prep, and I’d truly value a referral. I’ll share everything needed just need a chance to prove myself.`;
 
-const target = 5; // Very conservative target to avoid detection (reduced from 10)
+const target = 10; // Very conservative target to avoid detection (reduced from 10)
 const sleepTime = 15000; // 15 second delays - more human-like (increased)
 
 async function start() {

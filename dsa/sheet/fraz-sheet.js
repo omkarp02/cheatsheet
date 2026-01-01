@@ -128,7 +128,6 @@ const data = [
   "Substring with Concatenation of All Words",
   "Minimum Size Subarray Sum",
   "Subarray Product Less Than K",
-  "Grumpy Bookstore Owner",
   "Moving Stones Until Consecutive II",
   "Count Number of Nice Subarrays",
   "Number of Subarrays with Bounded Maximum",
@@ -249,7 +248,6 @@ const data = [
   "Median of Two Sorted Arrays",
   "Magnetic Force Between Two Balls",
   "Maximum Tastiness of Candy Basket",
-  "Minimum Limit of Balls in a Bag",
   "Minimized Maximum of Products Distributed to Any Store",
   "Minimize the Maximum Difference of Pairs",
   "Maximize the Minimum Powered City",
@@ -336,7 +334,6 @@ const data = [
   "Seat Reservation Manager",
   "Sort Characters By Frequency",
   "Longest Happy String",
-  "Reorganize String",
   "Maximum Average Pass Ratio",
   "Find Score of an Array After Marking All Elements",
   "Furthest Building You Can Reach",
@@ -375,7 +372,6 @@ const data = [
   "The Number of the Smallest Unoccupied Chair",
   "Lexicographically Minimum String After Removing Stars",
   "Replace Question Marks in String to Minimize Its Value",
-  "Minimum Sum of Squared Difference",
   "Minimum Cost to Hire K Workers",
   "Minimize Deviation in Array",
   "Minimum Moves to Move a Box to Their Target Location",
@@ -451,7 +447,6 @@ const data = [
   "String Without AAA or BBB",
   "Check If a String Can Break Another String",
   "Remove Duplicate Letters",
-  "Shortest String That Contains Three Strings",
   "Lexicographically Smallest String After Substring Operation",
   "Minimum Rounds to Complete All Tasks",
   "Number of Burgers with No Waste of Ingredients",
@@ -731,7 +726,8 @@ const notDone = [
   "Delete Columns to Make Sorted III",
   "Sum of Imbalance Numbers of All Subarrays",
   "http://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/description/",
-  "Longest Arithmetic Subsequence"
+  "Longest Arithmetic Subsequence",
+  "Maximum White Tiles Covered by a Carpet"
 ];
 
 function getRandomTitle(titles) {

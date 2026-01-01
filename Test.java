@@ -8,7 +8,7 @@ class Test {
         System.out.println("Try programiz.pro");
         Solution solution = new Solution();
 
-        // nums1 = [1,2,3,2,1], nums2 = [2,1,3,2,1,4,7]
+        // nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0
 
         int[] nums = { 24, 13, 1, 100, 0, 94, 3, 0, 3 };
         int result = solution.longestArithSeqLength(nums);
