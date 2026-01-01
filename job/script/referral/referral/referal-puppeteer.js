@@ -148,7 +148,7 @@ const openAndVisitProfiles = async ({
         // Small random delay before each page
         await sleep(randomDelay(3000, 6000));
 
-        await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 10000 });
 
         // Human-like behavior after page load
         await sleep(randomDelay(2000, 4000));
@@ -228,27 +228,28 @@ const openAndVisitProfiles = async ({
 
 
 const url = [
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2262902%22%5D&page=2&spellCorrectionEnabled=true",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223762143%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%225360261%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%229498084%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250135%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213250912%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%22104967197%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2228843444%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2280856410%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223882691%22%5D",
- "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223495%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213245704%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%222464624%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2239624%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213213484%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%221262%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2210129177%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2264863146%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2299142263%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2290437215%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2269088800%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%2213216995%22%5D",
+  "https://www.linkedin.com/search/results/people/?keywords=software%20engineer&origin=FACETED_SEARCH&currentCompany=%5B%223165356%22%5D",
 ];
 
 const accessToken =
   "AQEDAT9J7gMDcQ13AAABmwgox3YAAAGbLDVLdk0Av9Nd-Mg-zQJjTyLM_eozjiSY76D1a0MiEqgZp5EEixO3G-5Rwcf5DWH3fYbRSy5XMB8t8ggr1uAznUrrM0lIlNSCr93hoUnd7y9yo0LqncYhRLym";
 const profilePicClassName =
-  "a.e9240e9a f3d5ab7d _0bfecead b4471907 ebea0ded _8d65a587 _29926e15 _9a2dc561 daa05862 _94d7787d";
-const connectBtnClassName = "OSHnKSWBmVVluHcAUeYNgSjYqReAwvDgpkTRbuQ";
+  "a.ca32d07b _942aa933 _31cc92b9 d106aca7 _771e9cec _3238b979 e008953e _8dadaf4b f8c71ccf _306efec1";
+const connectBtnClassName = "myDqvynLuvuJENzcxdyjTNvBnXClnOBgpVg";
 const message = `Hi! I came across a job opening at your company. Over the past year, I’ve been putting in 8+ hrs daily solving 500+ DSA problems, system design, and Striver A2Z, Fraz prep, and I’d truly value a referral. I’ll share everything needed just need a chance to prove myself.`;
 
-const target = 5; // Very conservative target to avoid detection (reduced from 10)
+const target = 10; // Very conservative target to avoid detection (reduced from 10)
 const sleepTime = 15000; // 15 second delays - more human-like (increased)
 
 async function start() {
