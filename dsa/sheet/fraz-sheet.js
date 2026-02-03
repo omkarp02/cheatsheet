@@ -26,11 +26,9 @@ const data = [
   "Movement of Robots",
   "Range Sum Query 2D - Immutable",
   "Increment Submatrices by One",
-  "Power of Heroes",
   "Minimum Cost to Make Array Equal",
   "Pongal Bunk",
   "Car Pooling",
-  "My Calendar II",
   "Shifting Letters II",
   "Perfect Rectangle",
   "Rectangle Area II",
@@ -73,7 +71,6 @@ const data = [
   "Groups of Special Equivalent Strings",
   "Word Subsets",
   "Find the Maximum Number of Elements in Subset",
-  "Count the Number of Good Partitions",
   "Optimal Partition of String",
   "Custom Sort String",
   "Finding the Users Active Minutes",
@@ -107,7 +104,6 @@ const data = [
   "Count Number of Bad Pairs",
   "Continuous Subarray Sum",
   "Count of Interesting Subarrays",
-  "Count Number of Nice Subarrays",
   "Sum of Digit Differences of All Pairs",
   "Binary Subarrays with Sum",
   "Number of Wonderful Substrings",
@@ -151,7 +147,6 @@ const data = [
   "Minimum Insertions to Balance a Parentheses String",
   "Longest Valid Parentheses",
   "Redundant Parenthesis",
-  "Min Stack",
   "Maximum Frequency Stack",
   "Design a Stack With Increment Operation",
   "Dinner Plate Stacks",
@@ -193,7 +188,6 @@ const data = [
   "First Negative Integer in Every Window of Size K",
   "Find the Winner of the Circular Game",
   "Reveal Cards in Increasing Order",
-  "Minimum Number of K Consecutive Bit Flips",
   "Stamping the Sequence",
   "Design Circular Deque",
   "Jump Game VI",
@@ -727,10 +721,11 @@ const notDone = [
   "Maximum White Tiles Covered by a Carpet",
   "H-Index",
   "Minimum Number of Operations to Make Arrays Similar",
-  "Flower Planting With No Adjacent"
+  "Flower Planting With No Adjacent",
+  "http://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/description/",
+  "Longest Arithmetic Subsequence",
+  "Maximum White Tiles Covered by a Carpet",
 ];
-
-
 
 function getRandomTitle(titles) {
   if (!Array.isArray(titles) || titles.length === 0) return null;
