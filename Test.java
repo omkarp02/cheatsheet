@@ -15,74 +15,20 @@ class Main {
 }
 
 class Solution {
-    public int maxDotProduct(int[] nums1, int[] nums2) {
-
-        boolean allPositiveNums1 = true;
-        boolean allNegativeNums1 = true;
-        boolean allPositiveNums2 = true;
-        boolean allNegativeNums2 = true;
-        for (int i = 0; i < Math.max(nums1.length, nums2.length); i++) {
-            if (i < nums1.length && nums1[i] < 0) {
-                allPositiveNums1 = false;
-            }
-            if (i < nums1.length && nums1[i] >= 0) {
-                allNegativeNums1 = false;
-            }
-            if (i < nums2.length && nums2[i] < 0) {
-                allPositiveNums2 = false;
-            }
-            if (i < nums2.length && nums2[i] >= 0) {
-                allNegativeNums2 = false;
-            }
-
-        }
-
-        if ((allPositiveNums1 && allNegativeNums2) || (allPositiveNums2 && allNegativeNums1)) {
-            Arrays.sort(nums1);
-            Arrays.sort(nums2);
-            if (allPositiveNums1) {
-                return nums1[0] * nums2[nums2.length - 1];
-            }
-
-            return nums2[0] * nums1[nums1.length - 1];
-        }
-
-        return dpSoln(nums1, nums2);
+    public int checkRecord(int n) {
+        
     }
 
-    // nums1 = [2,1,-2,5], nums2 = [3,0,-6]
-    public int helper(int i, int j, int[] nums1, int[] nums2) {
-        if (i == nums1.length || j == nums2.length) {
-            return 0;
-        }
+    //a: 1, p: 2, l:3
+    public helper(int absent, int noOfLeave, int deep, int n){
 
-        int max;
 
-        max = helper(i + 1, j + 1, nums1, nums2) + nums1[i] * nums2[j];
-
-        int b = helper(i + 1, j, nums1, nums2);
-        int c = helper(i, j + 1, nums1, nums2);
-
-        return Math.max(max, Math.max(b, c));
-
-    }
-
-    public int dpSoln(int[] nums1, int[] nums2) {
-        int n = nums1.length;
-        int m = nums2.length;
-        int[][] dp = new int[n + 1][m + 1];
-
-        for (int i = nums1.length - 1; i >= 0; i--) {
-            for (int j = nums2.length - 1; j >= 0; j--) {
-                int max = dp[i + 1][j + 1] + nums1[i] * nums2[j];
-
-                int b = dp[i + 1][j];
-                int c = dp[i][j + 1];
-
-                dp[i][j] = Math.max(max, Math.max(b, c));
+        for(int i = 1; i <= 3; i++) {
+            if(absent == 0 || i != 1){
+                helper(i == 1 ? 1 : 0 , i == 3 ? noOfLeave + 1 : 0, deep + 1, n);
             }
         }
-        System.out.println(Arrays.deepToString(dp));
-        return dp[0][0];
+
+
     }
 }
