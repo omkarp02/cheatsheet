@@ -117,8 +117,6 @@ async function visitUserProfile(
 
       const name = await page.$eval("h1", (el) => el.innerText.trim());
 
-      console.log("Name:", name);
-
       const ariaLabel = `Invite ${name} to connect`;
 
       const btnSelector = `button[aria-label="${ariaLabel}"]`;

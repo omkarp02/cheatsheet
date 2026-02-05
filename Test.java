@@ -1,53 +1,88 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
+import java.util.Arrays;
 
-// import org.junit.jupiter.api.Test;
-import java.util.*;
-
-class Test {
+class Main {
     public static void main(String[] args) {
-        System.out.println("Try programiz.pro");
+
+        // price = [2,5], special = [[3,0,5],[1,2,10]], needs = [3,2]
         Solution solution = new Solution();
-
-        // nums1 = [1,2,3,4], nums2 = [2,10,20,19], k1 = 0, k2 = 0
-
-        int[] nums = { 24, 13, 1, 100, 0, 94, 3, 0, 3 };
-        int result = solution.longestArithSeqLength(nums);
-        System.out.println(result);
+        int[] nums1 = { 2, 1, -2, 5 };
+        int[] nums2 = { 3, 0, -6 };
+        int result = solution.maxDotProduct(nums1, nums2);
+        System.out.println("Max Dot Product: " + result);
 
     }
 }
 
-// nums = [1, 7, 10, 13, 14, 19], 1, 7, 13, 19
 class Solution {
-    List<Integer> asdf = new ArrayList<>();
+    public int maxDotProduct(int[] nums1, int[] nums2) {
 
-    public int longestArithSeqLength(int[] nums) {
-        return helper(0, -1, null, nums);
+        boolean allPositiveNums1 = true;
+        boolean allNegativeNums1 = true;
+        boolean allPositiveNums2 = true;
+        boolean allNegativeNums2 = true;
+        for (int i = 0; i < Math.max(nums1.length, nums2.length); i++) {
+            if (i < nums1.length && nums1[i] < 0) {
+                allPositiveNums1 = false;
+            }
+            if (i < nums1.length && nums1[i] >= 0) {
+                allNegativeNums1 = false;
+            }
+            if (i < nums2.length && nums2[i] < 0) {
+                allPositiveNums2 = false;
+            }
+            if (i < nums2.length && nums2[i] >= 0) {
+                allNegativeNums2 = false;
+            }
+
+        }
+
+        if ((allPositiveNums1 && allNegativeNums2) || (allPositiveNums2 && allNegativeNums1)) {
+            Arrays.sort(nums1);
+            Arrays.sort(nums2);
+            if (allPositiveNums1) {
+                return nums1[0] * nums2[nums2.length - 1];
+            }
+
+            return nums2[0] * nums1[nums1.length - 1];
+        }
+
+        return dpSoln(nums1, nums2);
     }
 
-    public int helper(int i, int prev, Integer diff, int[] nums) {
-        if (i == nums.length) {
+    // nums1 = [2,1,-2,5], nums2 = [3,0,-6]
+    public int helper(int i, int j, int[] nums1, int[] nums2) {
+        if (i == nums1.length || j == nums2.length) {
             return 0;
         }
 
-        int count = 0;
-        if (prev == -1) {
-            count = helper(i + 1, i, null, nums) + 1;
-        } else {
-            int d = nums[i] - nums[prev];
-            if(diff == null || d == diff){
-                count = helper(i + 1, i, diff == null ? d : diff, nums)  + 1;
-            }
-        }
-        int b = helper(i + 1, prev, diff, nums);
-        count = Math.max(b, count);
+        int max;
 
-        return count;
+        max = helper(i + 1, j + 1, nums1, nums2) + nums1[i] * nums2[j];
+
+        int b = helper(i + 1, j, nums1, nums2);
+        int c = helper(i, j + 1, nums1, nums2);
+
+        return Math.max(max, Math.max(b, c));
+
     }
 
+    public int dpSoln(int[] nums1, int[] nums2) {
+        int n = nums1.length;
+        int m = nums2.length;
+        int[][] dp = new int[n + 1][m + 1];
 
+        for (int i = nums1.length - 1; i >= 0; i--) {
+            for (int j = nums2.length - 1; j >= 0; j--) {
+                int max = dp[i + 1][j + 1] + nums1[i] * nums2[j];
+
+                int b = dp[i + 1][j];
+                int c = dp[i][j + 1];
+
+                dp[i][j] = Math.max(max, Math.max(b, c));
+            }
+        }
+        System.out.println(Arrays.deepToString(dp));
+        return dp[0][0];
+    }
 }
-
-
-
-// asdf
