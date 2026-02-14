@@ -738,5 +738,6 @@ function getRandomTitle(titles) {
 }
 
 //data2 have 795 count
+
 console.log(data.length);
 console.log(getRandomTitle(data));

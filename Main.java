@@ -1,56 +1,49 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
+import java.util.Arrays;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
+
+        // price = [2,5], special = [[3,0,5],[1,2,10]], needs = [3,2]
         Solution solution = new Solution();
-        int[][] tiles = { { 1, 1 }, { 10, 11 } };
-        int carpetLen = 2;
-        int result = solution.maximumWhiteTiles(tiles, carpetLen);
-        System.out.println(result);
+        int[] nums1 = { 2, 1, -2, 5 };
+        int[] nums2 = { 3, 0, -6 };
+        int result = solution.checkRecord(10101);
+        System.out.println("Max Dot Product: " + result);
+
     }
 }
 
 class Solution {
-    public int maximumWhiteTiles(int[][] tiles, int carpetLen) {
-        Arrays.sort(tiles, (a, b) -> a[0] - b[0]);
-        int l = 0;
-        int r = 0;
+    private static final int MOD = 1_000_000_007;
 
-        int curSum = 0;
-        int max = 0;
-        int totalTilesCovered = 0;
-        while (r < tiles.length) {
-            int curr = tiles[r][1] - tiles[r][0] + 1;
-            if (totalTilesCovered + curr >= carpetLen) {
-                max = Math.max(max, curSum + (carpetLen - totalTilesCovered));
+    public int checkRecord(int n) {
+        // return helper(0, 0, 0, n);
+
+        long[][][] dp = new long[2][3][n + 1];
+
+        for (int a = 0; a < 2; a++) {
+            for (int l = 0; l < 3; l++) {
+                dp[a][l][n] = 1;
             }
-            totalTilesCovered += curr;
-            curSum += curr;
-
-            if (r < tiles.length - 1) {
-                totalTilesCovered += tiles[r + 1][0] - tiles[r][1] - 1;
-            }
-
-            while (totalTilesCovered > carpetLen) {
-                totalTilesCovered -= tiles[l][1] - tiles[l][0] + 1;
-                curSum -= tiles[l][1] - tiles[l][0] + 1;
-                if (l < tiles.length - 1) {
-                    totalTilesCovered -= tiles[l + 1][0] - tiles[l][1] - 1;
+        }
+        for (int deep = n - 1; deep >= 0; deep--) {
+            for (int absent = 0; absent < 2; absent++) {
+                for (int noOfLeave = 0; noOfLeave < 3; noOfLeave++) {
+                    long count = 0;
+                    for (int i = 1; i <= 3; i++) {
+                        if ((absent == 0 || i != 1) && (i == 3 ? noOfLeave < 2 : noOfLeave < 3)) {
+                            count += (dp[i == 1 ? 1 : absent][i == 3 ? noOfLeave + 1 : 0][deep + 1]) % MOD;
+                        }
+                    }
+                    dp[absent][noOfLeave][deep] = count;
                 }
-                l++;
             }
-
-            if (curSum >= carpetLen) {
-                return curSum;
-            }
-
-            max = Math.max(curSum, max);
-            r++;
         }
 
-        return max;
+
+        return (int) dp[0][0][0];
+
     }
+
 }
