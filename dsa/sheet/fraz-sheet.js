@@ -60,7 +60,7 @@ const data = [
   // "Replace Elements in an Array",
   "Count the Number of Special Characters II",
   "Reconstruct Original Digits from English",
-  "Integer to Roman",
+  // "Integer to Roman",
   "Sort Characters by Frequency",
   // "HTML Entity Parser",
   "Group Anagrams",
@@ -246,7 +246,6 @@ const data = [
   "Maximum Tastiness of Candy Basket",
   "Minimized Maximum of Products Distributed to Any Store",
   "Minimize the Maximum Difference of Pairs",
-  "Maximize the Minimum Powered City",
   "Kth Smallest Number in Multiplication Table",
   "Find the Median of the Uniqueness Array",
   "Kth Smallest Product of Two Sorted Arrays",
@@ -728,6 +727,7 @@ const notDone = [
   "http://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/description/",
   "Longest Arithmetic Subsequence",
   "Maximum White Tiles Covered by a Carpet",
+  "Maximize the Minimum Powered City",
 ];
 
 function getRandomTitle(titles) {
@@ -735,6 +735,8 @@ function getRandomTitle(titles) {
   const randomIndex = Math.floor(Math.random() * titles.length);
   return titles[randomIndex];
 }
+
+//do next Minimum Swaps To Make Sequences Increasing
 
 //data2 have 795 count
 
