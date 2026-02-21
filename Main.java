@@ -8,44 +8,44 @@ class Main {
 
         // price = [2,5], special = [[3,0,5],[1,2,10]], needs = [3,2]
         Solution solution = new Solution();
-        int[] nums1 = { 1,2,1,2,3 };
-        int result = solution.subarraysWithKDistinct(nums1, 2);
-        System.out.println("Max Dot Product: " + result);
+        int[] nums1 = { 1, 2, 1, 2, 3 };
+        String str1 = "horse";
+        String str2 = "ros";
+        int result = solution.minDistance(str1, str2);
+        System.out.println("===========> " + result);
 
     }
 }
 
+// word1 = "horse", word2 = "ros"
 class Solution {
+    public int minDistance(String word1, String word2) {
+        int n = word1.length();
+        int m = word2.length();
+        int[][] dp = new int[n + 1][m + 1];
 
-    // nums = [1,2,1,2,3], k = 2
-    public int subarraysWithKDistinct(int[] nums, int k) {
-        int a = helper(nums, k);
-        int b = helper(nums, k - 1);
-        return a - b;
-    }
-
-    // nums = [1,2,1,2,3], k = 2
-    public int helper(int[] nums, int k){
-        if(k == 0) return 0;
- 
-        int l = 0;
-        int r = 0;
-        Map<Integer, Integer> map = new HashMap<>();
-        int count = 0;
-        while(r < nums.length){
-            map.put(nums[r], map.getOrDefault(nums[r], 0) + 1);
-            while(map.size() > k){
-                map.put(nums[l], map.get(nums[l]) - 1);
-                if(map.get(nums[l]) == 0) {
-                    map.remove(nums[l]);
-                };
-                l += 1;
-            }
-
-            count += r - l + 1;
-            r += 1;
+        for (int i = 0; i <= n; i++) {
+            dp[i][0] = i;
         }
-        
-        return count; 
+        for (int j = 0; j <= m; j++) {
+            dp[0][j] = j;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(dp[i][j - 1],
+                            Math.min(dp[i - 1][j], dp[i - 1][j - 1])) + 1;
+                }
+
+            }
+        }
+
+        return dp[n][m];
+
     }
+
+
 }
